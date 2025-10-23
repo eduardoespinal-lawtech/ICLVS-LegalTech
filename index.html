@@ -1,161 +1,164 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="utf-8">
-  <title>Intelligent Contextual Legal Verification System — Project</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light only">
-  <meta name="description" content="Public demonstrative research project in legal-tech for contextual clause adaptation, jurisdiction detection, and regulatory traceability.">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    main, section, footer, header, figure, figcaption, p, h1, h2, h3, ul, ol {
-      text-align: center;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    ul, ol {
-      display: inline-block;
-      text-align: left;
-    }
-    figure img {
-      display: block;
-      margin: 0 auto;
-    }
-  </style>
+  <meta charset="utf-8" />
+  <title>Intelligent Contextual Legal Verification System — Proyecto</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light only" />
+  <meta name="description" content="Proyecto demostrativo en legal-tech: verificación legal contextual con trazabilidad y adaptación normativa multi-jurisdicción." />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<header class="hero">
-  <h1>Intelligent Contextual Legal Verification System</h1>
-  <p class="tag">Developed by Eduardo Luis Espinal de Aza, Esq. · Version 1.0 · October 2025</p>
-  <a class="btn" href="#overview">Project overview</a>
-</header>
+  <!-- HERO / PORTADA -->
+  <header class="hero">
+    <div class="container">
+      <p class="eyebrow">Proyecto demostrativo · Legal-Tech</p>
+      <h1>Intelligent Contextual Legal Verification System</h1>
+      <p class="subtitle">Marco para trazabilidad legal y consistencia regulatoria asistida por IA</p>
+      <p class="meta">Desarrollado por <strong>Eduardo Luis Espinal de Aza, Esq.</strong> · Versión 1.0 · Octubre 2025</p>
+      <nav class="cta-row">
+        <a class="btn" href="#resumen">Resumen</a>
+        <a class="btn ghost" href="#flujo">Flujo</a>
+        <a class="btn ghost" href="#usos">Casos de uso</a>
+      </nav>
+    </div>
+  </header>
 
-<main>
+  <main class="container">
 
-  <!-- EXECUTIVE SUMMARY -->
-  <section id="overview">
-    <h2>Executive Summary</h2>
-    <p>
-      The Intelligent Contextual Legal Verification System (ICLVS) is a public demonstrative research project in legal-tech.
-      It outlines a conceptual architecture that applies AI-assisted reasoning to analyze legal documents, detect governing
-      jurisdictions, adapt clauses to normative frameworks, and preserve audit-grade traceability—while retaining professional legal oversight.
-    </p>
-    <ul>
-      <li>Faster verification (conceptual)</li>
-      <li>Fewer drafting inconsistencies</li>
-      <li>Improved clause uniformity across jurisdictions</li>
-    </ul>
-    <figure id="fig0">
-      <img src="assets/cover.svg" alt="Conceptual cover — compliance-oriented architecture" width="80%">
-      <figcaption><strong>Figure 0 — Conceptual Overview.</strong><br>Regulatory frame, traceability axes, and AI contextual core.</figcaption>
-    </figure>
-  </section>
+    <!-- RESUMEN -->
+    <section id="resumen" class="card centered">
+      <h2>Resumen ejecutivo</h2>
+      <p>
+        El <strong>ICLVS</strong> es un proyecto demostrativo de investigación en legal-tech. Propone
+        una arquitectura que aplica razonamiento asistido por IA para analizar documentos, detectar
+        jurisdicción aplicable, adaptar cláusulas a marcos normativos y conservar <em>trazabilidad
+        audit-grade</em>, manteniendo la supervisión profesional del abogado.
+      </p>
+      <ul class="bullets">
+        <li>Verificación más rápida (proyección conceptual)</li>
+        <li>Menos inconsistencias de redacción</li>
+        <li>Mejor uniformidad de cláusulas entre jurisdicciones</li>
+      </ul>
 
-  <!-- RESEARCH MOTIVATION -->
-  <section id="motivation">
-    <h2>Research Motivation</h2>
-    <p>
-      Multi-jurisdictional compliance creates inefficiencies and inconsistencies. Manual clause verification across regulatory frameworks
-      is slow and costly. This project explores how explainable AI and rule-based adaptation can make legal verification measurable,
-      interoperable, and auditable.
-    </p>
-  </section>
+      <figure class="figure">
+        <img src="assets/cover.svg" alt="Vista conceptual: marco regulatorio, ejes de trazabilidad y núcleo IA" />
+        <figcaption><strong>Figura 0 — Vista conceptual.</strong> Marco regulatorio, ejes de trazabilidad y núcleo de IA contextual.</figcaption>
+      </figure>
+    </section>
 
-  <!-- PROJECT DESCRIPTION -->
-  <section id="description">
-    <h2>Project Description</h2>
-    <p>
-      ICLVS proposes a modular approach: an input layer for document ingestion (PDF/DOCX/JSON-LD), a processing layer for contextual
-      legal rule analysis, an adaptation layer for clause revision against a jurisdiction-aware corpus, and a traceability layer for
-      immutable audit records (optionally blockchain-anchored).
-    </p>
-  </section>
+    <!-- MOTIVACIÓN -->
+    <section class="card centered">
+      <h2>Motivación de investigación</h2>
+      <p>
+        La complejidad multi-jurisdiccional vuelve ineficiente la verificación legal manual. Este
+        proyecto explora cómo la IA explicable y la adaptación basada en reglas pueden hacer la
+        verificación <strong>medible, interoperable y auditable</strong>.
+      </p>
+    </section>
 
-  <!-- USE CASES -->
-  <section id="use-cases">
-    <h2>Use Cases</h2>
-    <ul>
-      <li><strong>Regulatory Document Verification:</strong> Pre-submission review of bylaws, contracts, and filings.</li>
-      <li><strong>Land & Real-Estate Registries:</strong> Validation of property documents and registry data.</li>
-      <li><strong>Multi-Jurisdictional Adaptation:</strong> Harmonization of agreements across regions.</li>
-      <li><strong>Financial Compliance:</strong> Clause screening for AML and data-protection regulations.</li>
-      <li><strong>Academic & Institutional Research:</strong> Model for studying AI and RegTech in comparative law.</li>
-    </ul>
-  </section>
+    <!-- DESCRIPCIÓN -->
+    <section class="card centered">
+      <h2>Descripción del sistema</h2>
+      <p>
+        El enfoque es modular: <strong>ingesta</strong> (PDF/DOCX/JSON-LD), <strong>análisis
+        contextual</strong> de reglas, <strong>adaptación normativa</strong> por corpus con
+        conciencia jurisdiccional y <strong>trazabilidad</strong> con registro inmutable (anclaje
+        opcional a blockchain). Objetivo: elevar confianza, velocidad y transparencia en flujos
+        de cumplimiento.
+      </p>
+    </section>
 
-  <!-- SYSTEM FLOW -->
-  <section id="how">
-    <h2>System Flow</h2>
-    <ol class="flow">
-      <li>(100) Document Upload</li>
-      <li>(200) Jurisdiction Detection</li>
-      <li>(300) Normative/Clause Adaptation</li>
-      <li>(400) Legal Traceability</li>
-      <li>(500) Attorney Review → (600) Verified Output</li>
-    </ol>
-    <figure id="fig1">
-      <img src="assets/flow.svg" alt="System Flow Diagram" width="80%">
-      <figcaption><strong>Figure 1 — System Flow Diagram.</strong><br>End-to-end workflow with numbered functional modules.</figcaption>
-    </figure>
-  </section>
+    <!-- CASOS DE USO -->
+    <section id="usos" class="card centered">
+      <h2>Casos de uso</h2>
+      <div class="grid">
+        <div class="chip">Verificación regulatoria de documentos</div>
+        <div class="chip">Registros inmobiliarios y catastrales</div>
+        <div class="chip">Adaptación contractual multi-jurisdicción</div>
+        <div class="chip">Cumplimiento en sector financiero (AML/privacidad)</div>
+        <div class="chip">Investigación académica / RegTech</div>
+      </div>
+    </section>
 
-  <!-- IMPACT METRICS -->
-  <section id="impact">
-    <h2>Impact Metrics</h2>
-    <p>Conceptual projections based on the proposed AI-driven legal-compliance framework.</p>
-    <figure id="fig2">
-      <img src="assets/impact.svg" alt="Quantitative Impact Metrics" width="80%">
-      <figcaption><strong>Figure 2 — Quantitative Impact Metrics.</strong><br>Expected efficiency and consistency improvements (conceptual).</figcaption>
-    </figure>
-  </section>
+    <!-- FLUJO -->
+    <section id="flujo" class="card centered">
+      <h2>Flujo del sistema</h2>
+      <p>Secuencia procedimental propuesta:</p>
+      <ol class="flow">
+        <li><strong>(100)</strong> Carga de documento</li>
+        <li><strong>(200)</strong> Detección de jurisdicción</li>
+        <li><strong>(300)</strong> Adaptación normativa</li>
+        <li><strong>(400)</strong> Trazabilidad legal</li>
+        <li><strong>(500)</strong> Revisión letrada → <strong>(600)</strong> Salida verificada</li>
+      </ol>
+      <figure class="figure">
+        <img src="assets/flow.svg" alt="Diagrama del flujo de verificación legal" />
+        <figcaption><strong>Figura 1 — Diagrama de flujo.</strong> Módulos funcionales numerados de extremo a extremo.</figcaption>
+      </figure>
+    </section>
 
-  <!-- REGULATORY IMPACT -->
-  <section id="regulatory-impact">
-    <h2>Regulatory Impact</h2>
-    <ul>
-      <li>Supports modernization of compliance processes within public registries.</li>
-      <li>Provides a digital trace of clause reasoning for audit readiness.</li>
-      <li>Promotes interoperable data models aligned with AI governance frameworks.</li>
-    </ul>
-  </section>
+    <!-- MÉTRICAS -->
+    <section class="card centered">
+      <h2>Métricas de impacto</h2>
+      <p>Proyección conceptual basada en el marco propuesto de verificación asistida por IA.</p>
+      <figure class="figure">
+        <img src="assets/impact.svg" alt="Gráfico cuantitativo de mejoras proyectadas" />
+        <figcaption><strong>Figura 2 — Métricas cuantitativas.</strong> Eficiencia y consistencia esperadas (conceptual).</figcaption>
+      </figure>
+    </section>
 
-  <!-- ETHICAL PRINCIPLES -->
-  <section id="ethics">
-    <h2>Ethical & Data Principles</h2>
-    <ul>
-      <li>No personal or client data processed — uses anonymized structures.</li>
-      <li>Human oversight remains central to final legal validation.</li>
-      <li>Transparent rule-based adaptation for explainable AI outcomes.</li>
-    </ul>
-  </section>
+    <!-- IMPACTO REGULATORIO -->
+    <section class="card centered">
+      <h2>Impacto regulatorio</h2>
+      <ul class="bullets">
+        <li>Moderniza procesos de cumplimiento en registros y organismos.</li>
+        <li>Genera traza digital explicable preparada para auditoría.</li>
+        <li>Favorece modelos interoperables alineados con gobernanza de IA.</li>
+      </ul>
+    </section>
 
-  <!-- ARCHITECTURE -->
-  <section id="architecture">
-    <h2>System Architecture</h2>
-    <figure id="fig3">
-      <img src="assets/architecture.svg" alt="System Architecture Diagram" width="80%">
-      <figcaption><strong>Figure 3 — System Architecture.</strong><br>Conceptual layers showing input, reasoning, adaptation, and traceability modules.</figcaption>
-    </figure>
-  </section>
+    <!-- ÉTICA Y DATOS -->
+    <section class="card centered">
+      <h2>Principios éticos y de datos</h2>
+      <ul class="bullets">
+        <li>Sin datos personales: estructuras anonimizadas de ejemplo.</li>
+        <li>Supervisión humana determinante en la validación final.</li>
+        <li>Adaptación transparente basada en reglas (IA explicable).</li>
+      </ul>
+    </section>
 
-  <!-- DOCUMENTATION -->
-  <section id="docs">
-    <h2>Documentation & Resources</h2>
-    <ul>
-      <li><a href="#">White Paper (pre-print / DOI)</a></li>
-      <li><a href="#">Provisional Patent Reference</a></li>
-      <li><a href="#">Curriculum Vitae (PDF)</a></li>
-      <li><a href="https://github.com/eduardoespinal-lawtech/legal-verification-system" target="_blank">Repository (GitHub)</a></li>
-    </ul>
-    <p class="note">Public demonstrative research project. No personal data is collected.</p>
-  </section>
+    <!-- ARQUITECTURA (opcional) -->
+    <section class="card centered">
+      <h2>Arquitectura del sistema</h2>
+      <figure class="figure">
+        <img src="assets/architecture.svg" alt="Arquitectura conceptual por capas" />
+        <figcaption><strong>Figura 3 — Arquitectura.</strong> Ingesta → Razonamiento → Adaptación → Trazabilidad.</figcaption>
+      </figure>
+      <p class="note">Incluya <code>assets/architecture.svg</code> cuando esté disponible.</p>
+    </section>
 
-</main>
+    <!-- DOCUMENTACIÓN -->
+    <section class="card centered">
+      <h2>Documentación & Recursos</h2>
+      <p class="links">
+        <a href="#" title="A solicitud">White Paper (pre-print / DOI)</a> ·
+        <a href="#" title="A solicitud">Referencia de Patente Provisional</a> ·
+        <a href="#" title="A solicitud">Currículum Vitae (PDF)</a> ·
+        <a href="https://github.com/eduardoespinal-lawtech/legal-verification-system" target="_blank" rel="noopener">Repositorio (GitHub)</a>
+      </p>
+      <p class="note">Proyecto demostrativo público. No se recopilan datos personales.</p>
+    </section>
 
-<footer>
-  <small>© 2025 Eduardo Luis Espinal de Aza · Espinal & Almonte, Consultores Legales, SRL · Public Demonstrative Research Project</small>
-</footer>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Eduardo Luis Espinal de Aza · Espinal &amp; Almonte, Consultores Legales, SRL</p>
+      <p class="light">Public Demonstrative Research Project</p>
+    </div>
+  </footer>
 
 </body>
 </html>
