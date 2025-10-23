@@ -1,25 +1,183 @@
-/* Centrado del encabezado principal */
-header.hero {
-  text-align: center;
+/* ===========================
+   Legal-Tech Modern (Center)
+   =========================== */
+:root{
+  --bg:#ffffff;
+  --ink:#0f172a;        /* azul-gris legal */
+  --muted:#667085;      /* texto secundario */
+  --line:#e6e8ee;       /* bordes suaves */
+  --brand:#1a73e8;      /* acento serio */
+  --brand-ghost:#e8f0fe;
+  --shadow: 0 10px 30px rgba(2,6,23,.06);
+}
+
+*{box-sizing:border-box}
+html,body{
+  background:var(--bg);
+  color:var(--ink);
+  margin:0;
+  font-family: Inter, "Segoe UI", Roboto, Arial, system-ui, -apple-system, "Helvetica Neue", sans-serif;
+  line-height:1.65;
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* ------------------ Layout ------------------ */
+.container{
+  max-width: 1024px;
   margin: 0 auto;
-  padding: 60px 20px;
+  padding: 0 20px;
 }
+main.container{padding: 34px 20px 64px}
 
-header.hero h1 {
-  font-size: 2.5em;
+/* ------------------ Hero ------------------ */
+.hero{
+  text-align:center;
+  padding: 72px 16px 46px;
+  border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,#fff, #fafbff);
+}
+.eyebrow{
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  font-size:.78rem;
+  color:var(--muted);
+  margin:0 0 10px;
+}
+.hero h1{
+  margin:0 0 6px;
+  font-size: clamp(28px, 4.6vw, 48px);
   font-weight: 800;
-  margin-bottom: 10px;
+  line-height:1.15;
+}
+.subtitle{
+  margin: 4px auto 10px;
+  max-width: 820px;
+  color:#1f2a44;
+  font-size: clamp(16px, 2.2vw, 20px);
+}
+.meta{
+  color:var(--muted);
+  margin:4px 0 18px;
+}
+.cta-row{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  flex-wrap:wrap;
 }
 
-header.hero .tag {
-  display: block;
-  font-size: 1.1em;
-  margin-bottom: 20px;
-  color: #222;
+/* ------------------ Buttons ------------------ */
+.btn{
+  display:inline-block;
+  background:var(--brand);
+  color:#fff;
+  padding:10px 16px;
+  border-radius:12px;
+  font-weight:600;
+  text-decoration:none;
+  box-shadow: 0 6px 14px rgba(26,115,232,.22);
+  transition:.18s transform ease, .18s box-shadow ease, .18s background ease;
+}
+.btn:hover{ transform: translateY(-2px); box-shadow:0 10px 24px rgba(26,115,232,.25) }
+.btn.ghost{
+  background:var(--brand-ghost);
+  color:#0b57d0;
+  box-shadow:none;
+}
+.btn.ghost:hover{ background:#dfe9ff }
+
+/* ------------------ Cards / Content ------------------ */
+h2{
+  text-align:center;
+  font-weight:800;
+  letter-spacing:.2px;
+  font-size: clamp(20px, 2.6vw, 26px);
+  margin: 0 0 10px;
+}
+.card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding: 22px 22px 18px;
+  margin: 20px auto;
+  box-shadow: var(--shadow);
+}
+.centered{ text-align:center }
+.centered p{ margin: 8px auto; max-width: 860px }
+.note{ color:var(--muted) }
+.links a{ color:#0b57d0; text-decoration:none }
+.links a:hover{ text-decoration:underline }
+
+/* bullets elegantes centradas */
+.bullets{
+  display:inline-block;
+  text-align:left;
+  margin: 10px auto 2px;
+  padding-left: 16px;
 }
 
-header.hero .btn {
-  display: inline-block;
-  margin: 10px auto;
-  text-align: center;
+/* chips para casos de uso */
+.grid{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+}
+.chip{
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:999px;
+  padding:8px 14px;
+  font-weight:600;
+  font-size:.95rem;
+}
+
+/* listas de flujo centradas */
+.flow{
+  display:inline-block;
+  text-align:left;
+  margin:8px auto 12px;
+  padding-left: 18px;
+}
+
+/* ------------------ Figures ------------------ */
+.figure{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:12px;
+  margin: 16px auto 4px;
+  max-width: 100%;
+}
+.figure img{
+  display:block;
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  border-radius:12px;
+  background:#fff;
+}
+.figure figcaption{
+  text-align:center;
+  color:var(--muted);
+  font-size:.95rem;
+  margin-top:8px;
+}
+
+/* ------------------ Footer ------------------ */
+.footer{
+  border-top:1px solid var(--line);
+  text-align:center;
+  padding: 18px 0 26px;
+  background:#fff;
+}
+.footer .light{ color:var(--muted) }
+
+/* ------------------ Print Ready ------------------ */
+@media print{
+  .hero, .cta-row{ box-shadow:none; background:#fff; border:0 }
+  .btn, .cta-row{ display:none !important }
+  .card, .figure{ break-inside: avoid }
 }
