@@ -1,31 +1,47 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="utf-8" />
 <title>Exhibit A — Intelligent Contextual Legal Verification System</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="color-scheme" content="light only">
-<meta name="description" content="Demonstrative legal-tech prototype for EB-2 NIW evidentiary use.">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="light only" />
+<meta name="description" content="Demonstrative legal-tech prototype for EB-2 NIW evidentiary use." />
+
+<!-- Modern, clean, print-ready styles -->
 <style>
-  :root{--ink:#0f172a;--muted:#667085;--blue:#1a73e8;--line:#e5e7eb}
-  html,body{background:#fff !important;color:var(--ink) !important;font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;line-height:1.6;margin:0}
+  :root{
+    color-scheme: light only;
+    --ink:#0f172a; --muted:#667085; --blue:#1a73e8; --line:#e5e7eb; --bg:#ffffff;
+    --card: #ffffff; --shadow: 0 4px 18px rgba(2,6,23,.06);
+  }
+  html,body{background:var(--bg)!important;color:var(--ink)!important;font-family:Inter, system-ui, Segoe UI, Arial, sans-serif;line-height:1.6;margin:0}
   a{color:#0b57d0;text-decoration:none} a:hover{text-decoration:underline}
-  .exhibit{text-align:center;border-bottom:1px solid var(--line);padding:16px 12px}
-  .exhibit h1{margin:0 0 6px;font-size:20px}
-  .exhibit p{margin:0;color:var(--muted);font-size:13px}
+  header.exhibit{position:sticky;top:0;background:#fff;z-index:10;border-bottom:1px solid var(--line);padding:16px 12px}
+  header.exhibit h1{margin:0 0 6px;font-size:20px;font-weight:700}
+  header.exhibit p{margin:0;color:var(--muted);font-size:13px}
   .btn{background:var(--blue);color:#fff;border:0;border-radius:10px;padding:8px 14px;margin-top:10px;cursor:pointer}
-  main{max-width:900px;margin:0 auto;padding:0 16px 40px}
-  h2{margin:28px 0 10px;border-bottom:1px solid var(--line);padding-bottom:6px}
-  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
-  .summary ul{margin:8px 0 0 18px}
-  figure{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;margin:16px 0}
-  img{display:block;max-width:100%;height:auto;background:#fff;border-radius:8px}
+  main{max-width:980px;margin:0 auto;padding:18px 16px 48px}
+  h2{margin:28px 0 12px;border-bottom:1px solid var(--line);padding-bottom:6px;font-size:19px}
+  .grid{display:grid;gap:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:var(--shadow)}
+  .two{grid-template-columns:1.1fr .9fr}
+  figure{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;margin:16px 0}
+  img{display:block;max-width:100%;height:auto;background:#fff;border-radius:10px}
   figcaption{font-size:13px;color:var(--muted);text-align:center;margin-top:8px}
-  .qr{display:flex;gap:12px;align-items:center;justify-content:center;margin:14px 0}
-  footer{border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:12px;padding:12px 0}
-  /* print */
+  .kpi{display:flex;gap:12px;flex-wrap:wrap}
+  .pill{border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:13px;background:#fff}
+  table.clean{width:100%;border-collapse:collapse;font-size:14px}
+  table.clean th, table.clean td{padding:8px 0;vertical-align:top}
+  table.clean th{color:var(--muted);text-align:left;border-bottom:1px solid var(--line)}
+  table.clean td{border-bottom:1px solid var(--line)}
+  .qr{display:flex;gap:12px;align-items:center;justify-content:center;margin:10px 0}
+  footer{border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:12px;padding:14px 0}
+  .note{color:var(--muted)}
+  .tag{color:var(--muted);font-size:13px;margin-top:2px}
+
+  /* Print */
   @media print{
-    .btn,.qr{display:none !important}
+    header.exhibit, .btn, .qr{display:none!important}
     section{page-break-inside:avoid}
     #fig1{page-break-before:always}
     #fig2{page-break-before:always}
@@ -36,43 +52,48 @@
 
 <header class="exhibit">
   <h1>EXHIBIT A — Demonstrative Legal-Tech Prototype</h1>
-  <p>Eduardo Luis Espinal de Aza, Esq. · Version 1.0 · Updated: Oct 2025</p>
+  <p>Eduardo Luis Espinal de Aza, Esq. · Version 1.0 · <span id="updated">Updated: —</span></p>
   <button class="btn" onclick="window.print()">Download Exhibit PDF</button>
 </header>
 
 <main>
 
-  <!-- Evidence summary -->
-  <section class="card summary">
+  <!-- Evidence Summary -->
+  <section class="card">
     <h2>Evidence Summary</h2>
     <ul>
-      <li>Public, non-commercial demonstrative prototype for **EB-2 NIW** evidentiary use.</li>
-      <li>Conceptual legal-tech system for compliance, jurisdiction detection, clause adaptation, and traceability.</li>
+      <li>Public, non-commercial demonstrative prototype for EB-2 NIW evidentiary use.</li>
+      <li>Conceptual system: compliance, jurisdiction detection, clause adaptation, traceability.</li>
       <li>Figures: <a href="#fig0">Fig. 0</a>, <a href="#fig1">Fig. 1</a>, <a href="#fig2">Fig. 2</a>. No personal data collected.</li>
     </ul>
   </section>
 
-  <!-- Purpose -->
-  <section class="card">
-    <h2>Purpose &amp; National Relevance</h2>
-    <p>This demonstrative prototype illustrates conceptual improvements in U.S. legal-compliance workflows through automated clause validation, jurisdiction detection, and normative adaptation—supporting transparency, speed, and consistency.</p>
-    <ul>
-      <li>35% faster compliance verification (conceptual projection)</li>
-      <li>28% fewer drafting inconsistencies</li>
-      <li>42% improved clause uniformity across jurisdictions</li>
-    </ul>
-    <p><em>This conceptual system supports U.S. regulatory efficiency and responsible AI governance objectives.</em></p>
+  <!-- Purpose & National Relevance + Cover -->
+  <section class="grid two">
+    <div class="card">
+      <h2>Purpose &amp; National Relevance</h2>
+      <p>This demonstrative prototype illustrates conceptual improvements in U.S. legal-compliance workflows through automated clause validation, jurisdiction detection, and normative adaptation—supporting transparency, speed, and consistency.</p>
+      <div class="kpi">
+        <span class="pill">35% faster verification (conceptual)</span>
+        <span class="pill">28% fewer drafting inconsistencies</span>
+        <span class="pill">42% improved clause uniformity</span>
+      </div>
+      <p class="tag"><em>This conceptual system supports U.S. regulatory efficiency and responsible AI governance objectives.</em></p>
+      <div class="qr">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://eduardoespinal-lawtech.github.io/legal-verification-system/" alt="QR to Exhibit A" />
+        <small>Permanent link to Exhibit A</small>
+      </div>
+    </div>
+
+    <div class="card" id="fig0">
+      <figure>
+        <img src="assets/cover.svg" alt="Conceptual cover — compliance-oriented architecture" />
+        <figcaption><strong>Figure 0 — Conceptual Overview.</strong> Compliance-oriented architecture with regulatory frame, traceability axes, and AI contextual core.</figcaption>
+      </figure>
+    </div>
   </section>
 
-  <!-- Fig 0 -->
-  <section class="card" id="fig0">
-    <figure>
-      <img src="assets/cover.svg" alt="Conceptual cover — compliance-oriented architecture">
-      <figcaption><strong>Figure 0 — Conceptual Overview.</strong> Compliance-oriented architecture with regulatory frame, traceability axes, and AI contextual core.</figcaption>
-    </figure>
-  </section>
-
-  <!-- Fig 1 -->
+  <!-- System Flow -->
   <section class="card" id="fig1">
     <h2>System Flow</h2>
     <ol>
@@ -83,46 +104,95 @@
       <li><strong>Attorney Review</strong></li>
     </ol>
     <figure>
-      <img src="assets/flow.svg" alt="Workflow diagram">
+      <img src="assets/flow.svg" alt="Workflow diagram — legal verification system" />
       <figcaption><strong>Figure 1 — System Flow Diagram.</strong> (100) Document Upload → (200) Jurisdiction Detection → (300) Normative Adaptation → (400) Legal Traceability → (500) Legal Review → (600) Verified Output.</figcaption>
     </figure>
   </section>
 
-  <!-- Fig 2 -->
+  <!-- Impact Metrics -->
   <section class="card" id="fig2">
     <h2>Impact Metrics</h2>
     <p>Conceptual projections based on the proposed AI-driven legal-compliance framework.</p>
     <figure>
-      <img src="assets/impact.svg" alt="Quantitative improvement metrics">
+      <img src="assets/impact.svg" alt="Quantitative impact metrics — conceptual projection" />
       <figcaption><strong>Figure 2 — Quantitative Impact Metrics.</strong> Conceptual projection illustrating expected efficiency and consistency improvements.</figcaption>
     </figure>
   </section>
 
-  <!-- Docs -->
+  <!-- Regulatory Alignment -->
   <section class="card">
-    <h2>Project Documentation</h2>
+    <h2>Regulatory Alignment</h2>
+    <table class="clean">
+      <thead>
+        <tr><th>U.S. Policy Objective</th><th>System Contribution</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>AI Governance & Transparency</td>
+          <td>Automated traceability and rule adaptation for legal data.</td>
+        </tr>
+        <tr>
+          <td>Regulatory Efficiency</td>
+          <td>Streamlined compliance verification (conceptual projections).</td>
+        </tr>
+        <tr>
+          <td>Responsible Data Use</td>
+          <td>Public demonstrative prototype; no personal data collected or stored.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Technical Overview -->
+  <section class="card">
+    <h2>Technical Overview</h2>
     <ul>
-      <li><a href="#" title="Available upon request" target="_blank" rel="noopener">White Paper (SSRN / DOI)</a></li>
-      <li><a href="#" title="Available upon request" target="_blank" rel="noopener">USPTO Provisional Receipt</a></li>
-      <li><a href="#" title="Available upon request" target="_blank" rel="noopener">Curriculum Vitae (PDF)</a></li>
+      <li><strong>Input Layer:</strong> Document ingestion (PDF, DOCX, JSON-LD)</li>
+      <li><strong>Processing Layer:</strong> Contextual legal rule analysis</li>
+      <li><strong>Adaptation Layer:</strong> Clause revision via normative database</li>
+      <li><strong>Traceability Layer:</strong> Immutable audit record (optional blockchain)</li>
+    </ul>
+  </section>
+
+  <!-- Evidentiary Integrity (auto-commit) -->
+  <section class="card">
+    <h2>Evidentiary Integrity</h2>
+    <ul>
+      <li>Repository: <a href="https://github.com/eduardoespinal-lawtech/legal-verification-system" target="_blank" rel="noopener">eduardoespinal-lawtech/legal-verification-system</a></li>
+      <li>Commit Reference: <code id="commitRef">main@latest</code></li>
+      <li class="note">Preserved digital hash available upon request for evidentiary verification.</li>
     </ul>
   </section>
 
   <!-- Notice -->
   <section class="card">
     <h2>Notice</h2>
-    <p>This site is a public, non-commercial demonstrative prototype intended solely for evidentiary purposes in a National Interest Waiver (EB-2 NIW) petition. No personal or identifying data is collected or stored.</p>
+    <p class="note">This site is a public, non-commercial demonstrative prototype intended solely for evidentiary purposes in a National Interest Waiver (EB-2 NIW) petition. No personal or identifying data is collected or stored.</p>
   </section>
-
-  <!-- QR -->
-  <div class="qr">
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://eduardoespinal-lawtech.github.io/legal-verification-system/" alt="QR to Exhibit A">
-    <span>Permanent link to Exhibit A</span>
-  </div>
 
 </main>
 
 <footer>© 2025 Eduardo Luis Espinal de Aza · Demonstrative prototype for EB-2 NIW evidentiary purposes.</footer>
+
+<!-- Tiny script to fetch latest commit & date -->
+<script>
+(async () => {
+  const repo = "eduardoespinal-lawtech/legal-verification-system";
+  try {
+    const r = await fetch(`https://api.github.com/repos/${repo}/commits/main`, {headers:{'Accept':'application/vnd.github+json'}});
+    if (!r.ok) throw new Error("GitHub API limit or repo not public");
+    const d = await r.json();
+    const sha = (d.sha || "").slice(0,7);
+    const when = new Date(d.commit.author.date);
+    const updated = when.toLocaleDateString(undefined,{year:'numeric',month:'short',day:'2-digit'});
+    const link = d.html_url || `https://github.com/${repo}/commit/${d.sha}`;
+    document.getElementById("commitRef").innerHTML = `<a href="${link}" target="_blank" rel="noopener">${sha}</a>`;
+    document.getElementById("updated").textContent = "Updated: " + updated;
+  } catch(e){
+    // Fallback: keep main@latest
+  }
+})();
+</script>
 
 </body>
 </html>
