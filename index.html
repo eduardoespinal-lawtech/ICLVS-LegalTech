@@ -1,177 +1,166 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>ICLVS — Intelligent Contextual Legal Verification System</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="color-scheme" content="light only" />
-  <meta name="description" content="Demonstrative legal-tech project for contextual legal verification, jurisdictional adaptation, and audit-grade traceability." />
-  <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8" />
+<title>ICLVS — Intelligent Contextual Legal Verification System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="light only" />
+<meta name="description" content="Demonstrative legal-tech project for contextual verification, jurisdictional adaptation, and audit-grade traceability." />
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- STICKY TOP BAR -->
-  <header class="topbar">
-    <div class="wrap">
-      <a class="brand" href="#hero">ICLVS</a>
-      <nav class="nav">
-        <a href="#overview" data-i18n="nav_overview">Overview</a>
-        <a href="#usecases" data-i18n="nav_use">Use Cases</a>
-        <a href="#flow" data-i18n="nav_flow">Flow</a>
-        <a href="#metrics" data-i18n="nav_metrics">Metrics</a>
-        <a href="#architecture" data-i18n="nav_arch">Architecture</a>
-        <a href="#docs" data-i18n="nav_docs">Docs</a>
-      </nav>
-      <div class="actions">
-        <select id="lang" class="lang" aria-label="Change language">
-          <option value="en" selected>EN</option>
-          <option value="es">ES</option>
-          <option value="pt">PT</option>
-          <option value="fr">FR</option>
-        </select>
-        <button id="share" class="btn ghost" type="button" data-i18n="share">Share</button>
-      </div>
+<!-- Topbar -->
+<header class="topbar">
+  <div class="container">
+    <a class="brand" href="#home">ICLVS</a>
+    <nav class="nav">
+      <a href="#overview" data-i18n="nav_overview">Overview</a>
+      <a href="#usecases" data-i18n="nav_use">Use Cases</a>
+      <a href="#flow" data-i18n="nav_flow">Flow</a>
+      <a href="#metrics" data-i18n="nav_metrics">Metrics</a>
+      <a href="#architecture" data-i18n="nav_arch">Architecture</a>
+      <a href="#docs" data-i18n="nav_docs">Docs</a>
+    </nav>
+    <div class="actions">
+      <select id="lang" class="lang" aria-label="Language">
+        <option value="en" selected>EN</option>
+        <option value="es">ES</option>
+        <option value="pt">PT</option>
+        <option value="fr">FR</option>
+      </select>
+      <button id="share" class="btn ghost" type="button" data-i18n="share">Share</button>
     </div>
-  </header>
+  </div>
+</header>
 
-  <!-- HERO -->
-  <section id="hero" class="hero center">
-    <div class="wrap">
-      <p class="eyebrow" data-i18n="eyebrow">Demonstrative Project · Legal-Tech</p>
-      <h1 data-i18n="title">Intelligent Contextual Legal Verification System</h1>
-      <p class="lead" data-i18n="lead">A framework for AI-assisted legal traceability and regulatory consistency</p>
-      <p class="meta">
-        <span data-i18n="by">Developed by</span> <strong>Eduardo Luis Espinal de Aza, Esq.</strong> ·
-        <span data-i18n="version">Version</span> 1.0 · <span data-i18n="date">October 2025</span>
-      </p>
-      <div class="cta">
-        <a class="btn" href="#overview" data-i18n="cta_overview">View overview</a>
-        <a class="btn ghost" href="#flow" data-i18n="cta_flow">View flow</a>
-      </div>
+<!-- Hero -->
+<section id="home" class="hero">
+  <div class="container center">
+    <p class="eyebrow" data-i18n="eyebrow">Demonstrative Project · Legal-Tech</p>
+    <h1 data-i18n="title">Intelligent Contextual Legal Verification System</h1>
+    <p class="lead" data-i18n="lead">A framework for AI-assisted legal traceability and regulatory consistency</p>
+    <p class="meta">
+      <span data-i18n="by">Developed by</span> <strong>Eduardo Luis Espinal de Aza, Esq.</strong> ·
+      <span data-i18n="version">Version</span> 1.0 · <span data-i18n="date">October 2025</span>
+    </p>
+    <div class="cta">
+      <a class="btn" href="#overview" data-i18n="cta_overview">View overview</a>
+      <a class="btn ghost" href="#flow" data-i18n="cta_flow">View flow</a>
+    </div>
+  </div>
+</section>
+
+<main class="container">
+
+  <!-- Overview -->
+  <section id="overview" class="card center">
+    <h2 data-i18n="overview_h">Executive Summary</h2>
+    <p class="max" data-i18n="overview_p1">
+      ICLVS applies AI-assisted reasoning to analyze documents, detect governing jurisdiction,
+      adapt clauses to the relevant normative framework, and preserve audit-grade traceability —
+      while keeping human legal oversight central to the process.
+    </p>
+    <ul class="bullets">
+      <li data-i18n="overview_b1">Faster verification (conceptual projection)</li>
+      <li data-i18n="overview_b2">Fewer drafting inconsistencies</li>
+      <li data-i18n="overview_b3">Improved clause uniformity across jurisdictions</li>
+    </ul>
+    <figure class="figure">
+      <img src="assets/cover.svg" alt="Conceptual overview: regulatory frame, traceability axes, AI contextual core" />
+      <figcaption><span class="fig">Figure 0</span> — <span data-i18n="fig0">Conceptual overview: regulatory frame, traceability axes, and AI contextual core.</span></figcaption>
+    </figure>
+  </section>
+
+  <!-- Use Cases -->
+  <section id="usecases" class="card center">
+    <h2 data-i18n="use_h">Use Cases</h2>
+    <div class="chips">
+      <span class="chip" data-i18n="use1">Regulatory document verification</span>
+      <span class="chip" data-i18n="use2">Land & real-estate registries</span>
+      <span class="chip" data-i18n="use3">Multi-jurisdictional contract adaptation</span>
+      <span class="chip" data-i18n="use4">Financial compliance (AML / privacy)</span>
+      <span class="chip" data-i18n="use5">Academic & institutional research (RegTech)</span>
     </div>
   </section>
 
-  <main class="wrap center">
+  <!-- Flow -->
+  <section id="flow" class="card center">
+    <h2 data-i18n="flow_h">System Flow</h2>
+    <p class="max" data-i18n="flow_p">Proposed procedural sequence for contextual legal verification.</p>
+    <ol class="flow-list">
+      <li><strong>(100)</strong> <span data-i18n="f1">Document Upload</span></li>
+      <li><strong>(200)</strong> <span data-i18n="f2">Jurisdiction Detection</span></li>
+      <li><strong>(300)</strong> <span data-i18n="f3">Normative / Clause Adaptation</span></li>
+      <li><strong>(400)</strong> <span data-i18n="f4">Legal Traceability</span></li>
+      <li><strong>(500)</strong> <span data-i18n="f5">Attorney Review</span> → <strong>(600)</strong> <span data-i18n="f6">Verified Output</span></li>
+    </ol>
+    <figure class="figure">
+      <img src="assets/flow.svg" alt="End-to-end system flow with numbered modules" />
+      <figcaption><span class="fig">Figure 1</span> — <span data-i18n="fig1">End-to-end flow with numbered functional modules.</span></figcaption>
+    </figure>
+  </section>
 
-    <!-- OVERVIEW -->
-    <section id="overview" class="card">
-      <h2 data-i18n="overview_h">Executive Summary</h2>
-      <p class="max" data-i18n="overview_p1">
-        ICLVS outlines a modular architecture that applies AI-assisted reasoning to analyze documents,
-        detect governing jurisdiction, adapt clauses to the relevant normative framework, and preserve
-        audit-grade traceability — while keeping human legal oversight central to the process.
-      </p>
-      <ul class="bullets">
-        <li data-i18n="overview_b1">Faster verification (conceptual projection)</li>
-        <li data-i18n="overview_b2">Fewer drafting inconsistencies</li>
-        <li data-i18n="overview_b3">Improved clause uniformity across jurisdictions</li>
-      </ul>
+  <!-- Metrics -->
+  <section id="metrics" class="card center">
+    <h2 data-i18n="metrics_h">Impact Metrics (conceptual)</h2>
+    <p class="max" data-i18n="metrics_p">Conceptual projections based on the proposed AI-assisted verification framework.</p>
+    <figure class="figure">
+      <img src="assets/impact.svg" alt="Quantitative improvement projection" />
+      <figcaption><span class="fig">Figure 2</span> — <span data-i18n="fig2">Expected gains in speed, error reduction, and clause consistency (conceptual).</span></figcaption>
+    </figure>
+  </section>
 
-      <figure class="figure">
-        <img src="assets/cover.svg" alt="Conceptual overview: regulatory frame, traceability axes, AI contextual core" />
-        <figcaption><span class="fig">Figure 0</span> — <span data-i18n="fig0">Conceptual overview: regulatory frame, traceability axes, and AI contextual core.</span></figcaption>
-      </figure>
-    </section>
+  <!-- Architecture -->
+  <section id="architecture" class="card center">
+    <h2 data-i18n="arch_h">System Architecture</h2>
+    <p class="max" data-i18n="arch_p">Ingest → Contextual reasoning → Normative adaptation → Traceability / audit.</p>
+    <figure class="figure">
+      <img src="assets/architecture.svg" alt="Layered architecture and modules" />
+      <figcaption><span class="fig">Figure 3</span> — <span data-i18n="fig3">Layered view of ingestion, reasoning, adaptation, and traceability.</span></figcaption>
+    </figure>
+    <p class="note" data-i18n="arch_note">Include <code>assets/architecture.svg</code> when available.</p>
+  </section>
 
-    <!-- USE CASES -->
-    <section id="usecases" class="card">
-      <h2 data-i18n="use_h">Use Cases</h2>
-      <div class="chips">
-        <span class="chip" data-i18n="use1">Regulatory document verification</span>
-        <span class="chip" data-i18n="use2">Land & real-estate registries</span>
-        <span class="chip" data-i18n="use3">Multi-jurisdictional contract adaptation</span>
-        <span class="chip" data-i18n="use4">Financial compliance (AML / privacy)</span>
-        <span class="chip" data-i18n="use5">Academic & institutional research (RegTech)</span>
-      </div>
-    </section>
+  <!-- Docs -->
+  <section id="docs" class="card center">
+    <h2 data-i18n="docs_h">Documentation & Resources</h2>
+    <p class="links">
+      <a href="#" title="On request" data-i18n="doc1">White Paper (pre-print / DOI)</a> ·
+      <a href="#" title="On request" data-i18n="doc2">Provisional Patent Reference</a> ·
+      <a href="#" title="On request" data-i18n="doc3">Curriculum Vitae (PDF)</a> ·
+      <a href="https://github.com/eduardoespinal-lawtech/legal-verification-system" target="_blank" rel="noopener" data-i18n="doc4">Repository (GitHub)</a>
+    </p>
+    <p class="note" data-i18n="notice">Public demonstrative project. No personal data is collected.</p>
+  </section>
 
-    <!-- FLOW -->
-    <section id="flow" class="card">
-      <h2 data-i18n="flow_h">System Flow</h2>
-      <p class="max" data-i18n="flow_p">Proposed procedural sequence for contextual legal verification.</p>
-      <ol class="flow-list">
-        <li><strong>(100)</strong> <span data-i18n="f1">Document Upload</span></li>
-        <li><strong>(200)</strong> <span data-i18n="f2">Jurisdiction Detection</span></li>
-        <li><strong>(300)</strong> <span data-i18n="f3">Normative / Clause Adaptation</span></li>
-        <li><strong>(400)</strong> <span data-i18n="f4">Legal Traceability</span></li>
-        <li><strong>(500)</strong> <span data-i18n="f5">Attorney Review</span> → <strong>(600)</strong> <span data-i18n="f6">Verified Output</span></li>
-      </ol>
+</main>
 
-      <figure class="figure">
-        <img src="assets/flow.svg" alt="End-to-end system flow with numbered modules" />
-        <figcaption><span class="fig">Figure 1</span> — <span data-i18n="fig1">End-to-end flow with numbered functional modules.</span></figcaption>
-      </figure>
-    </section>
+<!-- Footer -->
+<footer class="footer">
+  <div class="container center">
+    <p>© 2025 Eduardo Luis Espinal de Aza · Espinal &amp; Almonte, Consultores Legales, SRL</p>
+    <p class="muted" data-i18n="footer_tag">Public Demonstrative Research Project</p>
+  </div>
+</footer>
 
-    <!-- METRICS -->
-    <section id="metrics" class="card">
-      <h2 data-i18n="metrics_h">Impact Metrics (conceptual)</h2>
-      <p class="max" data-i18n="metrics_p">Conceptual projections based on the proposed AI-assisted verification framework.</p>
-      <figure class="figure">
-        <img src="assets/impact.svg" alt="Quantitative improvement projection" />
-        <figcaption><span class="fig">Figure 2</span> — <span data-i18n="fig2">Expected gains in speed, error reduction, and clause consistency (conceptual).</span></figcaption>
-      </figure>
-    </section>
-
-    <!-- ARCHITECTURE -->
-    <section id="architecture" class="card">
-      <h2 data-i18n="arch_h">System Architecture</h2>
-      <p class="max" data-i18n="arch_p">Ingest → Contextual reasoning → Normative adaptation → Traceability / audit.</p>
-      <figure class="figure">
-        <img src="assets/architecture.svg" alt="Layered architecture and modules" />
-        <figcaption><span class="fig">Figure 3</span> — <span data-i18n="fig3">Layered view of ingestion, reasoning, adaptation, and traceability.</span></figcaption>
-      </figure>
-      <p class="note" data-i18n="arch_note">Include <code>assets/architecture.svg</code> when available.</p>
-    </section>
-
-    <!-- DOCS -->
-    <section id="docs" class="card">
-      <h2 data-i18n="docs_h">Documentation & Resources</h2>
-      <p class="links">
-        <a href="#" title="On request" data-i18n="doc1">White Paper (pre-print / DOI)</a> ·
-        <a href="#" title="On request" data-i18n="doc2">Provisional Patent Reference</a> ·
-        <a href="#" title="On request" data-i18n="doc3">Curriculum Vitae (PDF)</a> ·
-        <a href="https://github.com/eduardoespinal-lawtech/legal-verification-system" target="_blank" rel="noopener" data-i18n="doc4">Repository (GitHub)</a>
-      </p>
-      <p class="note" data-i18n="notice">Public demonstrative project. No personal data is collected.</p>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="footer center">
-    <div class="wrap">
-      <p>© 2025 Eduardo Luis Espinal de Aza · Espinal &amp; Almonte, Consultores Legales, SRL</p>
-      <p class="muted" data-i18n="footer_tag">Public Demonstrative Research Project</p>
-    </div>
-  </footer>
-
-  <!-- Minimal JS: i18n + Web Share (no external libs) -->
-  <script>
-  // Simple dictionary for UI text
-  const dict = {
-    es: {
-      eyebrow:"Proyecto demostrativo · Legal-Tech",
-      title:"Sistema Inteligente de Verificación Legal Contextual",
-      lead:"Marco para trazabilidad legal y consistencia regulatoria asistida por IA",
-      by:"Desarrollado por", version:"Versión", date:"Octubre 2025",
-      cta_overview:"Ver resumen", cta_flow:"Ver flujo",
-      nav_overview:"Resumen", nav_use:"Casos de uso", nav_flow:"Flujo", nav_metrics:"Métricas", nav_arch:"Arquitectura", nav_docs:"Docs",
+<!-- Minimal JS: i18n + Share -->
+<script>
+const dict = {
+  es:{eyebrow:"Proyecto demostrativo · Legal-Tech",title:"Sistema Inteligente de Verificación Legal Contextual",
+      lead:"Marco para trazabilidad legal y consistencia regulatoria asistida por IA",by:"Desarrollado por",version:"Versión",date:"Octubre 2025",
+      cta_overview:"Ver resumen",cta_flow:"Ver flujo",
+      nav_overview:"Resumen",nav_use:"Casos de uso",nav_flow:"Flujo",nav_metrics:"Métricas",nav_arch:"Arquitectura",nav_docs:"Docs",
       share:"Compartir",
       overview_h:"Resumen ejecutivo",
-      overview_p1:"ICLVS describe una arquitectura modular que aplica razonamiento asistido por IA para analizar documentos, detectar la jurisdicción aplicable, adaptar cláusulas al marco normativo correspondiente y conservar trazabilidad audit-grade, manteniendo la supervisión jurídica humana.",
+      overview_p1:"ICLVS aplica razonamiento asistido por IA para analizar documentos, detectar la jurisdicción aplicable, adaptar cláusulas al marco normativo correspondiente y conservar trazabilidad audit-grade — con supervisión jurídica humana.",
       overview_b1:"Verificación más rápida (proyección conceptual)",
-      overview_b2:"Menos inconsistencias de redacción",
-      overview_b3:"Mejor uniformidad de cláusulas entre jurisdicciones",
+      overview_b2:"Menos inconsistencias de redacción", overview_b3:"Mejor uniformidad de cláusulas entre jurisdicciones",
       fig0:"Vista conceptual: marco regulatorio, ejes de trazabilidad y núcleo de IA contextual.",
-      use_h:"Casos de uso",
-      use1:"Verificación regulatoria de documentos",
-      use2:"Registros inmobiliarios y catastrales",
-      use3:"Adaptación contractual multi-jurisdicción",
-      use4:"Cumplimiento financiero (AML / privacidad)",
+      use_h:"Casos de uso", use1:"Verificación regulatoria de documentos", use2:"Registros inmobiliarios y catastrales",
+      use3:"Adaptación contractual multi-jurisdicción", use4:"Cumplimiento financiero (AML / privacidad)",
       use5:"Investigación académica e institucional (RegTech)",
-      flow_h:"Flujo del sistema",
-      flow_p:"Secuencia procedimental propuesta para la verificación legal contextual.",
+      flow_h:"Flujo del sistema", flow_p:"Secuencia procedimental propuesta para la verificación legal contextual.",
       f1:"Carga de documento", f2:"Detección de jurisdicción", f3:"Adaptación normativa / de cláusulas",
       f4:"Trazabilidad legal", f5:"Revisión letrada", f6:"Salida verificada",
       fig1:"Flujo de extremo a extremo con módulos funcionales numerados.",
@@ -183,35 +172,23 @@
       fig3:"Vista por capas de ingesta, razonamiento, adaptación y trazabilidad.",
       arch_note:"Incluya assets/architecture.svg cuando esté disponible.",
       docs_h:"Documentación y recursos",
-      doc1:"White Paper (pre-print / DOI)",
-      doc2:"Referencia de Patente Provisional",
-      doc3:"Currículum Vitae (PDF)",
-      doc4:"Repositorio (GitHub)",
+      doc1:"White Paper (pre-print / DOI)", doc2:"Referencia de Patente Provisional", doc3:"Currículum Vitae (PDF)", doc4:"Repositorio (GitHub)",
       notice:"Proyecto demostrativo público. No se recopilan datos personales.",
-      footer_tag:"Proyecto Público Demostrativo de Investigación"
-    },
-    pt: {
-      eyebrow:"Projeto demonstrativo · Legal-Tech",
-      title:"Sistema Inteligente de Verificação Jurídica Contextual",
-      lead:"Framework para rastreabilidade jurídica e consistência regulatória assistida por IA",
-      by:"Desenvolvido por", version:"Versão", date:"Outubro de 2025",
-      cta_overview:"Ver resumo", cta_flow:"Ver fluxo",
-      nav_overview:"Resumo", nav_use:"Casos de uso", nav_flow:"Fluxo", nav_metrics:"Métricas", nav_arch:"Arquitetura", nav_docs:"Docs",
+      footer_tag:"Proyecto Público Demostrativo de Investigación"},
+  pt:{eyebrow:"Projeto demonstrativo · Legal-Tech",title:"Sistema Inteligente de Verificação Jurídica Contextual",
+      lead:"Framework para rastreabilidade jurídica e consistência regulatória assistida por IA",by:"Desenvolvido por",version:"Versão",date:"Outubro de 2025",
+      cta_overview:"Ver resumo",cta_flow:"Ver fluxo",
+      nav_overview:"Resumo",nav_use:"Casos de uso",nav_flow:"Fluxo",nav_metrics:"Métricas",nav_arch:"Arquitetura",nav_docs:"Docs",
       share:"Compartilhar",
       overview_h:"Resumo executivo",
-      overview_p1:"O ICLVS descreve uma arquitetura modular que aplica raciocínio assistido por IA para analisar documentos, detectar a jurisdição aplicável, adaptar cláusulas ao marco normativo e manter rastreabilidade auditável — preservando a supervisão jurídica humana.",
+      overview_p1:"O ICLVS aplica raciocínio assistido por IA para analisar documentos, detectar a jurisdição aplicável, adaptar cláusulas ao marco normativo e manter rastreabilidade auditável — com supervisão jurídica humana.",
       overview_b1:"Verificação mais rápida (projeção conceitual)",
-      overview_b2:"Menos inconsistências de redação",
-      overview_b3:"Maior uniformidade de cláusulas entre jurisdições",
+      overview_b2:"Menos inconsistências de redação", overview_b3:"Maior uniformidade de cláusulas entre jurisdições",
       fig0:"Visão conceitual: marco regulatório, eixos de rastreabilidade e núcleo de IA contextual.",
-      use_h:"Casos de uso",
-      use1:"Verificação regulatória de documentos",
-      use2:"Registros imobiliários e cadastrais",
-      use3:"Adaptação contratual multi-jurisdição",
-      use4:"Conformidade financeira (AML / privacidade)",
+      use_h:"Casos de uso", use1:"Verificação regulatória de documentos", use2:"Registros imobiliários e cadastrais",
+      use3:"Adaptação contratual multi-jurisdição", use4:"Conformidade financeira (AML / privacidade)",
       use5:"Pesquisa acadêmica e institucional (RegTech)",
-      flow_h:"Fluxo do sistema",
-      flow_p:"Sequência procedimental proposta para verificação jurídica contextual.",
+      flow_h:"Fluxo do sistema", flow_p:"Sequência procedimental proposta para verificação jurídica contextual.",
       f1:"Envio de documento", f2:"Detecção de jurisdição", f3:"Adaptação normativa / de cláusulas",
       f4:"Rastreabilidade jurídica", f5:"Revisão por advogado", f6:"Saída verificada",
       fig1:"Fluxo de ponta a ponta com módulos funcionais numerados.",
@@ -220,82 +197,60 @@
       fig2:"Ganhos esperados em velocidade, redução de erros e consistência de cláusulas (conceitual).",
       arch_h:"Arquitetura do sistema",
       arch_p:"Ingestão → Raciocínio contextual → Adaptação normativa → Rastreabilidade / auditoria.",
-      fig3:"Visão em camadas de ingestão, raciocínio, adaptação e rastreabilidade.",
+      fig3:"Visão em camadas: ingestão, raciocínio, adaptação e rastreabilidade.",
       arch_note:"Inclua assets/architecture.svg quando disponível.",
       docs_h:"Documentação e recursos",
-      doc1:"White Paper (pre-print / DOI)",
-      doc2:"Referência de Patente Provisória",
-      doc3:"Curriculum Vitae (PDF)",
-      doc4:"Repositório (GitHub)",
+      doc1:"White Paper (pre-print / DOI)", doc2:"Referência de Patente Provisória", doc3:"Curriculum Vitae (PDF)", doc4:"Repositório (GitHub)",
       notice:"Projeto público demonstrativo. Nenhum dado pessoal é coletado.",
-      footer_tag:"Projeto Público Demonstrativo de Pesquisa"
-    },
-    fr: {
-      eyebrow:"Projet démonstratif · Legal-Tech",
-      title:"Système Intelligent de Vérification Juridique Contextuelle",
-      lead:"Cadre pour la traçabilité juridique et la cohérence réglementaire assistées par l’IA",
-      by:"Développé par", version:"Version", date:"Octobre 2025",
-      cta_overview:"Voir le résumé", cta_flow:"Voir le flux",
-      nav_overview:"Résumé", nav_use:"Cas d’usage", nav_flow:"Flux", nav_metrics:"Mesures", nav_arch:"Architecture", nav_docs:"Docs",
+      footer_tag:"Projeto Público Demonstrativo de Pesquisa"},
+  fr:{eyebrow:"Projet démonstratif · Legal-Tech",title:"Système Intelligent de Vérification Juridique Contextuelle",
+      lead:"Cadre pour la traçabilité juridique et la cohérence réglementaire assistées par l’IA",by:"Développé par",version:"Version",date:"Octobre 2025",
+      cta_overview:"Voir le résumé",cta_flow:"Voir le flux",
+      nav_overview:"Résumé",nav_use:"Cas d’usage",nav_flow:"Flux",nav_metrics:"Mesures",nav_arch:"Architecture",nav_docs:"Docs",
       share:"Partager",
       overview_h:"Résumé exécutif",
-      overview_p1:"ICLVS décrit une architecture modulaire appliquant un raisonnement assisté par IA pour analyser des documents, détecter la juridiction, adapter les clauses au cadre normatif et conserver une traçabilité de niveau audit — tout en gardant la supervision juridique humaine au centre.",
+      overview_p1:"ICLVS applique un raisonnement assisté par IA pour analyser des documents, détecter la juridiction, adapter les clauses au cadre normatif et conserver une traçabilité de niveau audit — avec supervision juridique humaine.",
       overview_b1:"Vérification plus rapide (projection conceptuelle)",
-      overview_b2:"Moins d’incohérences de rédaction",
-      overview_b3:"Meilleure uniformité des clauses entre juridictions",
+      overview_b2:"Moins d’incohérences de rédaction", overview_b3:"Meilleure uniformité des clauses entre juridictions",
       fig0:"Vue conceptuelle : cadre réglementaire, axes de traçabilité et noyau d’IA contextuelle.",
-      use_h:"Cas d’usage",
-      use1:"Vérification réglementaire de documents",
-      use2:"Registres fonciers et immobiliers",
-      use3:"Adaptation contractuelle multi-juridiction",
-      use4:"Conformité financière (AML / vie privée)",
+      use_h:"Cas d’usage", use1:"Vérification réglementaire de documents", use2:"Registres fonciers et immobiliers",
+      use3:"Adaptation contractuelle multi-juridiction", use4:"Conformité financière (AML / vie privée)",
       use5:"Recherche académique et institutionnelle (RegTech)",
-      flow_h:"Flux du système",
-      flow_p:"Séquence procédurale proposée pour la vérification juridique contextuelle.",
+      flow_h:"Flux du système", flow_p:"Séquence procédurale proposée pour la vérification juridique contextuelle.",
       f1:"Téléversement du document", f2:"Détection de la juridiction", f3:"Adaptation normative / des clauses",
       f4:"Traçabilité juridique", f5:"Revue par avocat", f6:"Sortie vérifiée",
       fig1:"Flux de bout en bout avec modules fonctionnels numérotés.",
       metrics_h:"Mesures d’impact (conceptuel)",
-      metrics_p:"Projections conceptuelles basées sur le cadre proposé de vérification assistée par IA.",
+      metrics_p:"Projections conceptuelles basées sur le cadre de vérification assistée par IA proposé.",
       fig2:"Gains attendus en vitesse, réduction d’erreurs et cohérence des clauses (conceptuel).",
       arch_h:"Architecture du système",
       arch_p:"Ingestion → Raisonnement contextuel → Adaptation normative → Traçabilité / audit.",
       fig3:"Vue en couches : ingestion, raisonnement, adaptation et traçabilité.",
       arch_note:"Inclure assets/architecture.svg lorsqu’il sera disponible.",
       docs_h:"Documentation et ressources",
-      doc1:"White Paper (pré-publication / DOI)",
-      doc2:"Référence de brevet provisoire",
-      doc3:"Curriculum Vitae (PDF)",
-      doc4:"Dépôt (GitHub)",
+      doc1:"White Paper (pré-publication / DOI)", doc2:"Référence de brevet provisoire", doc3:"Curriculum Vitae (PDF)", doc4:"Dépôt (GitHub)",
       notice:"Projet public démonstratif. Aucune donnée personnelle n’est collectée.",
-      footer_tag:"Projet Public Démonstratif de Recherche"
-    }
-  };
+      footer_tag:"Projet Public Démonstratif de Recherche"}
+};
 
-  function applyLang(lang){
-    document.querySelectorAll("[data-i18n]").forEach(el=>{
-      const key = el.getAttribute("data-i18n");
-      const t = (dict[lang] && dict[lang][key]) || el.textContent;
-      if (t) el.textContent = t;
-    });
-    document.documentElement.lang = lang;
-  }
-
-  // Language selector
-  document.getElementById("lang").addEventListener("change", e => applyLang(e.target.value));
-
-  // Share button (Web Share API with clipboard fallback)
-  document.getElementById("share").addEventListener("click", async () => {
-    const payload = { title: document.title, text: "ICLVS — Intelligent Contextual Legal Verification System", url: location.href };
-    try {
-      if (navigator.share) {
-        await navigator.share(payload);
-      } else {
-        await navigator.clipboard.writeText(location.href);
-        alert("Link copied to clipboard.");
-      }
-    } catch (_) { /* user cancelled */ }
+function applyLang(lang){
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const k = el.getAttribute("data-i18n");
+    const t = (dict[lang] && dict[lang][k]);
+    if (t) el.textContent = t;
   });
-  </script>
+  document.documentElement.lang = lang;
+}
+document.getElementById("lang").addEventListener("change", e => applyLang(e.target.value));
+
+document.getElementById("share").addEventListener("click", async () => {
+  const payload = { title: document.title, text: "ICLVS — Intelligent Contextual Legal Verification System", url: location.href };
+  try {
+    if (navigator.share) await navigator.share(payload);
+    else { await navigator.clipboard.writeText(location.href); alert("Link copied to clipboard."); }
+  } catch(e){ /* cancelled */ }
+});
+</script>
+
 </body>
 </html>
