@@ -1,22 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900">
-  <defs>
-    <linearGradient id="g" x1="0" x2="0" y1="0" y2="1">
-      <stop offset="0" stop-color="#0f141b"/>
-      <stop offset="1" stop-color="#0a0d12"/>
-    </linearGradient>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#g)"/>
-  <g fill="none" stroke="#ffffff" stroke-opacity=".85">
-    <rect x="140" y="180" width="1320" height="540" rx="18" stroke-width="2"/>
-    <path d="M260 390h1080M800 240v420" opacity=".25"/>
-    <circle cx="800" cy="450" r="160" opacity=".35"/>
-  </g>
-  <g fill="#ffffff">
-    <text x="800" y="120" font-size="44" text-anchor="middle" font-family="Inter, Arial, sans-serif">
-      Intelligent Contextual Legal Verification System
-    </text>
-    <text x="800" y="170" font-size="20" text-anchor="middle" opacity=".85" font-family="Inter, Arial, sans-serif">
-      Demonstrative Prototype · Monochrome
-    </text>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" style="background:#ffffff">
+  <style>
+    .title {font-family:'Times New Roman',serif; font-size:26px; font-weight:bold; fill:#1a2b49;}
+    .subtitle {font-family:'Times New Roman',serif; font-size:15px; fill:#444;}
+    .outline {stroke:#1a73e8; stroke-width:2; fill:none; rx:15; ry:15;}
+    .center {stroke:#1a73e8; stroke-width:1.2; fill:none;}
+    .note {font-family:'Times New Roman',serif; font-size:12px; fill:#555;}
+  </style>
+
+  <!-- Frame -->
+  <rect x="50" y="90" width="800" height="320" class="outline"/>
+  
+  <!-- Title -->
+  <text x="450" y="60" text-anchor="middle" class="title">
+    Intelligent Contextual Legal Verification System
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="450" y="85" text-anchor="middle" class="subtitle">
+    Demonstrative Prototype — Legal-Tech Compliance Framework
+  </text>
+
+  <!-- Symbolic grid (light cross & circle) -->
+  <line x1="150" y1="250" x2="750" y2="250" class="center" opacity="0.3"/>
+  <line x1="450" y1="130" x2="450" y2="370" class="center" opacity="0.3"/>
+  <circle cx="450" cy="250" r="90" class="center" opacity="0.3"/>
+
+  <!-- Caption -->
+  <text x="450" y="440" text-anchor="middle" class="note">
+    Figure 0. Conceptual overview of the system’s framework for AI-driven legal verification and transparency.
+  </text>
 </svg>
