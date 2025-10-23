@@ -1,32 +1,41 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" style="background:#ffffff">
-  <style>
-    .title {font-family:'Times New Roman',serif; font-size:26px; font-weight:bold; fill:#1a2b49;}
-    .subtitle {font-family:'Times New Roman',serif; font-size:15px; fill:#444;}
-    .outline {stroke:#1a73e8; stroke-width:2; fill:none; rx:15; ry:15;}
-    .center {stroke:#1a73e8; stroke-width:1.2; fill:none;}
-    .note {font-family:'Times New Roman',serif; font-size:12px; fill:#555;}
-  </style>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720">
+  <defs>
+    <style>
+      .title { font: 700 30px "Times New Roman", Georgia, serif; fill: #1a2b49; }
+      .subtitle { font: 400 15px "Times New Roman", Georgia, serif; fill: #3f587e; }
+      .reg-frame { fill: none; stroke: #1a73e8; stroke-width: 2; }
+      .ai-core { fill: none; stroke: #1a73e8; stroke-width: 2; }
+      .trace-line { stroke: #8fb8f7; stroke-width: 1.5; opacity: 0.7; }
+      .caption { font: 400 12px "Times New Roman", Georgia, serif; fill: #444; }
+      .label { font: 400 13px "Times New Roman", Georgia, serif; fill: #1a2b49; }
+    </style>
+  </defs>
 
-  <!-- Frame -->
-  <rect x="50" y="90" width="800" height="320" class="outline"/>
-  
-  <!-- Title -->
-  <text x="450" y="60" text-anchor="middle" class="title">
+  <!-- Fondo -->
+  <rect width="100%" height="100%" fill="#ffffff" />
+
+  <!-- Título -->
+  <text x="600" y="80" text-anchor="middle" class="title">
     Intelligent Contextual Legal Verification System
   </text>
-  
-  <!-- Subtitle -->
-  <text x="450" y="85" text-anchor="middle" class="subtitle">
+  <text x="600" y="110" text-anchor="middle" class="subtitle">
     Demonstrative Prototype — Legal-Tech Compliance Framework
   </text>
 
-  <!-- Symbolic grid (light cross & circle) -->
-  <line x1="150" y1="250" x2="750" y2="250" class="center" opacity="0.3"/>
-  <line x1="450" y1="130" x2="450" y2="370" class="center" opacity="0.3"/>
-  <circle cx="450" cy="250" r="90" class="center" opacity="0.3"/>
+  <!-- Marco regulatorio -->
+  <rect x="120" y="160" width="960" height="420" rx="14" class="reg-frame" />
+  <text x="600" y="150" text-anchor="middle" class="label">Regulatory Framework</text>
 
-  <!-- Caption -->
-  <text x="450" y="440" text-anchor="middle" class="note">
-    Figure 0. Conceptual overview of the system’s framework for AI-driven legal verification and transparency.
+  <!-- Líneas de trazabilidad y flujo normativo -->
+  <line x1="200" y1="370" x2="1000" y2="370" class="trace-line" />
+  <line x1="600" y1="220" x2="600" y2="520" class="trace-line" />
+
+  <!-- Núcleo IA contextual -->
+  <circle cx="600" cy="370" r="120" class="ai-core" />
+  <text x="600" y="375" text-anchor="middle" class="label">AI Contextual Core</text>
+
+  <!-- Pie de figura -->
+  <text x="600" y="630" text-anchor="middle" class="caption">
+    Figure 0 — Conceptual overview of the system’s framework for AI-driven legal verification and traceability.
   </text>
 </svg>
