@@ -1,36 +1,143 @@
 :root {
   color-scheme: light only;
+  --ink: #0f172a;
+  --muted: #667085;
+  --blue: #1a73e8;
+  --line: #e5e7eb;
+  --bg: #ffffff;
 }
 
-/* Fuerza fondo blanco y texto negro global */
 html, body {
-  background: #ffffff !important;
-  color: #000000 !important;
+  background: var(--bg) !important;
+  color: var(--ink) !important;
+  font-family: Inter, system-ui, Segoe UI, Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
 }
 
-/* Elimina cajas grises del tema GitHub */
-section, main, header, footer, div, article {
-  background: #ffffff !important;
-  color: #000000 !important;
-  box-shadow: none !important;
-}
-
-/* Títulos visibles */
-h1, h2, h3, h4, h5 {
-  color: #000000 !important;
-}
-
-/* Bordes y líneas suaves */
-hr, .divider {
-  border-color: #cccccc !important;
-}
-
-/* Corrige color de los enlaces */
+/* Links */
 a {
-  color: #0033cc !important;
+  color: var(--blue);
   text-decoration: none;
 }
-
 a:hover {
   text-decoration: underline;
+}
+
+/* Header */
+.exhibit {
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+  padding: 16px 12px;
+}
+.exhibit h1 {
+  margin: 0 0 6px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.exhibit p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Button for PDF */
+.btn {
+  background: var(--blue);
+  color: #fff;
+  border: 0;
+  border-radius: 10px;
+  padding: 8px 14px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 13px;
+}
+.btn:hover {
+  background: #0d5fd2;
+}
+
+/* Layout */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 16px 40px;
+}
+
+/* Section titles */
+h2 {
+  margin: 28px 0 10px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 6px;
+  font-size: 18px;
+}
+
+/* Card container */
+.card {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px;
+  margin: 16px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+}
+
+/* Evidence summary */
+.summary ul {
+  margin: 8px 0 0 18px;
+}
+
+/* Figures */
+figure {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 12px;
+  margin: 16px 0;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  background: var(--bg);
+  border-radius: 8px;
+}
+figcaption {
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* QR block */
+.qr {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  margin: 14px 0;
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--line);
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  padding: 12px 0;
+}
+
+/* Print optimization */
+@media print {
+  .btn, .qr {
+    display: none !important;
+  }
+  section {
+    page-break-inside: avoid;
+  }
+  #fig1 {
+    page-break-before: always;
+  }
+  #fig2 {
+    page-break-before: always;
+  }
 }
