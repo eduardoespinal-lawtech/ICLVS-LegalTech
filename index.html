@@ -1,177 +1,128 @@
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Intelligent Contextual Legal Verification System — Demo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light only">
-  <meta name="description" content="Demonstrative prototype for AI-driven legal verification and jurisdictional clause adaptation supporting U.S. regulatory efficiency.">
-  <link rel="stylesheet" href="style.css">
-
-  <style>
-    body {
-      background-color: #ffffff !important;
-      color: #000000 !important;
-      font-family: "Segoe UI", Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-    }
-
-    .pdf-header {
-      text-align: center;
-      border-bottom: 1px solid #ccc;
-      padding: 15px 0;
-      margin-bottom: 25px;
-    }
-
-    .pdf-header h1 {
-      margin: 0;
-      font-size: 20px;
-      font-weight: bold;
-    }
-
-    .pdf-header p {
-      font-size: 13px;
-      margin-top: 5px;
-      color: #333;
-    }
-
-    section {
-      padding: 20px;
-      max-width: 800px;
-      margin: 0 auto;
-      page-break-inside: avoid;
-    }
-
-    h2 {
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 4px;
-      margin-top: 40px;
-    }
-
-    img {
-      background-color: #ffffff;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      padding: 4px;
-      width: 100%;
-      max-width: 700px;
-      display: block;
-      margin: 10px auto;
-    }
-
-    figcaption {
-      text-align: center;
-      font-size: 12px;
-      color: #555;
-      margin-top: 5px;
-    }
-
-    .pdf-footer {
-      text-align: center;
-      font-size: 10px;
-      color: #555;
-      border-top: 1px solid #ddd;
-      padding: 10px;
-      margin-top: 40px;
-    }
-
-    ul, ol {
-      margin-left: 20px;
-    }
-
-    .qr-block {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    .qr-block img {
-      border: none;
-      width: 100px;
-    }
-
-    .qr-block p {
-      font-size: 10px;
-      color: #444;
-    }
-
-    @media print {
-      header, footer, .btn { display: none !important; }
-      body { margin: 0; }
-    }
-  </style>
+<meta charset="utf-8">
+<title>Exhibit A — Intelligent Contextual Legal Verification System</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light only">
+<meta name="description" content="Demonstrative legal-tech prototype for EB-2 NIW evidentiary use.">
+<style>
+  :root{--ink:#0f172a;--muted:#667085;--blue:#1a73e8;--line:#e5e7eb}
+  html,body{background:#fff !important;color:var(--ink) !important;font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;line-height:1.6;margin:0}
+  a{color:#0b57d0;text-decoration:none} a:hover{text-decoration:underline}
+  .exhibit{text-align:center;border-bottom:1px solid var(--line);padding:16px 12px}
+  .exhibit h1{margin:0 0 6px;font-size:20px}
+  .exhibit p{margin:0;color:var(--muted);font-size:13px}
+  .btn{background:var(--blue);color:#fff;border:0;border-radius:10px;padding:8px 14px;margin-top:10px;cursor:pointer}
+  main{max-width:900px;margin:0 auto;padding:0 16px 40px}
+  h2{margin:28px 0 10px;border-bottom:1px solid var(--line);padding-bottom:6px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0}
+  .summary ul{margin:8px 0 0 18px}
+  figure{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;margin:16px 0}
+  img{display:block;max-width:100%;height:auto;background:#fff;border-radius:8px}
+  figcaption{font-size:13px;color:var(--muted);text-align:center;margin-top:8px}
+  .qr{display:flex;gap:12px;align-items:center;justify-content:center;margin:14px 0}
+  footer{border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:12px;padding:12px 0}
+  /* print */
+  @media print{
+    .btn,.qr{display:none !important}
+    section{page-break-inside:avoid}
+    #fig1{page-break-before:always}
+    #fig2{page-break-before:always}
+  }
+</style>
 </head>
-
 <body>
 
-  <div class="pdf-header">
-    <h1>EXHIBIT A — Demonstrative Legal-Tech Prototype</h1>
-    <p>Eduardo Luis Espinal de Aza, Esq. · October 2025</p>
+<header class="exhibit">
+  <h1>EXHIBIT A — Demonstrative Legal-Tech Prototype</h1>
+  <p>Eduardo Luis Espinal de Aza, Esq. · Version 1.0 · Updated: Oct 2025</p>
+  <button class="btn" onclick="window.print()">Download Exhibit PDF</button>
+</header>
+
+<main>
+
+  <!-- Evidence summary -->
+  <section class="card summary">
+    <h2>Evidence Summary</h2>
+    <ul>
+      <li>Public, non-commercial demonstrative prototype for **EB-2 NIW** evidentiary use.</li>
+      <li>Conceptual legal-tech system for compliance, jurisdiction detection, clause adaptation, and traceability.</li>
+      <li>Figures: <a href="#fig0">Fig. 0</a>, <a href="#fig1">Fig. 1</a>, <a href="#fig2">Fig. 2</a>. No personal data collected.</li>
+    </ul>
+  </section>
+
+  <!-- Purpose -->
+  <section class="card">
+    <h2>Purpose &amp; National Relevance</h2>
+    <p>This demonstrative prototype illustrates conceptual improvements in U.S. legal-compliance workflows through automated clause validation, jurisdiction detection, and normative adaptation—supporting transparency, speed, and consistency.</p>
+    <ul>
+      <li>35% faster compliance verification (conceptual projection)</li>
+      <li>28% fewer drafting inconsistencies</li>
+      <li>42% improved clause uniformity across jurisdictions</li>
+    </ul>
+    <p><em>This conceptual system supports U.S. regulatory efficiency and responsible AI governance objectives.</em></p>
+  </section>
+
+  <!-- Fig 0 -->
+  <section class="card" id="fig0">
+    <figure>
+      <img src="assets/cover.svg" alt="Conceptual cover — compliance-oriented architecture">
+      <figcaption><strong>Figure 0 — Conceptual Overview.</strong> Compliance-oriented architecture with regulatory frame, traceability axes, and AI contextual core.</figcaption>
+    </figure>
+  </section>
+
+  <!-- Fig 1 -->
+  <section class="card" id="fig1">
+    <h2>System Flow</h2>
+    <ol>
+      <li><strong>Document Upload</strong></li>
+      <li><strong>Jurisdiction Detection</strong></li>
+      <li><strong>Clause Adaptation</strong></li>
+      <li><strong>Legal Traceability</strong></li>
+      <li><strong>Attorney Review</strong></li>
+    </ol>
+    <figure>
+      <img src="assets/flow.svg" alt="Workflow diagram">
+      <figcaption><strong>Figure 1 — System Flow Diagram.</strong> (100) Document Upload → (200) Jurisdiction Detection → (300) Normative Adaptation → (400) Legal Traceability → (500) Legal Review → (600) Verified Output.</figcaption>
+    </figure>
+  </section>
+
+  <!-- Fig 2 -->
+  <section class="card" id="fig2">
+    <h2>Impact Metrics</h2>
+    <p>Conceptual projections based on the proposed AI-driven legal-compliance framework.</p>
+    <figure>
+      <img src="assets/impact.svg" alt="Quantitative improvement metrics">
+      <figcaption><strong>Figure 2 — Quantitative Impact Metrics.</strong> Conceptual projection illustrating expected efficiency and consistency improvements.</figcaption>
+    </figure>
+  </section>
+
+  <!-- Docs -->
+  <section class="card">
+    <h2>Project Documentation</h2>
+    <ul>
+      <li><a href="#" title="Available upon request" target="_blank" rel="noopener">White Paper (SSRN / DOI)</a></li>
+      <li><a href="#" title="Available upon request" target="_blank" rel="noopener">USPTO Provisional Receipt</a></li>
+      <li><a href="#" title="Available upon request" target="_blank" rel="noopener">Curriculum Vitae (PDF)</a></li>
+    </ul>
+  </section>
+
+  <!-- Notice -->
+  <section class="card">
+    <h2>Notice</h2>
+    <p>This site is a public, non-commercial demonstrative prototype intended solely for evidentiary purposes in a National Interest Waiver (EB-2 NIW) petition. No personal or identifying data is collected or stored.</p>
+  </section>
+
+  <!-- QR -->
+  <div class="qr">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://eduardoespinal-lawtech.github.io/legal-verification-system/" alt="QR to Exhibit A">
+    <span>Permanent link to Exhibit A</span>
   </div>
 
-  <main>
-    <section>
-      <h2>Purpose & National Relevance</h2>
-      <p>This demonstrative prototype illustrates conceptual improvements in U.S. legal-compliance workflows through automated clause validation, jurisdiction detection, and normative adaptation — supporting transparency, speed, and consistency.</p>
-      <ul>
-        <li>35% faster compliance verification (conceptual projection)</li>
-        <li>28% fewer drafting inconsistencies</li>
-        <li>42% improved clause uniformity across jurisdictions</li>
-      </ul>
-      <p><em>This conceptual system contributes to U.S. regulatory efficiency and supports national objectives in responsible AI governance.</em></p>
-      <figure>
-        <img src="assets/cover.svg" alt="Concept cover, monochrome">
-        <figcaption>Figure 0 — Conceptual overview of the system’s architecture.</figcaption>
-      </figure>
-    </section>
+</main>
 
-    <section id="how" style="page-break-before: always;">
-      <h2>System Flow</h2>
-      <ol class="flow">
-        <li><strong>Document Upload</strong></li>
-        <li><strong>Jurisdiction Detection</strong></li>
-        <li><strong>Clause Adaptation</strong></li>
-        <li><strong>Legal Traceability</strong></li>
-        <li><strong>Attorney Review</strong></li>
-      </ol>
-      <figure>
-        <img src="assets/flow.svg" alt="Workflow diagram, monochrome">
-        <figcaption>Figure 1 — Sequential workflow of the proposed verification system.</figcaption>
-      </figure>
-    </section>
-
-    <section style="page-break-before: always;">
-      <h2>Impact Metrics</h2>
-      <p>Conceptual projections based on the proposed AI-driven legal-compliance framework.</p>
-      <figure>
-        <img src="assets/impact.svg" alt="Bar chart of projected improvements">
-        <figcaption>Figure 2 — Quantitative improvement projection.</figcaption>
-      </figure>
-    </section>
-
-    <section style="page-break-before: always;">
-      <h2>Project Documentation</h2>
-      <ul>
-        <li><a href="#" target="_blank" rel="noopener">White Paper (SSRN / DOI)</a></li>
-        <li><a href="#" target="_blank" rel="noopener">USPTO Provisional Receipt</a></li>
-        <li><a href="#" target="_blank" rel="noopener">Curriculum Vitae (PDF)</a></li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Notice</h2>
-      <p class="note">This site is a public, non-commercial demonstrative prototype intended solely for evidentiary purposes in a National Interest Waiver (EB-2 NIW) petition. No personal data is collected or stored.</p>
-    </section>
-
-    <div class="qr-block">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://eduardoespinal-lawtech.github.io/legal-verification-system/" alt="QR code to demo site">
-      <p>Access demonstrative prototype online</p>
-    </div>
-  </main>
-
-  <div class="pdf-footer">
-    © 2025 Eduardo Luis Espinal de Aza · Demonstrative prototype for EB-2 NIW evidentiary purposes.
-  </div>
+<footer>© 2025 Eduardo Luis Espinal de Aza · Demonstrative prototype for EB-2 NIW evidentiary purposes.</footer>
 
 </body>
 </html>
