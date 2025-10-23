@@ -1,128 +1,152 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>EXHIBIT A — Intelligent Contextual Legal Verification System</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light only">
+<meta charset="utf-8" />
+<title>Intelligent Contextual Legal Verification System — Project</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="light only" />
+<meta name="description" content="Public demonstrative research project in legal-tech for contextual clause adaptation, jurisdiction detection, and regulatory traceability." />
 <style>
-  /* Estilo sobrio tipo expediente USCIS (B/N, Times, 12pt) */
-  :root{--ink:#000;--line:#ccc;}
-  html,body{background:#fff;color:var(--ink);font:12pt "Times New Roman",Times,serif;line-height:1.5;margin:0}
-  main{max-width:7.5in;margin:0 auto;padding:0.6in 0.6in}
-  h1,h2,h3{margin:0 0 8pt 0;font-weight:bold}
-  h1{font-size:16pt;text-align:center;border-bottom:1px solid var(--line);padding-bottom:6pt;margin-bottom:14pt}
-  h2{font-size:13pt;margin-top:18pt;border-bottom:1px solid var(--line);padding-bottom:4pt}
-  p,li,figcaption,small{font-size:12pt}
-  ul{margin:6pt 0 0 18pt}
-  figure{margin:10pt 0;border:1px solid var(--line);padding:10pt}
-  img{display:block;max-width:100%;height:auto;background:#fff}
-  figcaption{margin-top:6pt;font-style:italic;text-align:center}
-  .meta{margin:6pt 0 14pt 0}
-  .meta table{width:100%;border-collapse:collapse}
-  .meta td{padding:2pt 0;vertical-align:top}
-  .box{border:1px solid var(--line);padding:10pt;margin-top:8pt}
-  .notice{font-size:11pt}
-  .qr{margin-top:8pt;text-align:center}
-  .qr img{width:110px;height:110px;border:1px solid var(--line)}
-  footer{max-width:7.5in;margin:0 auto;padding:8pt 0.6in;border-top:1px solid var(--line);text-align:center}
-  .page-break{page-break-before:always}
+  :root{--ink:#0f172a;--muted:#667085;--line:#e5e7eb;--blue:#1a73e8}
+  html,body{background:#fff;color:var(--ink);font:16px/1.6 Inter,system-ui,Segoe UI,Arial,sans-serif;margin:0}
+  a{color:#0b57d0;text-decoration:none} a:hover{text-decoration:underline}
+  header.cover{padding:72px 20px 40px;border-bottom:1px solid var(--line);text-align:center}
+  header.cover h1{margin:0 0 8px;font:700 28px/1.2 "Times New Roman",Georgia,serif}
+  header.cover h2{margin:0 0 14px;font:400 18px/1.4 "Times New Roman",Georgia,serif;color:#2b3b55}
+  header.cover .by{color:var(--muted);font-size:14px}
+  main{max-width:980px;margin:0 auto;padding:24px 16px 48px}
+  h2{margin:28px 0 10px;border-bottom:1px solid var(--line);padding-bottom:6px;font:700 20px/1.3 "Times New Roman",Georgia,serif}
+  h3{margin:18px 0 6px;font:700 16px/1.3 "Times New Roman",Georgia,serif}
+  p{margin:10px 0}
+  .grid{display:grid;gap:16px}
+  .two{grid-template-columns:1.1fr .9fr}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
+  ul{margin:8px 0 0 18px}
+  figure{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;margin:14px 0}
+  img{display:block;max-width:100%;height:auto;background:#fff;border-radius:10px}
+  figcaption{font-size:13px;color:var(--muted);text-align:center;margin-top:8px}
+  .kpi{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+  .pill{border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:13px;background:#fff}
+  .meta{font-size:13px;color:var(--muted)}
+  footer{border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:12px;padding:16px}
   @media print{
-    a[href]:after{content:" (" attr(href) ")"; font-size:10pt}
+    header.cover{border:0;padding-bottom:16px}
+    .card, figure{break-inside:avoid-page}
+    #fig1{page-break-before:always}
+    #fig2{page-break-before:always}
   }
 </style>
 </head>
 <body>
 
+<!-- PORTADA -->
+<header class="cover">
+  <h1>Intelligent Contextual Legal Verification System</h1>
+  <h2>A Framework for AI-Driven Legal Traceability and Regulatory Consistency</h2>
+  <p class="by"><strong>Eduardo Luis Espinal de Aza, Esq.</strong> · Version 1.0 · October 2025</p>
+</header>
+
 <main>
-  <!-- Portada/Encabezado -->
-  <h1>EXHIBIT A — Demonstrative Legal-Tech Prototype</h1>
-  <div class="meta">
-    <table>
-      <tr><td><strong>Title:</strong></td><td>Intelligent Contextual Legal Verification System — Demonstrative Prototype</td></tr>
-      <tr><td><strong>Author:</strong></td><td>Eduardo Luis Espinal de Aza, Esq.</td></tr>
-      <tr><td><strong>Purpose:</strong></td><td>Evidentiary submission for EB-2 NIW</td></tr>
-      <tr><td><strong>Hosted at:</strong></td><td>https://eduardoespinal-lawtech.github.io/legal-verification-system/</td></tr>
-      <tr><td><strong>Date:</strong></td><td>October 2025</td></tr>
-    </table>
-  </div>
 
-  <!-- Purpose & National Relevance -->
-  <h2>Purpose & National Relevance</h2>
-  <p>
-    This demonstrative prototype describes a conceptual AI-assisted framework for legal-compliance review:
-    automated clause validation, jurisdiction detection, and normative adaptation—supporting transparency, speed,
-    and consistency across U.S. jurisdictions. This conceptual system aligns with U.S. objectives on regulatory efficiency
-    and responsible AI governance.
-  </p>
-  <ul>
-    <li>35% faster compliance verification (conceptual projection)</li>
-    <li>28% fewer drafting inconsistencies</li>
-    <li>42% improved clause uniformity across jurisdictions</li>
-  </ul>
+  <!-- EXECUTIVE OVERVIEW + COVER FIGURE -->
+  <section class="grid two">
+    <article class="card">
+      <h2>Executive Summary</h2>
+      <p>
+        The Intelligent Contextual Legal Verification System (ICLVS) is a public demonstrative research project in legal-tech.
+        It outlines a conceptual architecture that applies AI-assisted reasoning to analyze legal documents, detect
+        governing jurisdictions, adapt clauses to normative frameworks, and preserve audit-grade traceability—while retaining
+        professional legal oversight.
+      </p>
+      <div class="kpi">
+        <span class="pill">Faster verification (conceptual)</span>
+        <span class="pill">Fewer drafting inconsistencies</span>
+        <span class="pill">Improved clause uniformity</span>
+      </div>
+      <p class="meta">Repository: <a href="https://github.com/eduardoespinal-lawtech/legal-verification-system" target="_blank" rel="noopener">github.com/eduardoespinal-lawtech/legal-verification-system</a></p>
+    </article>
 
-  <!-- Figure 0 -->
-  <figure>
-    <img src="assets/cover.svg" alt="Conceptual cover — compliance-oriented architecture">
-    <figcaption><strong>Figure 0 — Conceptual Overview.</strong> Regulatory frame, traceability axes, and AI contextual core.</figcaption>
-  </figure>
+    <aside class="card" id="fig0">
+      <figure>
+        <img src="assets/cover.svg" alt="Conceptual cover — compliance-oriented architecture" />
+        <figcaption><strong>Figure 0 — Conceptual Overview.</strong> Regulatory frame, traceability axes, and AI contextual core.</figcaption>
+      </figure>
+    </aside>
+  </section>
 
-  <!-- System Flow -->
-  <div class="page-break"></div>
-  <h2>System Flow</h2>
-  <p>The procedural sequence of the proposed verification system is shown below.</p>
-  <ul>
-    <li><strong>(100)</strong> Document Upload</li>
-    <li><strong>(200)</strong> Jurisdiction Detection</li>
-    <li><strong>(300)</strong> Normative Adaptation</li>
-    <li><strong>(400)</strong> Legal Traceability</li>
-    <li><strong>(500)</strong> Attorney Review → <strong>(600)</strong> Verified Output</li>
-  </ul>
-  <figure>
-    <img src="assets/flow.svg" alt="System Flow Diagram">
-    <figcaption><strong>Figure 1 — System Flow Diagram.</strong> End-to-end workflow with numbered functional modules.</figcaption>
-  </figure>
+  <!-- PROJECT DESCRIPTION -->
+  <section class="card">
+    <h2>Project Description</h2>
+    <p>
+      ICLVS proposes a modular approach: an input layer for document ingestion (PDF/DOCX/JSON-LD), a processing layer for
+      contextual legal rule analysis, an adaptation layer for clause revision against a jurisdiction-aware corpus, and
+      a traceability layer for immutable audit records (optionally blockchain-anchored). The goal is to increase confidence,
+      speed, and transparency in legal-compliance workflows across jurisdictions.
+    </p>
+  </section>
 
-  <!-- Impact Metrics -->
-  <div class="page-break"></div>
-  <h2>Impact Metrics</h2>
-  <p>Conceptual projections based on the proposed AI-driven legal-compliance framework.</p>
-  <figure>
-    <img src="assets/impact.svg" alt="Quantitative Impact Metrics — conceptual projection">
-    <figcaption><strong>Figure 2 — Quantitative Impact Metrics.</strong> Expected efficiency and consistency improvements (conceptual).</figcaption>
-  </figure>
+  <!-- USE CASES -->
+  <section class="card">
+    <h2>Use Cases</h2>
 
-  <!-- Regulatory Alignment (breve, directo) -->
-  <h2>Regulatory Alignment</h2>
-  <div class="box">
-    <p><strong>AI Governance & Transparency:</strong> automated traceability and rule adaptation.</p>
-    <p><strong>Regulatory Efficiency:</strong> streamlined compliance verification (conceptual projections).</p>
-    <p><strong>Responsible Data Use:</strong> public demonstrative prototype; no personal data collected or stored.</p>
-  </div>
+    <h3>1) Regulatory Document Verification</h3>
+    <p>Pre-submission review of bylaws, contracts, and filings by mapping clauses to applicable laws and standards.</p>
 
-  <!-- Evidentiary Integrity -->
-  <h2>Evidentiary Integrity</h2>
-  <div class="box">
-    <p><strong>Repository:</strong> https://github.com/eduardoespinal-lawtech/legal-verification-system</p>
-    <p><strong>Commit Reference:</strong> <code>main@latest</code> (full hash available upon request)</p>
-  </div>
+    <h3>2) Land & Real-Estate Registries</h3>
+    <p>Assists attorneys/notaries by validating property documentation and registry-specific fields (parcel IDs, ownership chains).</p>
 
-  <!-- Notice -->
-  <h2>Notice</h2>
-  <p class="notice">
-    This site is a public, non-commercial demonstrative prototype intended solely for evidentiary purposes in a National
-    Interest Waiver (EB-2 NIW) petition. No personal or identifying data is collected or stored.
-  </p>
+    <h3>3) Multi-Jurisdictional Contract Adaptation</h3>
+    <p>Harmonizes agreements for multiple jurisdictions (e.g., DR, U.S., EU) without losing legal equivalence or traceability.</p>
 
-  <!-- QR -->
-  <div class="qr">
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://eduardoespinal-lawtech.github.io/legal-verification-system/" alt="QR to Exhibit A">
-    <div><small>Permanent link to Exhibit A</small></div>
-  </div>
+    <h3>4) Financial-Sector Compliance</h3>
+    <p>Supports compliance teams with automated clause screening for AML/privacy obligations and policy consistency.</p>
+
+    <h3>5) Academic & Institutional Research</h3>
+    <p>Provides a reference model to study explainable AI and rule-based systems in comparative law and RegTech.</p>
+  </section>
+
+  <!-- SYSTEM FLOW -->
+  <section class="card" id="fig1">
+    <h2>System Flow</h2>
+    <p>The procedural sequence of the proposed verification system:</p>
+    <ul>
+      <li><strong>(100)</strong> Document Upload</li>
+      <li><strong>(200)</strong> Jurisdiction Detection</li>
+      <li><strong>(300)</strong> Normative Adaptation</li>
+      <li><strong>(400)</strong> Legal Traceability</li>
+      <li><strong>(500)</strong> Attorney Review → <strong>(600)</strong> Verified Output</li>
+    </ul>
+    <figure>
+      <img src="assets/flow.svg" alt="System Flow Diagram" />
+      <figcaption><strong>Figure 1 — System Flow Diagram.</strong> End-to-end workflow with numbered functional modules.</figcaption>
+    </figure>
+  </section>
+
+  <!-- IMPACT METRICS -->
+  <section class="card" id="fig2">
+    <h2>Impact Metrics</h2>
+    <p>Conceptual projections based on the proposed AI-driven legal-compliance framework.</p>
+    <figure>
+      <img src="assets/impact.svg" alt="Quantitative Impact Metrics — conceptual projection" />
+      <figcaption><strong>Figure 2 — Quantitative Impact Metrics.</strong> Expected efficiency and consistency improvements (conceptual).</figcaption>
+    </figure>
+  </section>
+
+  <!-- DOCUMENTATION -->
+  <section class="card">
+    <h2>Documentation & Resources</h2>
+    <ul>
+      <li><a href="#" title="Available upon request">White Paper (pre-print / DOI)</a></li>
+      <li><a href="#" title="Available upon request">Provisional Patent Reference</a></li>
+      <li><a href="#" title="Available upon request">Curriculum Vitae (PDF)</a></li>
+    </ul>
+    <p class="meta">No personal data is collected. Public demonstrative project for academic and evidentiary purposes.</p>
+  </section>
+
 </main>
 
 <footer>
-  © 2025 Eduardo Luis Espinal de Aza · Demonstrative prototype for EB-2 NIW evidentiary purposes.
+  © 2025 Eduardo Luis Espinal de Aza · Espinal & Almonte, Consultores Legales, SRL · Public Demonstrative Research Project
 </footer>
 
 </body>
