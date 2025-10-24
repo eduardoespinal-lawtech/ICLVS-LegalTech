@@ -41,7 +41,7 @@ ICLVS aligns with global principles of **Responsible AI**, **RegTech**, and **Di
 
 ## 🧩 Demonstrative Prototype
 
-The pilot web system (`pilot.html`) illustrates the operational workflow of ICLVS in a **browser-based simulation**.  
+The pilot web system illustrates the operational workflow of ICLVS in a **browser-based simulation**.  
 It performs:
 - Clause analysis and keyword detection  
 - Jurisdiction-based rule matching  
@@ -61,8 +61,8 @@ It performs:
 
 ## 🔗 References
 - **Patent:** *Intelligent Contextual Legal Verification System — USPTO Provisional 63/902,544 (2025)*  
-- **Demo:** [[ICLVS Pilot Prototype](https://yourusername.github.io/ICLVS-pilot/)  ](https://eduardoespinal-lawtech.github.io/legal-verification-system/pilot.html)
-- **Publication:** SSRN (forthcoming)
+- **Demo:** [ICLVS Pilot Prototype](https://yourusername.github.io/ICLVS-pilot/) | [Legal Verification System](https://eduardoespinal-lawtech.github.io/legal-verification-system/pilot.html)  
+- **Publication:** [Publications of the Author](https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=8686960)
 
 ---
 
