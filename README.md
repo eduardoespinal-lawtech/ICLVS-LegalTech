@@ -1,67 +1,69 @@
 # Intelligent Contextual Legal Verification System (ICLVS)
 
-**Author:** Eduardo Luis Espinal de Aza, Esq.  
-**Field:** Legal Technology · Artificial Intelligence · Regulatory Compliance  
-**Location:** Santo Domingo, Dominican Republic  
+**Interactive Demonstrative Prototype — AI-Driven Legal Compliance Framework**  
+*Functional evidentiary annex for regulatory automation and normative adaptation.*
 
 ---
 
-## 📘 Overview
+## 🧠 About
 
-The **Intelligent Contextual Legal Verification System (ICLVS)** is a Legal-Tech demonstrative framework designed to automate and standardize the verification of legal documents across multiple jurisdictions.
+I am a legal researcher and system architect specialized in **AI-driven regulatory compliance** and **contextual legal automation**.  
+My work focuses on designing frameworks that merge **normative reasoning**, **algorithmic traceability**, and **cross-jurisdictional clause adaptation** within intelligent verification systems.
 
-By integrating **AI-driven contextual reasoning** with **normative adaptation and audit traceability**, the system supports legal transparency, compliance efficiency, and cross-border regulatory trust.
-
----
-
-## 🧩 Components
-
-- **System Architecture** — multilayer model integrating ingestion, reasoning, adaptation, and traceability.  
-- **Workflow Diagram** — visual representation of the end-to-end compliance process.  
-- **Impact Metrics** — performance indicators (review time, clause consistency, traceability rate).  
-- **Pilot Demo** — simulated prototype illustrating ICLVS functionality and evidentiary application.  
-- **Documentation** — includes reference diagrams, visual annex, and PDF metrics report.
+The ongoing project — **Intelligent Contextual Legal Verification System (ICLVS)** — demonstrates how artificial intelligence can interpret, evaluate, and adapt contractual clauses according to jurisdictional and regulatory contexts.  
+It provides a *functional and auditable model* for real-time compliance validation, document transparency, and machine-assisted legal consistency.
 
 ---
 
-## ⚙️ Key Features
+## 🎯 Project Vision
 
-- Automated clause validation with jurisdiction-specific adaptation.  
-- Audit log with cryptographic trace IDs for evidentiary use.  
-- AI reasoning engine integrating contextual interpretation and normative datasets.  
-- Scalable structure for cross-jurisdictional legal frameworks.  
+> “To transform legal verification into a transparent, adaptive, and computationally auditable process.”
 
----
-
-## 📊 Quantitative Impact (Pilot Simulation)
-
-| Metric | Improvement | Description |
-|--------|--------------|-------------|
-| Review Time | −35% | Faster compliance verification compared to manual review. |
-| Drafting Accuracy | +28% | Reduction in human drafting inconsistencies. |
-| Clause Consistency | +42% | Improved harmonization across jurisdictions. |
+ICLVS aligns with global principles of **Responsible AI**, **RegTech**, and **Digital Governance**, proposing a hybrid model where human legal expertise and algorithmic logic collaborate to ensure:
+- Normative consistency across jurisdictions  
+- Accelerated compliance review cycles  
+- Automated detection of conflicts of law  
+- Quantifiable traceability of legal decisions
 
 ---
 
-## 🧪 Pilot Demo
+## ⚙️ Technical Scope
 
-The pilot simulates a real-world scenario:
-- **Input:** Service Agreement → Florida Jurisdiction  
-- **Process:** Clause analysis and normative adaptation  
-- **Output:** Compliant clause proposal with traceable audit hash  
-
-Access the live demonstrative version:  
-🔗 [https://eduardoespinal-lawtech.github.io/legal-verification-system/](https://eduardoespinal-lawtech.github.io/legal-verification-system/)
-
----
-
-## 🧠 Technical Context
-
-The ICLVS framework aligns with:
-- U.S. **AI Governance and Digital Compliance** initiatives.  
-- **Responsible AI** principles for transparent and auditable automation.  
-- The evidentiary structure supporting **EB-2 NIW (National Interest Waiver)** documentation.  
+| Component | Function | Description |
+|------------|-----------|-------------|
+| **Ingestion Layer** | Input parsing | Processes legal text and metadata |
+| **Contextual Reasoning Engine** | AI inference | Detects applicable jurisdiction and clause semantics |
+| **Normative Adaptation Module** | Rule alignment | Adjusts legal clauses to target regulatory frameworks |
+| **Traceability & Audit Layer** | Transparency | Generates SHA-256 hash logs and trace IDs for evidentiary use |
+| **Metrics Visualization** | Evaluation | Displays performance indicators for compliance validation efficiency |
 
 ---
 
-## 🗂️ Repository Structure
+## 🧩 Demonstrative Prototype
+
+The pilot web system (`pilot.html`) illustrates the operational workflow of ICLVS in a **browser-based simulation**.  
+It performs:
+- Clause analysis and keyword detection  
+- Jurisdiction-based rule matching  
+- Risk scoring (0–100) with traffic-light logic  
+- Automatic clause adaptation  
+- Cryptographic trace generation (SHA-256)  
+- JSON export of verification logs  
+
+> ⚖️ This simulation is **self-contained**, requires **no backend**, and is suitable for **evidentiary demonstration before USCIS** under the *EB-2 National Interest Waiver (NIW)* framework.
+
+---
+
+## 📚 Keywords
+`Artificial Intelligence` · `Regulatory Compliance` · `RegTech` · `Digital Governance` · `Legal Automation` · `Traceability` · `Explainable AI` · `Cross-Jurisdictional Adaptation`
+
+---
+
+## 🔗 References
+- **Patent:** *Intelligent Contextual Legal Verification System — USPTO Provisional 63/902,544 (2025)*  
+- **Demo:** [ICLVS Pilot Prototype](https://yourusername.github.io/ICLVS-pilot/)  
+- **Publication:** SSRN (forthcoming)
+
+---
+
+© 2025 · Legal-Tech Research Initiative — All rights reserved.
