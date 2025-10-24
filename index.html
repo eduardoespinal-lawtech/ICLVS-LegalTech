@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <!-- NAVBAR -->
+  <!-- NAVIGATION -->
   <nav class="navbar">
     <div class="container nav-inner">
       <div class="brand">LawTech System</div>
@@ -23,7 +23,7 @@
     </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- HEADER -->
   <header class="hero">
     <div class="container">
       <h1>Intelligent Contextual Legal Verification System</h1>
@@ -34,7 +34,7 @@
     </div>
   </header>
 
-  <!-- MAIN CONTENT -->
+  <!-- CONTENT -->
   <main class="container">
     <section id="overview" class="section">
       <h2>Purpose & Overview</h2>
@@ -48,9 +48,7 @@
 
     <section id="workflow" class="section">
       <h2>System Workflow</h2>
-      <p>
-        Core path: <strong>Document Ingest → Contextual Reasoning → Normative Adaptation → Traceability / Audit</strong>.
-      </p>
+      <p>Core path: <strong>Document Ingest → Contextual Reasoning → Normative Adaptation → Traceability / Audit</strong>.</p>
       <img src="assets/flow.svg" alt="System Flow Diagram" class="diagram" />
     </section>
 
@@ -64,33 +62,63 @@
       <img src="assets/impact.svg" alt="Quantitative Metrics" class="diagram" />
     </section>
 
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="section contact-section">
-      <h2>Contact</h2>
-      <p>
-        For academic or evidentiary inquiries, please reach out via the contact form below.
-      </p>
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <div class="contact-wrap">
+        <div class="contact-card">
+          <div class="contact-grid">
+            <!-- INFO -->
+            <div class="contact-info">
+              <h2 class="contact-title">Contact</h2>
+              <p class="contact-lead">
+                For academic or evidentiary inquiries, please reach out using the form below.
+              </p>
+              <ul class="contact-list">
+                <li><strong>Project:</strong> Intelligent Contextual Legal Verification System</li>
+                <li><strong>Location:</strong> Santo Domingo, Dominican Republic</li>
+                <li><strong>Owner:</strong> Eduardo Luis Espinal de Aza, Esq.</li>
+              </ul>
+              <p class="contact-note">This form is a demonstrative component and does not transmit data.</p>
+            </div>
 
-      <form class="contact-form">
-        <div class="form-group">
-          <label for="name">Full Name</label>
-          <input type="text" id="name" placeholder="Enter your name" />
+            <!-- FORM -->
+            <form class="contact-form" id="contactForm" aria-label="Contact form">
+              <div class="form-row">
+                <label for="name">Full Name</label>
+                <input id="name" type="text" placeholder="Enter your name" required />
+              </div>
+              <div class="form-row">
+                <label for="email">Email Address</label>
+                <input id="email" type="email" placeholder="you@example.com" required />
+              </div>
+              <div class="form-row">
+                <label for="message">Message</label>
+                <textarea id="message" rows="5" placeholder="Write your message..." required></textarea>
+              </div>
+              <button type="submit" class="btn-primary">Send Message</button>
+              <div class="form-success" role="status" aria-live="polite">
+                ✅ Thanks — your message has been noted (demo).
+              </div>
+            </form>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" placeholder="you@example.com" />
-        </div>
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" rows="4" placeholder="Write your message..."></textarea>
-        </div>
-        <button type="button" class="btn">Send Message</button>
-      </form>
+      </div>
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="footer">
-    <div class="container">© 2025 Eduardo Luis Espinal de Aza · Intelligent Contextual Legal Verification System</div>
+    <div class="container">
+      © 2025 Eduardo Luis Espinal de Aza · Intelligent Contextual Legal Verification System
+    </div>
   </footer>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      this.querySelector('.form-success').classList.add('show');
+      this.reset();
+    });
+  </script>
 </body>
 </html>
