@@ -1,15 +1,15 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ICLVS · Prototipo Demostrativo (Realista)</title>
+<title>ICLVS · Interactive Demonstrative Prototype</title>
 <style>
   :root{
     --bg:#0f172a;--bg2:#1e3a8a;--line:#e5e7eb;--mut:#6b7280;--ok:#059669;--warn:#ca8a04;--bad:#dc2626;
-    --card:#fff;--ink:#0b1220;--accent:#0ea5e9;--accent-600:#0284c7
+    --card:#fff;--ink:#0b1220;--accent:#0ea5e9
   }
-  *{box-sizing:border-box} html,body{margin:0}
+  *{box-sizing:border-box}html,body{margin:0}
   body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#f8fafc;color:var(--ink);line-height:1.55}
   .hero{background:linear-gradient(180deg,var(--bg2),var(--bg));color:#fff;padding:40px 0 26px}
   .container{max-width:980px;margin:0 auto;padding:0 20px}
@@ -25,22 +25,20 @@
   .row{display:grid;gap:10px;margin:10px 0}
   .btn{background:var(--accent);color:#fff;border:none;border-radius:10px;padding:10px 14px;font-weight:700;cursor:pointer}
   .btn:disabled{opacity:.5;cursor:not-allowed}
-  .btn.ghost{background:#eef6ff;color:#0b4a6f;border:1px solid #cfe8ff}
-  .mut{color:var(--mut)} .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  .mut{color:var(--mut)}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
   .kpis{display:grid;gap:12px;grid-template-columns:repeat(3,1fr);margin-top:12px}
   @media(max-width:720px){.kpis{grid-template-columns:1fr}}
   .kpi{background:#f1f5f9;border:1px solid var(--line);border-radius:12px;text-align:center;padding:12px}
   .kpi .v{font-weight:800;font-size:1.2rem}
   table{width:100%;border-collapse:collapse;font-size:.95rem}
   th,td{padding:9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
-  .ok{color:var(--ok);font-weight:700}
   .chips{display:flex;flex-wrap:wrap;gap:8px}
   .chip{display:inline-flex;align-items:center;gap:6px;background:#f1f5f9;border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:.9rem}
   .chip.ok{background:#ecfdf5;border-color:#bbf7d0;color:#065f46}
   .chip.warn{background:#fffbeb;border-color:#fde68a;color:#92400e}
   .chip.bad{background:#fef2f2;border-color:#fecaca;color:#991b1b}
   .score{font-weight:800}
-  .score.ok{color:var(--ok)} .score.warn{color:var(--warn)} .score.bad{color:var(--bad)}
+  .score.ok{color:var(--ok)}.score.warn{color:var(--warn)}.score.bad{color:var(--bad)}
   pre{white-space:pre-wrap;background:#fafafa;border:1px solid var(--line);padding:10px;border-radius:10px}
   mark{background:#fee2e2;border-radius:4px;padding:0 3px}
   footer{padding:20px 0;color:var(--mut);border-top:1px solid var(--line);background:#fff;margin-top:22px}
@@ -50,19 +48,18 @@
 <body>
 <header class="hero">
   <div class="container">
-    <h1>ICLVS — Prototipo Demostrativo (Realista)</h1>
-    <p class="sub">Verificación legal contextual · Adaptación normativa · Trazabilidad auditable</p>
-    <div class="badge">Interactive Demonstrative Prototype — Functional AI-Legal Verification Pilot</div>
+    <h1>ICLVS — Interactive Demonstrative Prototype</h1>
+    <p class="sub">Contextual Legal Verification · Normative Adaptation · Audit Traceability</p>
+    <div class="badge">Functional AI-Legal Compliance Pilot — No backend required</div>
   </div>
 </header>
 
 <main class="container">
   <div class="grid">
-    <!-- Entrada -->
     <section class="card">
-      <h2>Entrada</h2>
+      <h2>Input</h2>
       <div class="row">
-        <label for="jur">Jurisdicción destino</label>
+        <label for="jur">Target Jurisdiction</label>
         <select id="jur">
           <option value="FL, U.S.">Florida (U.S.)</option>
           <option value="NY, U.S.">New York (U.S.)</option>
@@ -70,210 +67,75 @@
         </select>
       </div>
       <div class="row">
-        <label for="clause">Cláusula a verificar</label>
-        <textarea id="clause" rows="7" placeholder="Pegue aquí la cláusula de Terminación / Jurisdicción…"></textarea>
+        <label for="clause">Clause to verify</label>
+        <textarea id="clause" rows="7" placeholder="Paste termination/jurisdiction clause here..."></textarea>
       </div>
-
-      <div class="chips" id="detectedWrap" aria-live="polite"></div>
-
+      <div class="chips" id="signals"></div>
       <div class="row">
-        <button id="analyze" class="btn">Analizar</button>
-        <button id="exportJson" class="btn ghost" disabled>Exportar JSON (traza)</button>
-        <div class="mut hint">La demo procesa localmente y genera un hash SHA-256 del contenido.</div>
+        <button id="run" class="btn">Run Analysis</button>
+        <div class="mut hint">Local-only processing. Generates SHA-256 hash for traceability.</div>
       </div>
-
       <div class="kpis">
-        <div class="kpi"><div class="v" id="kReview">−35%</div><div class="mut">Review time</div></div>
-        <div class="kpi"><div class="v" id="kConsistency">+42%</div><div class="mut">Clause consistency</div></div>
-        <div class="kpi"><div class="v" id="kTrace">+28%</div><div class="mut">Traceability</div></div>
+        <div class="kpi"><div class="v">−35%</div><div class="mut">Review Time</div></div>
+        <div class="kpi"><div class="v">+42%</div><div class="mut">Clause Consistency</div></div>
+        <div class="kpi"><div class="v">+28%</div><div class="mut">Traceability</div></div>
       </div>
     </section>
 
-    <!-- Salida -->
     <section class="card">
-      <h2>Resultados</h2>
-      <p id="status" class="mut">Pegue una cláusula y ejecute “Analizar”.</p>
-
-      <div class="chips" id="scoreChips" style="margin:8px 0 6px"></div>
-
-      <h3>Detecciones & resaltado</h3>
+      <h2>Results</h2>
+      <p id="status" class="mut">Paste a clause and run analysis.</p>
+      <div id="scoreBox" class="chips" style="margin:8px 0"></div>
+      <h3>Detected & Highlighted Terms</h3>
       <pre id="highlight"></pre>
-
-      <h3 style="margin-top:12px">Propuesta compatible (<span id="jurOut">FL, U.S.</span>)</h3>
+      <h3>Compliant Suggestion (<span id="jurOut">FL, U.S.</span>)</h3>
       <pre id="proposal" class="mono"></pre>
-
-      <h3 style="margin-top:12px">Trazabilidad (demo)</h3>
+      <h3>Traceability Log</h3>
       <div style="overflow:auto">
-        <table>
-          <thead><tr><th>Trace ID</th><th>Jurisdicción</th><th>Riesgo</th><th>Hash (SHA-256)</th></tr></thead>
-          <tbody id="log">
-            <tr>
-              <td class="mono">ICLVS-2025-001</td>
-              <td>FL, U.S.</td>
-              <td>Medio</td>
-              <td class="mono">b9f2a43d…7c1</td>
-            </tr>
-          </tbody>
-        </table>
+        <table><thead><tr><th>Trace ID</th><th>Jurisdiction</th><th>Risk</th><th>Hash (SHA-256)</th></tr></thead><tbody id="log">
+          <tr><td class="mono">ICLVS-2025-001</td><td>FL, U.S.</td><td>Medium</td><td class="mono">b9f2a43d…7c1</td></tr>
+        </tbody></table>
       </div>
-
-      <p class="mut hint">Demostración probatoria (USCIS EB-2 NIW). Revisión humana requerida.</p>
+      <p class="mut hint">Demonstrative purpose only — evidentiary annex for USCIS (EB-2 NIW).</p>
     </section>
   </div>
 </main>
 
-<footer>
-  <div class="container">© 2025 ICLVS Legal-Tech · Demo sin backend</div>
-</footer>
+<footer><div class="container">© 2025 ICLVS Legal-Tech Prototype</div></footer>
 
 <script>
-  // Reglas mínimas por jurisdicción (mock)
-  const RULES = {
-    "FL, U.S.": {
-      must: [/miami|florida|fl statutes|florida law/i],
-      avoid: [/exclusive jurisdiction outside florida/i],
-      template:
-        "This Agreement shall be governed by the laws of the State of Florida. Venue and jurisdiction are exclusive to the state and federal courts located in Miami-Dade County, Florida. Termination: Either party may terminate upon written notice for material breach not cured within 30 days."
-    },
-    "NY, U.S.": {
-      must: [/new york|ny law|nys/i],
-      avoid: [/exclusive jurisdiction outside new york/i],
-      template:
-        "This Agreement shall be governed by the laws of the State of New York, with exclusive venue and jurisdiction in the state and federal courts located in New York County, New York. Termination: Either party may terminate upon written notice for material breach not cured within 30 days."
-    },
-    "CA, U.S.": {
-      must: [/california|ca law|los angeles/i],
-      avoid: [/exclusive jurisdiction outside california/i],
-      template:
-        "This Agreement shall be governed by the laws of the State of California. Venue and jurisdiction are exclusive to the state and federal courts located in Los Angeles County, California. Termination: Either party may terminate upon written notice for material breach not cured within 30 days."
-    }
-  };
+const RULES={
+"FL, U.S.":{must:[/florida|miami/i],avoid:[/outside florida/i],
+template:"This Agreement is governed by the laws of Florida. Venue and jurisdiction: Miami-Dade County, FL."},
+"NY, U.S.":{must:[/new york/i],avoid:[/outside new york/i],
+template:"This Agreement is governed by the laws of New York. Venue: New York County, NY."},
+"CA, U.S.":{must:[/california|los angeles/i],avoid:[/outside california/i],
+template:"This Agreement is governed by California law. Venue: Los Angeles County, CA."}
+};
+const $=s=>document.querySelector(s);
+const jur=$("#jur"),clause=$("#clause"),run=$("#run"),status=$("#status"),highlight=$("#highlight"),proposal=$("#proposal"),jurOut=$("#jurOut"),signals=$("#signals"),scoreBox=$("#scoreBox"),log=$("#log");
 
-  const $ = s => document.querySelector(s);
-  const jur = $('#jur'), clause = $('#clause');
-  const analyzeBtn = $('#analyze'), exportBtn = $('#exportJson');
-  const detectedWrap = $('#detectedWrap'), status = $('#status');
-  const highlight = $('#highlight'), proposal = $('#proposal'), jurOut = $('#jurOut');
-  const scoreChips = $('#scoreChips'), log = $('#log');
+function traceId(){const d=new Date();return`ICLVS-${d.getFullYear()}${String(d.getMonth()+1).padStart(2,"0")}${String(d.getDate()).padStart(2,"0")}-${String(d.getHours()).padStart(2,"0")}${String(d.getMinutes()).padStart(2,"0")}${String(d.getSeconds()).padStart(2,"0")}`}
+async function sha256(t){const e=new TextEncoder().encode(t);const b=await crypto.subtle.digest("SHA-256",e);return Array.from(new Uint8Array(b)).map(x=>x.toString(16).padStart(2,"0")).join("")}
+function analyze(txt,rules){let score=50;if(/governed by the laws/i.test(txt))score+=10;if(/exclusive jurisdiction/i.test(txt))score-=15;if(/termination/i.test(txt))score+=5;
+rules.must.forEach(r=>{if(r.test(txt))score+=15});rules.avoid.forEach(r=>{if(r.test(txt))score-=25});return Math.max(0,Math.min(100,score))}
+function riskBand(s){if(s>=75)return["Low","ok"];if(s>=55)return["Medium","warn"];return["High","bad"]}
+function highlightTxt(txt,rules){let out=txt.replace(/(exclusive jurisdiction)/ig,"<mark>$1</mark>").replace(/(governed by the laws)/ig,"<mark>$1</mark>").replace(/(termination)/ig,"<mark>$1</mark>");
+rules.must.forEach(r=>{out=out.replace(r,m=>`<mark style='background:#dcfce7'>${m}</mark>`)});return out}
+function chip(t,c=""){const s=document.createElement("span");s.className=`chip ${c}`;s.textContent=t;return s}
+function logRow(id,tgt,band,dig){const tr=document.createElement("tr");tr.innerHTML=`<td class="mono">${id}</td><td>${tgt}</td><td>${band}</td><td class="mono">${dig.slice(0,12)}…${dig.slice(-6)}</td>`;log.prepend(tr)}
 
-  function traceId(){
-    const d=new Date();
-    return `ICLVS-${d.getFullYear()}${String(d.getMonth()+1).padStart(2,'0')}${String(d.getDate()).padStart(2,'0')}-${String(d.getHours()).padStart(2,'0')}${String(d.getMinutes()).padStart(2,'0')}${String(d.getSeconds()).padStart(2,'0')}`;
-  }
-
-  async function sha256(text){
-    const enc = new TextEncoder().encode(text);
-    const buf = await crypto.subtle.digest('SHA-256', enc);
-    const arr = Array.from(new Uint8Array(buf));
-    return arr.map(b=>b.toString(16).padStart(2,'0')).join('');
-  }
-
-  function riskScore(txt, rules){
-    let score = 50; // base
-    // señales positivas
-    rules.must.forEach(re => { if(re.test(txt)) score += 15; });
-    // señales negativas
-    rules.avoid.forEach(re => { if(re.test(txt)) score -= 25; });
-    // términos críticos genéricos
-    if(/exclusive jurisdiction/i.test(txt)) score -= 10;
-    if(/governed by the laws of/i.test(txt)) score += 10;
-    if(/termination|rescission|rescind|terminate/i.test(txt)) score += 5;
-    return Math.max(0, Math.min(100, score));
-  }
-
-  function band(score){
-    if(score >= 75) return {label:'Bajo', cls:'ok'};
-    if(score >= 55) return {label:'Medio', cls:'warn'};
-    return {label:'Alto', cls:'bad'};
-  }
-
-  function chip(text, cls=''){
-    const span = document.createElement('span');
-    span.className = `chip ${cls}`;
-    span.textContent = text;
-    return span;
-  }
-
-  function highlightIssues(txt, rules){
-    let out = txt
-      .replace(/(exclusive jurisdiction)/ig, '<mark>$1</mark>')
-      .replace(/(governed by the laws of)/ig, '<mark>$1</mark>')
-      .replace(/(termination|rescind|terminate)/ig, '<mark>$1</mark>');
-    // pistas jurisdiccionales
-    rules.must.forEach(re=>{
-      out = out.replace(re, m => `<mark style="background:#dcfce7">${m}</mark>`);
-    });
-    return out;
-  }
-
-  function propose(rules, txt){
-    // si ya cumple bastante, ofrecemos “confirmación”; si no, plantilla
-    const hasGov = /governed by the laws of/i.test(txt);
-    const hasVenue = /venue|jurisdiction/i.test(txt);
-    if(hasGov && hasVenue) {
-      return "The clause appears generally consistent with target jurisdictional requirements. Consider retaining venue specificity and notice periods.";
-    }
-    return rules.template;
-  }
-
-  function renderScore(score){
-    const b = band(score);
-    scoreChips.innerHTML = '';
-    scoreChips.appendChild(chip(`Risk: `, b.cls));
-    const sc = document.createElement('span');
-    sc.className = `chip ${b.cls}`;
-    sc.innerHTML = `<span class="score ${b.cls}">${score}</span>/100 · ${b.label}`;
-    scoreChips.appendChild(sc);
-  }
-
-  function detectSignals(txt){
-    detectedWrap.innerHTML = '';
-    const hits = [];
-    if(/governed by the laws of/i.test(txt)) hits.push(chip('Governed by…', 'ok'));
-    if(/exclusive jurisdiction/i.test(txt)) hits.push(chip('Exclusive jurisdiction', 'bad'));
-    if(/venue|forum/i.test(txt)) hits.push(chip('Venue/Forum', 'ok'));
-    if(/termination|rescind|terminate/i.test(txt)) hits.push(chip('Termination', 'ok'));
-    if(hits.length===0) hits.push(chip('No key signals detected','warn'));
-    hits.forEach(x=>detectedWrap.appendChild(x));
-  }
-
-  analyzeBtn.addEventListener('click', async ()=>{
-    const tgt = jur.value;
-    const txt = clause.value.trim() || 'This Agreement shall be governed by the laws of X; venue and jurisdiction shall be exclusive to Y. Termination applies for material breach.';
-    const rules = RULES[tgt];
-    const id = traceId();
-
-    // análisis
-    detectSignals(txt);
-    const score = riskScore(txt, rules);
-    renderScore(score);
-
-    // resaltado + propuesta
-    highlight.innerHTML = highlightIssues(txt, rules);
-    proposal.textContent = propose(rules, txt);
-    jurOut.textContent = tgt;
-
-    // hash real
-    const digest = await sha256(`${tgt}::${txt}::${proposal.textContent}::${score}`);
-
-    // log
-    const tr = document.createElement('tr');
-    tr.innerHTML = `<td class="mono">${id}</td><td>${tgt}</td><td>${band(score).label}</td><td class="mono">${digest.slice(0,12)}…${digest.slice(-6)}</td>`;
-    log.prepend(tr);
-
-    status.textContent = 'Análisis completado. Propuesta y trazabilidad generadas.';
-    exportBtn.disabled = false;
-    exportBtn.onclick = () => exportJSON({traceId:id, target:tgt, score, risk:band(score).label, hash:digest, input:txt, proposal:proposal.textContent, ts:new Date().toISOString()});
-  });
-
-  function exportJSON(obj){
-    const blob = new Blob([JSON.stringify(obj,null,2)], {type:'application/json'});
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = `${obj.traceId}.json`;
-    a.click();
-    URL.revokeObjectURL(a.href);
-  }
+run.addEventListener("click",async()=>{
+ const tgt=jur.value,txt=clause.value.trim()||"This Agreement shall be governed by the laws of Florida. Exclusive jurisdiction outside Florida.";
+ const rules=RULES[tgt];jurOut.textContent=tgt;
+ const score=analyze(txt,rules);const[bandLbl,cls]=riskBand(score);
+ scoreBox.innerHTML="";scoreBox.appendChild(chip(`Risk ${bandLbl} (${score}/100)`,cls));
+ highlight.innerHTML=highlightTxt(txt,rules);
+ proposal.textContent=/governed by the laws/i.test(txt)? "Clause generally consistent. Maintain venue specificity.":rules.template;
+ const digest=await sha256(tgt+txt+proposal.textContent+score);
+ logRow(traceId(),tgt,bandLbl,digest);
+ status.textContent="Analysis complete — clause evaluated and trace recorded.";
+});
 </script>
 </body>
 </html>
