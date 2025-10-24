@@ -9,65 +9,77 @@
 </head>
 
 <body>
+  <!-- ===== Navigation ===== -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">LawTech System</div>
+      <ul class="nav-links">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#workflow">Workflow</a></li>
+        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#metrics">Metrics</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== Hero Section ===== -->
   <header class="hero">
     <h1>Intelligent Contextual Legal Verification System</h1>
-    <p class="subtitle">Developed by <strong>Eduardo Luis Espinal de Aza, Esq.</strong><br>Version 1.0 · October 2025</p>
-    <div class="buttons">
-      <button class="btn" onclick="translatePage()">🌐 Translate</button>
-      <button class="btn" onclick="sharePage()">🔗 Share</button>
-    </div>
+    <p class="subtitle">
+      Developed by <strong>Eduardo Luis Espinal de Aza, Esq.</strong><br>
+      A Legal-Tech Demonstrative Framework for AI-Driven Regulatory Compliance
+    </p>
   </header>
 
+  <!-- ===== Main Content ===== -->
   <main>
-    <section class="section">
+    <section id="overview" class="section">
       <h2>Purpose & Overview</h2>
-      <p>This project demonstrates a conceptual AI-driven framework for intelligent legal verification, clause adaptation, and compliance automation.</p>
+      <p>
+        This project proposes an intelligent framework to automate legal document verification
+        and compliance across jurisdictions. It enhances transparency, accelerates review cycles,
+        and promotes consistency through contextual reasoning and normative adaptation.
+      </p>
       <img src="assets/cover.svg" alt="Concept Overview" class="diagram">
     </section>
 
-    <section class="section">
+    <section id="workflow" class="section">
       <h2>System Workflow</h2>
-      <p>Core process: <strong>Document Ingest → Contextual Reasoning → Normative Adaptation → Traceability / Audit.</strong></p>
+      <p>
+        The process follows a structured path: <strong>Document Ingest → Contextual Reasoning →
+        Normative Adaptation → Traceability & Audit</strong>, ensuring verifiable and explainable outputs.
+      </p>
       <img src="assets/flow.svg" alt="System Flow Diagram" class="diagram">
     </section>
 
-    <section class="section">
+    <section id="architecture" class="section">
       <h2>System Architecture</h2>
       <img src="assets/architecture.svg" alt="Architecture Diagram" class="diagram">
     </section>
 
-    <section class="section">
+    <section id="metrics" class="section">
       <h2>Impact Metrics</h2>
+      <p>
+        Preliminary conceptual results indicate measurable improvement in legal compliance efficiency
+        through hybrid AI-driven automation and attorney supervision.
+      </p>
       <img src="assets/impact.svg" alt="Quantitative Metrics" class="diagram">
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p>
+        For academic or evidentiary inquiries, please contact<br>
+        <strong>Eduardo Luis Espinal de Aza</strong><br>
+        <em>Managing Partner — Espinal & Almonte Consultores Legales, SRL</em><br>
+        Santo Domingo, Dominican Republic
+      </p>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Eduardo Luis Espinal de Aza · Demonstrative Legal-Tech Prototype</p>
+    <p>© 2025 Eduardo Luis Espinal de Aza · Intelligent Contextual Legal Verification System</p>
   </footer>
-
-  <script>
-    function translatePage() {
-      const lang = navigator.language.startsWith("es") ? "en" : "es";
-      if (lang === "es") {
-        alert("🌐 Traducción al español próximamente disponible.");
-      } else {
-        alert("🌐 Translation to English active.");
-      }
-    }
-
-    function sharePage() {
-      if (navigator.share) {
-        navigator.share({
-          title: document.title,
-          text: "Explore the Intelligent Contextual Legal Verification System",
-          url: window.location.href
-        });
-      } else {
-        navigator.clipboard.writeText(window.location.href);
-        alert("🔗 Link copied to clipboard!");
-      }
-    }
-  </script>
 </body>
 </html>
