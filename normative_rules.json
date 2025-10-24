@@ -1,1 +1,130 @@
-
+{
+  "version": "1.0",
+  "updated": "2025-10-24",
+  "jurisdictions": [
+    {
+      "name": "Florida",
+      "code": "FL, U.S.",
+      "locale": "en-US",
+      "weights": { "must": 15, "avoid": -25, "generic_positive": 10, "generic_negative": -10 },
+      "clause_types": {
+        "governing_law": {
+          "must_keywords": ["Florida", "laws of Florida", "Florida law", "FL Statutes"],
+          "avoid_keywords": ["outside Florida", "laws of another state", "foreign law governs"],
+          "regex_must": ["\\b(State of )?Florida\\b", "\\blaws? of Florida\\b"],
+          "regex_avoid": ["exclusive jurisdiction outside Florida", "laws? of (?!Florida)[A-Z][a-z]+"],
+          "template": "This Agreement shall be governed by the laws of the State of Florida."
+        },
+        "venue_jurisdiction": {
+          "must_keywords": ["Miami-Dade County", "Miami", "state and federal courts in Florida"],
+          "avoid_keywords": ["exclusive jurisdiction outside Florida", "venue outside FL"],
+          "regex_must": ["exclusive (venue|jurisdiction).*(Miami|Miami-Dade|Florida)"],
+          "regex_avoid": ["exclusive (venue|jurisdiction).*(New York|California|Texas|outside Florida)"],
+          "template": "Venue and jurisdiction are exclusive to the state and federal courts located in Miami-Dade County, Florida."
+        },
+        "termination": {
+          "must_keywords": ["material breach", "written notice", "cure period", "30 days"],
+          "avoid_keywords": ["immediate termination without cause", "waiver of statutory rights"],
+          "regex_must": ["material breach", "(written )?notice", "(cure|remedy) period", "\\b30 days?\\b"],
+          "regex_avoid": ["immediate termination without cause", "waiver of .* rights"],
+          "template": "Either party may terminate this Agreement upon written notice for material breach not cured within thirty (30) days."
+        }
+      },
+      "compliance_checks": [
+        "Clause references Florida as governing law.",
+        "Exclusive venue within Florida is specified.",
+        "Termination clause includes notice and 30-day cure period."
+      ],
+      "suggestion_block": "This Agreement shall be governed by the laws of the State of Florida. Venue and jurisdiction are exclusive to the state and federal courts located in Miami-Dade County, Florida. Either party may terminate this Agreement upon written notice for material breach not cured within thirty (30) days.",
+      "sources": [
+        "Modeled references for demonstrative purposes (non-legal advice)."
+      ]
+    },
+    {
+      "name": "New York",
+      "code": "NY, U.S.",
+      "locale": "en-US",
+      "weights": { "must": 15, "avoid": -25, "generic_positive": 10, "generic_negative": -10 },
+      "clause_types": {
+        "governing_law": {
+          "must_keywords": ["New York", "laws of New York", "NY law"],
+          "avoid_keywords": ["outside New York", "laws of another state"],
+          "regex_must": ["\\b(State of )?New York\\b", "\\blaws? of New York\\b"],
+          "regex_avoid": ["exclusive (venue|jurisdiction).*(outside New York|California|Florida)"],
+          "template": "This Agreement shall be governed by the laws of the State of New York."
+        },
+        "venue_jurisdiction": {
+          "must_keywords": ["New York County", "Manhattan", "state and federal courts in New York"],
+          "avoid_keywords": ["exclusive jurisdiction outside New York"],
+          "regex_must": ["exclusive (venue|jurisdiction).*(New York County|Manhattan|New York)"],
+          "regex_avoid": ["exclusive (venue|jurisdiction).*(Miami|Los Angeles|outside New York)"],
+          "template": "Venue and jurisdiction are exclusive to the state and federal courts located in New York County, New York."
+        },
+        "termination": {
+          "must_keywords": ["material breach", "written notice", "cure period", "30 days"],
+          "avoid_keywords": ["immediate termination without cause"],
+          "regex_must": ["material breach", "(written )?notice", "(cure|remedy) period", "\\b30 days?\\b"],
+          "regex_avoid": ["immediate termination without cause"],
+          "template": "Either party may terminate this Agreement upon written notice for material breach not cured within thirty (30) days."
+        }
+      },
+      "compliance_checks": [
+        "Clause references New York as governing law.",
+        "Exclusive venue within New York is specified.",
+        "Termination clause includes notice and 30-day cure period."
+      ],
+      "suggestion_block": "This Agreement shall be governed by the laws of the State of New York. Venue and jurisdiction are exclusive to the state and federal courts located in New York County, New York. Either party may terminate this Agreement upon written notice for material breach not cured within thirty (30) days.",
+      "sources": [
+        "Modeled references for demonstrative purposes (non-legal advice)."
+      ]
+    },
+    {
+      "name": "California",
+      "code": "CA, U.S.",
+      "locale": "en-US",
+      "weights": { "must": 15, "avoid": -25, "generic_positive": 10, "generic_negative": -10 },
+      "clause_types": {
+        "governing_law": {
+          "must_keywords": ["California", "laws of California", "CA law"],
+          "avoid_keywords": ["outside California", "laws of another state"],
+          "regex_must": ["\\b(State of )?California\\b", "\\blaws? of California\\b"],
+          "regex_avoid": ["exclusive (venue|jurisdiction).*(outside California|New York|Florida)"],
+          "template": "This Agreement shall be governed by the laws of the State of California."
+        },
+        "venue_jurisdiction": {
+          "must_keywords": ["Los Angeles County", "Los Angeles", "state and federal courts in California"],
+          "avoid_keywords": ["exclusive jurisdiction outside California"],
+          "regex_must": ["exclusive (venue|jurisdiction).*(Los Angeles County|Los Angeles|California)"],
+          "regex_avoid": ["exclusive (venue|jurisdiction).*(New York|Miami|outside California)"],
+          "template": "Venue and jurisdiction are exclusive to the state and federal courts located in Los Angeles County, California."
+        },
+        "termination": {
+          "must_keywords": ["material breach", "written notice", "cure period", "30 days"],
+          "avoid_keywords": ["immediate termination without cause"],
+          "regex_must": ["material breach", "(written )?notice", "(cure|remedy) period", "\\b30 days?\\b"],
+          "regex_avoid": ["immediate termination without cause"],
+          "template": "Either party may terminate this Agreement upon written notice for material breach not cured within thirty (30) days."
+        }
+      },
+      "compliance_checks": [
+        "Clause references California as governing law.",
+        "Exclusive venue within California is specified.",
+        "Termination clause includes notice and 30-day cure period."
+      ],
+      "suggestion_block": "This Agreement shall be governed by the laws of the State of California. Venue and jurisdiction are exclusive to the state and federal courts located in Los Angeles County, California. Either party may terminate this Agreement upon written notice for material breach not cured within thirty (30) days.",
+      "sources": [
+        "Modeled references for demonstrative purposes (non-legal advice)."
+      ]
+    }
+  ],
+  "scoring": {
+    "base": 50,
+    "generic_positive_signals": ["governed by the laws of", "venue", "jurisdiction", "termination", "notice", "cure period"],
+    "generic_negative_signals": ["exclusive jurisdiction outside", "waiver of statutory rights"],
+    "caps": { "min": 0, "max": 100 }
+  },
+  "output": {
+    "fields": ["jurisdiction", "risk_score", "risk_band", "detected_terms", "suggested_text", "trace_hash", "trace_id", "timestamp_iso"]
+  },
+  "disclaimer": "Demonstrative dataset for ICLVS prototype. Not legal advice. For evidentiary and research purposes only."
+}
