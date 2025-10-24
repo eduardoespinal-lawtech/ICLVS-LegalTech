@@ -1,0 +1,12 @@
+NOTICE — Intellectual Property Rights
+
+The Intelligent Contextual Legal Verification System (ICLVS) and its related
+architectural concept, reasoning model, and normative adaptation process are
+protected under U.S. Patent Application No. 63/902,544 (2025).
+
+This repository is a demonstrative implementation for research and educational
+purposes. Reuse or reproduction of the underlying invention, conceptual
+framework, or derivative systems for commercial purposes requires express
+authorization from the inventor.
+
+All rights reserved under applicable intellectual property and patent laws.
