@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Intelligent Contextual Legal Verification System</title>
+  <title>Sistema Intelligent Contextual Legal Verification System (ICLVS)</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -18,9 +18,7 @@
         <li><a href="#workflow">Workflow</a></li>
         <li><a href="#architecture">Architecture</a></li>
         <li><a href="#metrics">Metrics</a></li>
-        <!-- NEW -->
         <li><a href="#pilot">Pilot Demo</a></li>
-        <!-- /NEW -->
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
@@ -39,6 +37,7 @@
 
   <!-- CONTENT -->
   <main class="container">
+    <!-- OVERVIEW -->
     <section id="overview" class="section">
       <h2>Purpose & Overview</h2>
       <p>
@@ -49,33 +48,35 @@
       <img src="assets/cover.svg" alt="Concept Overview" class="diagram" />
     </section>
 
+    <!-- WORKFLOW -->
     <section id="workflow" class="section">
       <h2>System Workflow</h2>
       <p>Core path: <strong>Document Ingest → Contextual Reasoning → Normative Adaptation → Traceability / Audit</strong>.</p>
       <img src="assets/flow.svg" alt="System Flow Diagram" class="diagram" />
     </section>
 
+    <!-- ARCHITECTURE -->
     <section id="architecture" class="section">
       <h2>System Architecture</h2>
       <img src="assets/architecture.svg" alt="Architecture Diagram" class="diagram" />
     </section>
 
+    <!-- METRICS -->
     <section id="metrics" class="section">
       <h2>Impact Metrics</h2>
       <img src="assets/impact.svg" alt="Quantitative Metrics" class="diagram" />
     </section>
 
-    <!-- NEW: PILOT DEMO -->
+    <!-- PILOT DEMO -->
     <section id="pilot" class="section">
       <h2>Pilot Demo</h2>
       <p>
-        Functional demonstration of ICLVS: <em>document analysis → contextual reasoning → normative adaptation → legal traceability → attorney review</em>.
+        Functional demonstration of the Intelligent Contextual Legal Verification System (ICLVS):
+        <em>document analysis → contextual reasoning → normative adaptation → legal traceability → attorney review.</em>
       </p>
 
-      <!-- Flow image (puedes reutilizar tu diagrama actual) -->
       <img src="assets/flow.svg" alt="ICLVS Pilot Workflow" class="diagram" />
 
-      <!-- Simulated case -->
       <div class="pilot-grid">
         <div class="pilot-card">
           <h3>Input (Simulated)</h3>
@@ -84,35 +85,45 @@
             <li><strong>Target Context:</strong> Florida, U.S.</li>
             <li><strong>Clause:</strong> Termination & Jurisdiction</li>
           </ul>
-          <p class="muted">Pilot uses modeled references for evidentiary purposes.</p>
-          <p class="muted">
-            Full metrics (PDF): <a href="assets/metrics.pdf" target="_blank" rel="noopener">assets/metrics.pdf</a>
-          </p>
+          <p class="muted">Pilot uses modeled references for demonstrative evidentiary purposes.</p>
+          <p class="muted">Full metrics: <a href="assets/metrics.pdf" target="_blank">Download PDF</a></p>
         </div>
+
         <div class="pilot-card">
           <h3>Output (ICLVS)</h3>
           <ol>
-            <li>Detects mismatch with FL statutory requirements.</li>
+            <li>Detects mismatch with Florida statutory requirements.</li>
             <li>Suggests compliant clause (modeled reference).</li>
             <li>Generates <em>Trace ID</em> and audit hash.</li>
           </ol>
-          <img src="assets/sample-clause.png" alt="Suggested compliant clause sample" class="diagram" />
+          <img src="assets/sample-clause.png" alt="Suggested compliant clause" class="diagram" />
         </div>
       </div>
 
-      <!-- KPIs -->
       <div class="kpi-row">
-        <div class="kpi"><div class="kpi-val">−35%</div><div class="kpi-lab">Review Time</div></div>
-        <div class="kpi"><div class="kpi-val">+42%</div><div class="kpi-lab">Clause Consistency</div></div>
-        <div class="kpi"><div class="kpi-val">+28%</div><div class="kpi-lab">Traceability</div></div>
+        <div class="kpi">
+          <div class="kpi-val">−35%</div>
+          <div class="kpi-lab">Review Time</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-val">+42%</div>
+          <div class="kpi-lab">Clause Consistency</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-val">+28%</div>
+          <div class="kpi-lab">Traceability</div>
+        </div>
       </div>
 
-      <!-- Traceability table -->
       <div class="trace-wrap">
-        <table class="trace-table" aria-label="Traceability demo">
+        <table class="trace-table">
           <thead>
             <tr>
-              <th>Trace ID</th><th>Document</th><th>Jurisdiction</th><th>Action</th><th>Hash</th>
+              <th>Trace ID</th>
+              <th>Document</th>
+              <th>Jurisdiction</th>
+              <th>Action</th>
+              <th>Hash</th>
             </tr>
           </thead>
           <tbody>
@@ -132,10 +143,9 @@
             </tr>
           </tbody>
         </table>
-        <p class="muted note">Evidentiary demo for USCIS (EB-2 NIW). Human-in-the-loop review required.</p>
+        <p class="muted note">Evidentiary demonstration for USCIS (EB-2 NIW). Human-in-the-loop review required.</p>
       </div>
     </section>
-    <!-- /NEW: PILOT DEMO -->
 
     <!-- CONTACT -->
     <section id="contact" class="section contact">
