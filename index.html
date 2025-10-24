@@ -7,8 +7,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <!-- NAV -->
+  <!-- NAVBAR -->
   <nav class="navbar">
     <div class="container nav-inner">
       <div class="brand">LawTech System</div>
@@ -27,13 +28,13 @@
     <div class="container">
       <h1>Intelligent Contextual Legal Verification System</h1>
       <p class="subtitle">
-        Developed by <strong>Eduardo Luis Espinal de Aza, Esq.</strong><br/>
+        Developed by <strong>Eduardo Luis Espinal de Aza, Esq.</strong><br />
         A Legal-Tech Demonstrative Framework for AI-Driven Regulatory Compliance
       </p>
     </div>
   </header>
 
-  <!-- MAIN -->
+  <!-- MAIN CONTENT -->
   <main class="container">
     <section id="overview" class="section">
       <h2>Purpose & Overview</h2>
@@ -63,13 +64,28 @@
       <img src="assets/impact.svg" alt="Quantitative Metrics" class="diagram" />
     </section>
 
-    <section id="contact" class="section">
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section contact-section">
       <h2>Contact</h2>
       <p>
-        For academic or evidentiary inquiries, please contact<br/>
-        <strong>Eduardo Luis Espinal de Aza</strong><br/>
-        Santo Domingo, Dominican Republic
+        For academic or evidentiary inquiries, please reach out via the contact form below.
       </p>
+
+      <form class="contact-form">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="Enter your name" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="you@example.com" />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" rows="4" placeholder="Write your message..."></textarea>
+        </div>
+        <button type="button" class="btn">Send Message</button>
+      </form>
     </section>
   </main>
 
