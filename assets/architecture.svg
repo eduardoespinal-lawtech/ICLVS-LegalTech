@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="960" height="540" viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg{fill:#fff}
+      .frame{fill:#fff;stroke:#E5E7EB;stroke-width:2}
+      .box{fill:#F8FAFC;stroke:#CBD5E1;stroke-width:2}
+      .title{font:700 18px/1.2 "Inter",ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial}
+      .subtitle{font:600 12px/1.2 "Inter",ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial; fill:#475569}
+      .label{font:600 13px/1.2 "Inter",ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial}
+      .muted{font:400 12px/1.2 "Inter",ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial; fill:#64748B}
+      .cap{font:400 12px/1.4 "Inter",ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial; fill:#334155}
+      .arrow{stroke:#94A3B8;stroke-width:2;marker-end:url(#m)}
+      .pill{fill:#EEF2FF;stroke:#C7D2FE}
+    </style>
+    <marker id="m" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#94A3B8"/>
+    </marker>
+  </defs>
+
+  <!-- marco -->
+  <rect x="20" y="20" width="920" height="500" rx="12" class="frame"/>
+  <text x="480" y="50" text-anchor="middle" class="title">System Architecture</text>
+  <text x="480" y="70" text-anchor="middle" class="subtitle">Ingest → Contextual reasoning → Normative adaptation → Traceability / audit</text>
+
+  <!-- LAYER 1 · INGEST -->
+  <rect x="60" y="100" width="840" height="80" rx="10" class="box"/>
+  <text x="80" y="125" class="label">Ingest</text>
+  <text x="80" y="144" class="muted">Secure upload · OCR/Parsing · Metadata extraction</text>
+
+  <!-- módulos ingest -->
+  <rect x="260" y="118" width="150" height="44" rx="8" class="pill"/>
+  <text x="335" y="144" text-anchor="middle" class="label">Document Intake</text>
+
+  <rect x="430" y="118" width="150" height="44" rx="8" class="pill"/>
+  <text x="505" y="144" text-anchor="middle" class="label">Normalization</text>
+
+  <rect x="600" y="118" width="150" height="44" rx="8" class="pill"/>
+  <text x="675" y="144" text-anchor="middle" class="label">Entity Extract</text>
+
+  <!-- arrow to L2 -->
+  <line x1="480" y1="180" x2="480" y2="205" class="arrow"/>
+
+  <!-- LAYER 2 · CONTEXTUAL REASONING -->
+  <rect x="60" y="205" width="840" height="100" rx="10" class="box"/>
+  <text x="80" y="230" class="label">Contextual reasoning</text>
+  <text x="80" y="249" class="muted">Jurisdiction detect · Similarity search · Risk/consistency checks (explainable)</text>
+
+  <rect x="180" y="223" width="170" height="56" rx="8" class="pill"/>
+  <text x="265" y="256" text-anchor="middle" class="label">Jurisdiction Classifier</text>
+
+  <rect x="390" y="223" width="170" height="56" rx="8" class="pill"/>
+  <text x="475" y="256" text-anchor="middle" class="label">Context Retrieval</text>
+
+  <rect x="600" y="223" width="170" height="56" rx="8" class="pill"/>
+  <text x="685" y="256" text-anchor="middle" class="label">Reasoning Engine</text>
+
+  <!-- data stores right side of reasoning -->
+  <ellipse cx="840" cy="235" rx="55" ry="20" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="2"/>
+  <rect x="785" y="235" width="110" height="40" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="2"/>
+  <ellipse cx="840" cy="275" rx="55" ry="20" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="840" y="245" text-anchor="middle" class="label">Legal Corpus</text>
+  <text x="840" y="268" text-anchor="middle" class="muted">statutes · case law</text>
+
+  <!-- arrows L2 -> L3 -->
+  <line x1="480" y1="305" x2="480" y2="330" class="arrow"/>
+
+  <!-- LAYER 3 · NORMATIVE ADAPTATION -->
+  <rect x="60" y="330" width="840" height="100" rx="10" class="box"/>
+  <text x="80" y="355" class="label">Normative adaptation</text>
+  <text x="80" y="374" class="muted">Clause selection &amp; drafting · Policy rules · Human-in-the-loop</text>
+
+  <rect x="170" y="348" width="180" height="56" rx="8" class="pill"/>
+  <text x="260" y="381" text-anchor="middle" class="label">Clause Recommender</text>
+
+  <rect x="380" y="348" width="180" height="56" rx="8" class="pill"/>
+  <text x="470" y="381" text-anchor="middle" class="label">Policy / Rules Engine</text>
+
+  <rect x="590" y="348" width="180" height="56" rx="8" class="pill"/>
+  <text x="680" y="371" text-anchor="middle" class="label">Attorney Review</text>
+  <text x="680" y="387" text-anchor="middle" class="muted">approval &amp; edits</text>
+
+  <!-- side store: Policy DB -->
+  <ellipse cx="120" cy="362" rx="55" ry="20" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="2"/>
+  <rect x="65" y="362" width="110" height="40" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="2"/>
+  <ellipse cx="120" cy="402" rx="55" ry="20" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="120" y="372" text-anchor="middle" class="label">Policy DB</text>
+  <text x="120" y="395" text-anchor="middle" class="muted">templates · rules</text>
+
+  <!-- arrows L3 -> L4 -->
+  <line x1="480" y1="430" x2="480" y2="455" class="arrow"/>
+
+  <!-- LAYER 4 · TRACEABILITY / AUDIT -->
+  <rect x="60" y="455" width="840" height="50" rx="10" class="box"/>
+  <text x="80" y="485" class="label">Traceability / audit</text>
+
+  <rect x="300" y="465" width="180" height="30" rx="8" class="pill"/>
+  <text x="390" y="485" text-anchor="middle" class="label">Provenance Record</text>
+
+  <rect x="500" y="465" width="180" height="30" rx="8" class="pill"/>
+  <text x="590" y="485" text-anchor="middle" class="label">Decision Log</text>
+
+  <!-- Audit ledger (right) -->
+  <ellipse cx="840" cy="470" rx="55" ry="18" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="2"/>
+  <rect x="785" y="470" width="110" height="30" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="2"/>
+  <ellipse cx="840" cy="500" rx="55" ry="18" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="840" y="480" text-anchor="middle" class="label">Audit Ledger</text>
+  <text x="840" y="498" text-anchor="middle" class="muted">WORM / hash-chain</text>
+
+  <!-- caption -->
+  <text x="480" y="520" text-anchor="middle" class="cap">
+    Figure 3 — Layered view of ingestion, contextual reasoning, normative adaptation, and traceability/audit.
+  </text>
+</svg>
