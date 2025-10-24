@@ -61,7 +61,7 @@ It performs:
 
 ## 🔗 References
 - **Patent:** *Intelligent Contextual Legal Verification System — USPTO Provisional 63/902,544 (2025)*  
-- **Demo:** [ICLVS Pilot Prototype](https://yourusername.github.io/ICLVS-pilot/)  
+- **Demo:** [[ICLVS Pilot Prototype](https://yourusername.github.io/ICLVS-pilot/)  ](https://eduardoespinal-lawtech.github.io/legal-verification-system/pilot.html)
 - **Publication:** SSRN (forthcoming)
 
 ---
