@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ICLVS · Prototipo Demostrativo</title>
+<style>
+  :root{--bg:#0f172a;--bg2:#1e3a8a;--line:#e5e7eb;--mut:#6b7280;--ok:#059669;--card:#fff;--ink:#0b1220;--accent:#0ea5e9}
+  *{box-sizing:border-box} html,body{margin:0} body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#f8fafc;color:var(--ink);line-height:1.55}
+  .hero{background:linear-gradient(180deg,var(--bg2),var(--bg));color:#fff;padding:40px 0 26px}
+  .container{max-width:980px;margin:0 auto;padding:0 20px}
+  h1{margin:0 0 6px;font-weight:800;font-size:clamp(24px,4.8vw,40px)}
+  .sub{margin:0;color:#dbe9ff;font-weight:600}
+  .badge{display:inline-block;margin-top:10px;background:rgba(255,255,255,.1);padding:6px 10px;border-radius:10px;font-weight:700}
+  main{padding:28px 0}
+  .grid{display:grid;gap:18px;grid-template-columns:1fr}
+  @media(min-width:900px){.grid{grid-template-columns:1fr 1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+  label{font-weight:600}
+  textarea,input,select{width:100%;border:1px solid var(--line);border-radius:10px;padding:10px;font:inherit;background:#fff}
+  .row{display:grid;gap:10px;margin:10px 0}
+  .btn{background:var(--accent);color:#fff;border:none;border-radius:10px;padding:10px 14px;font-weight:700;cursor:pointer}
+  .btn:disabled{opacity:.5;cursor:not-allowed}
+  .mut{color:var(--mut)} .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  .kpis{display:grid;gap:12px;grid-template-columns:repeat(3,1fr);margin-top:12px}
+  @media(max-width:720px){.kpis{grid-template-columns:1fr}}
+  .kpi{background:#f1f5f9;border:1px solid var(--line);border-radius:12px;text-align:center;padding:12px}
+  .kpi .v{font-weight:800;font-size:1.2rem}
+  table{width:100%;border-collapse:collapse;font-size:.95rem}
+  th,td{padding:9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  .ok{color:var(--ok);font-weight:700}
+  footer{padding:20px 0;color:var(--mut);border-top:1px solid var(--line);background:#fff;margin-top:22px}
+  .hint{font-size:.92rem}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="container">
+    <h1>ICLVS — Prototipo Demostrativo</h1>
+    <p class="sub">Verificación legal contextual · Adaptación normativa · Trazabilidad auditable</p>
+    <div class="badge">Interactive Demonstrative Prototype — Functional AI-Legal Verification Pilot</div>
+  </div>
+</header>
+
+<main class="container">
+  <div class="grid">
+    <!-- Entrada -->
+    <section class="card">
+      <h2>Entrada (simulada)</h2>
+      <div class="row">
+        <label for="jur">Jurisdicción destino</label>
+        <select id="jur">
+          <option value="FL, U.S.">Florida (U.S.)</option>
+          <option value="NY, U.S.">New York (U.S.)</option>
+          <option value="CA, U.S.">California (U.S.)</option>
+        </select>
+      </div>
+      <div class="row">
+        <label for="clause">Cláusula a verificar</label>
+        <textarea id="clause" rows="6" placeholder="Pegue aquí la cláusula de Terminación y Jurisdicción…"></textarea>
+      </div>
+      <div class="row">
+        <button id="run" class="btn">Run Demo</button>
+        <div class="mut hint">No se suben datos. La demo genera resultados locales y un hash demostrativo.</div>
+      </div>
+      <div class="kpis">
+        <div class="kpi"><div class="v">−35%</div><div class="mut">Review time</div></div>
+        <div class="kpi"><div class="v">+42%</div><div class="mut">Clause consistency</div></div>
+        <div class="kpi"><div class="v">+28%</div><div class="mut">Traceability</div></div>
+      </div>
+    </section>
+
+    <!-- Salida -->
+    <section class="card">
+      <h2>Salida (ICLVS)</h2>
+      <p id="status" class="mut">Ejecute la demo para obtener una propuesta de adaptación.</p>
+      <div id="suggest" style="display:none">
+        <p class="ok">✔ Propuesta compatible (<span id="jurOut">FL, U.S.</span>):</p>
+        <pre id="textOut" class="mono" style="white-space:pre-wrap;background:#fafafa;border:1px solid var(--line);padding:10px;border-radius:10px"></pre>
+      </div>
+      <h3 style="margin-top:12px">Trazabilidad (demo)</h3>
+      <div style="overflow:auto">
+        <table>
+          <thead>
+            <tr><th>Trace ID</th><th>Documento</th><th>Jurisdicción</th><th>Acción</th><th>Hash</th></tr>
+          </thead>
+          <tbody id="log">
+            <tr>
+              <td class="mono">ICLVS-2025-001</td>
+              <td>Service Contract (DO)</td>
+              <td>FL, U.S.</td>
+              <td>Clause adaptation</td>
+              <td class="mono">b9f2a4…7c1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mut hint">Evidentiary demonstration for USCIS (EB-2 NIW). Human-in-the-loop review required.</p>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="container">© 2025 ICLVS Legal-Tech · Demo sin backend</div>
+</footer>
+
+<script>
+  const $ = s => document.querySelector(s);
+  const run = $('#run'), jur = $('#jur'), clause = $('#clause');
+  const status = $('#status'), suggest = $('#suggest'), jurOut = $('#jurOut'), textOut = $('#textOut'), log = $('#log');
+
+  function traceId(){
+    const d=new Date();
+    return `ICLVS-${d.getFullYear()}${String(d.getMonth()+1).padStart(2,'0')}${String(d.getDate()).padStart(2,'0')}-${String(d.getHours()).padStart(2,'0')}${String(d.getMinutes()).padStart(2,'0')}${String(d.getSeconds()).padStart(2,'0')}`;
+  }
+  function hashDemo(){
+    return (Math.random().toString(16).slice(2,8)+'…'+Math.random().toString(16).slice(2,5)).toLowerCase();
+  }
+  function suggestClause(target, text){
+    // Heurística mínima de demostración (no legal advice)
+    const safe = {
+      "FL, U.S.": "Any dispute arising out of this Agreement shall be governed by the laws of the State of Florida, and the parties submit to the exclusive jurisdiction of the state and federal courts located in Miami-Dade County, Florida.",
+      "NY, U.S.": "This Agreement shall be governed by the laws of the State of New York; venue and jurisdiction are exclusive to the state and federal courts located in New York County, New York.",
+      "CA, U.S.": "This Agreement is governed by the laws of the State of California; venue and jurisdiction are exclusive to the state and federal courts located in Los Angeles County, California."
+    };
+    const base = safe[target] || safe["FL, U.S."];
+    // Si el texto menciona terminación, agrega párrafo modelo
+    const termination = /\btermina|termination|rescind/i.test(text) ?
+      "\nTermination: Either party may terminate upon written notice for material breach not cured within 30 days." : "";
+    return base + termination;
+  }
+
+  run.addEventListener('click', ()=>{
+    const tgt = jur.value;
+    const txt = clause.value.trim();
+    const id = traceId();
+    const h = hashDemo();
+
+    const proposal = suggestClause(tgt, txt);
+    jurOut.textContent = tgt;
+    textOut.textContent = proposal;
+    suggest.style.display = 'block';
+    status.textContent = 'Consistencia verificada y propuesta generada.';
+
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td class="mono">${id}</td>
+      <td>Service Contract (DO)</td>
+      <td>${tgt}</td>
+      <td>Clause adaptation</td>
+      <td class="mono">${h}</td>`;
+    log.prepend(tr);
+
+    run.textContent = 'Run Demo (OK)';
+    setTimeout(()=>run.textContent='Run Demo', 1500);
+  });
+</script>
+</body>
+</html>
