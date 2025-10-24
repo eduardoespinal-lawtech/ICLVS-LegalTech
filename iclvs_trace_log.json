@@ -1,0 +1,10 @@
+{
+  "trace_id": "ICLVS-20251024-223045",
+  "jurisdiction": "Florida",
+  "risk_score": 85,
+  "risk_band": "Low",
+  "detected_terms": ["Florida", "Miami-Dade County", "material breach"],
+  "suggested_text": "This Agreement shall be governed by the laws of the State of Florida. Venue and jurisdiction are exclusive to the state and federal courts located in Miami-Dade County, Florida. Either party may terminate this Agreement upon written notice for material breach not cured within thirty (30) days.",
+  "trace_hash": "ef56c0a7a19bce1a3e1e4a938dc86fcb25f70e6b8cd9f1332db927412ff72d62",
+  "timestamp_iso": "2025-10-24T22:30:45Z"
+}
