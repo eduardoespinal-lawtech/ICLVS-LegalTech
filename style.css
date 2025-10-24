@@ -1,126 +1,62 @@
-/* ===== General ===== */
-body {
-  font-family: 'Inter', sans-serif;
-  margin: 0;
-  background: #f9fbfd;
-  color: #1e293b;
-  text-align: justify;
-  line-height: 1.7;
+/* RESET + BASE */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:'Inter',system-ui,Segoe UI,Roboto,Arial,sans-serif;
+  color:#0f172a; background:#f7fafc;
+}
+.container{max-width:1100px; margin:0 auto; padding:0 20px}
+
+/* NAVBAR */
+.navbar{
+  position:sticky; top:0; z-index:50;
+  background:#0f172a; color:#e2e8f0;
+  box-shadow:0 2px 8px rgba(0,0,0,.12);
+}
+.nav-inner{display:flex; align-items:center; justify-content:space-between; min-height:56px}
+.brand{font-weight:800; letter-spacing:.3px}
+.nav-links{display:flex; gap:18px; list-style:none; margin:0; padding:0}
+.nav-links a{
+  color:#e2e8f0; text-decoration:none; font-weight:600; padding:8px 6px; border-radius:8px;
+}
+.nav-links a:hover{background:#1f2937; color:#93c5fd}
+
+/* HERO */
+.hero{
+  background:linear-gradient(135deg,#2563eb,#1e3a8a);
+  color:#fff; text-align:center; padding:64px 0 48px;
+}
+.hero h1{margin:0 0 10px; font-size:clamp(28px,4.5vw,44px); font-weight:800}
+.subtitle{opacity:.92; line-height:1.6}
+
+/* SECTIONS */
+.section{padding:56px 0; border-bottom:1px solid #e5e7eb}
+.section:last-of-type{border-bottom:0}
+.section h2{
+  text-align:center; margin:0 0 14px; font-size:clamp(20px,2.8vw,28px); font-weight:800;
+  color:#0b1324;
+}
+.section p{
+  margin:0 auto 18px; max-width:900px;
+  text-align:justify; color:#334155; line-height:1.8;
 }
 
-/* ===== Navigation Bar ===== */
-.navbar {
-  background-color: #0f172a;
-  padding: 0.8rem 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+/* IMAGES */
+.diagram{
+  display:block; margin:18px auto 0;
+  width:100%; max-width:860px; background:#fff;
+  border:1px solid #e2e8f0; border-radius:14px;
+  box-shadow:0 6px 16px rgba(0,0,0,.07);
+  transition:transform .25s ease, box-shadow .25s ease;
 }
+.diagram:hover{transform:scale(1.01); box-shadow:0 10px 24px rgba(0,0,0,.12)}
 
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
+/* FOOTER */
+.footer{background:#0f172a; color:#e2e8f0; text-align:center; padding:18px 0}
 
-.nav-logo {
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 1.2rem;
-  letter-spacing: 0.5px;
-}
-
-.nav-links {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 1.2rem;
-}
-
-.nav-links a {
-  color: #e2e8f0;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-.nav-links a:hover {
-  color: #60a5fa;
-}
-
-/* ===== Hero ===== */
-.hero {
-  background: linear-gradient(135deg, #2563eb, #1e3a8a);
-  color: #fff;
-  text-align: center;
-  padding: 4rem 1rem 3rem;
-}
-
-.hero h1 {
-  font-size: 2.2rem;
-  font-weight: 800;
-  margin: 0;
-}
-
-.hero .subtitle {
-  margin-top: 0.8rem;
-  font-size: 1.05rem;
-  opacity: 0.9;
-  line-height: 1.5;
-}
-
-/* ===== Sections ===== */
-.section {
-  max-width: 900px;
-  margin: 4rem auto;
-  padding: 0 1.5rem;
-  text-align: justify;
-}
-
-.section h2 {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #0f172a;
-  margin-bottom: 0.8rem;
-  text-align: center;
-}
-
-.section p {
-  font-size: 1rem;
-  color: #334155;
-  margin-bottom: 1.4rem;
-}
-
-/* ===== Images / Diagrams ===== */
-.diagram {
-  display: block;
-  margin: 1.5rem auto;
-  width: 100%;
-  max-width: 800px;
-  border-radius: 12px;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.diagram:hover {
-  transform: scale(1.01);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-}
-
-/* ===== Footer ===== */
-footer {
-  background-color: #0f172a;
-  color: #e2e8f0;
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-  margin-top: 3rem;
-  letter-spacing: 0.3px;
+/* SMALL SCREENS */
+@media (max-width:720px){
+  .nav-links{gap:10px; flex-wrap:wrap; justify-content:flex-end}
+  .diagram{max-width:100%}
 }
