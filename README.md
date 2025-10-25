@@ -66,7 +66,7 @@ Lawyer · Legal-Tech Researcher · System Architect
 ## 📚 References
 - **Patent:** *Intelligent Contextual Legal Verification System — USPTO Provisional 63/902,544 (2025)*  
 - **Demo:** [ICLVS Pilot Prototype](https://eduardoespinal-lawtech.github.io/ICLVS-LegalTech/)  
-- **Publication:** [Legal Automation & AI Governance Papers](https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=8686960)
+- **Publication:** *Legal Automation & AI Governance Papers* — [DOI: 10.2139/ssrn.5646790](https://dx.doi.org/10.2139/ssrn.5646790)
 
 ---
 
