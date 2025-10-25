@@ -59,7 +59,7 @@ It performs:
 **Eduardo Luis Espinal de Aza**  
 Lawyer · Legal-Tech Researcher · System Architect  
 📍 Santo Domingo, Dominican Republic  
-🔗 [SSRN Profile](https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=8686960) · [GitHub](https://github.com/eduardoespinal-lawtech) · [ORCID](https://orcid.org/)
+🔗 [ORCID: 0009-0004-3743-1477](https://orcid.org/0009-0004-3743-1477) · [SSRN Profile](https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=8686960) · [GitHub](https://github.com/eduardoespinal-lawtech)
 
 ---
 
