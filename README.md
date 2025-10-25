@@ -7,8 +7,8 @@
 
 ## 🧠 About
 
-I am a legal researcher and system architect specialized in **AI-driven regulatory compliance** and **contextual legal automation**.  
-My work focuses on designing frameworks that merge **normative reasoning**, **algorithmic traceability**, and **cross-jurisdictional clause adaptation** within intelligent verification systems.
+I am a **lawyer and Legal-Tech researcher** specialized in **AI-driven regulatory compliance** and **contextual legal automation**.  
+My work focuses on integrating **normative reasoning**, **machine transparency**, and **cross-jurisdictional clause adaptation** into intelligent legal verification systems.
 
 The ongoing project — **Intelligent Contextual Legal Verification System (ICLVS)** — demonstrates how artificial intelligence can interpret, evaluate, and adapt contractual clauses according to jurisdictional and regulatory contexts.  
 It provides a *functional and auditable model* for real-time compliance validation, document transparency, and machine-assisted legal consistency.
@@ -54,16 +54,21 @@ It performs:
 
 ---
 
-## 📚 Keywords
-`Artificial Intelligence` · `Regulatory Compliance` · `RegTech` · `Digital Governance` · `Legal Automation` · `Traceability` · `Explainable AI` · `Cross-Jurisdictional Adaptation`
+## 👤 Author Information
+
+**Eduardo Luis Espinal de Aza**  
+Lawyer · Legal-Tech Researcher · System Architect  
+📍 Santo Domingo, Dominican Republic  
+🔗 [SSRN Profile](https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=8686960) · [GitHub](https://github.com/eduardoespinal-lawtech) · [ORCID](https://orcid.org/)
 
 ---
 
-## 🔗 References
+## 📚 References
 - **Patent:** *Intelligent Contextual Legal Verification System — USPTO Provisional 63/902,544 (2025)*  
-- **Demo:** [ICLVS Pilot Prototype](https://yourusername.github.io/ICLVS-pilot/) | [Legal Verification System](https://eduardoespinal-lawtech.github.io/legal-verification-system/pilot.html)  
-- **Publication:** [Publications of the Author](https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=8686960)
+- **Demo:** [ICLVS Pilot Prototype](https://eduardoespinal-lawtech.github.io/ICLVS-LegalTech/)  
+- **Publication:** [Legal Automation & AI Governance Papers](https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=8686960)
 
 ---
 
-© 2025 · Legal-Tech Research Initiative — All rights reserved.
+© 2025 · Eduardo Luis Espinal de Aza — Legal-Tech Research Initiative.  
+All rights reserved.
