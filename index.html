@@ -1,276 +1,298 @@
 <!doctype html>
+<!--
+ICLVS — Intelligent Contextual Legal Verification System
+Author: Eduardo Luis Espinal de Aza
+Role: Abogado · LegalTech Developer
+Purpose: Evidencia técnica y conceptual para peticiones de visa EB-2 NIW (AI-driven Legal Compliance Framework)
+Date: 2025-10-27
+Repository: REPLACE_WITH_REPO_URL
+CommitSHA: REPLACE_WITH_COMMIT_SHA
+-->
 <html lang="es">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ICLVS — Intelligent Contextual Legal Verification System</title>
-  <meta name="description" content="Landing técnica y imprimible del prototipo ICLVS: ingestión, razonamiento contextual, adaptación normativa y trazabilidad." />
-  <meta name="color-scheme" content="light only" />
+  <meta name="description" content="ICLVS — Prototipo técnico imprimible para verificación legal contextual: ingestión, razonamiento, adaptación normativa y trazabilidad." />
+  <meta name="author" content="Eduardo Luis Espinal de Aza — Abogado & Desarrollador LegalTech (República Dominicana)" />
+  <link rel="canonical" href="https://REPLACE_WITH_GITHUB_URL/" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="ICLVS — Intelligent Contextual Legal Verification System" />
+  <meta property="og:description" content="Prototipo técnico imprimible para verificación legal contextual, adaptación normativa y trazabilidad." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://REPLACE_WITH_GITHUB_URL/" />
+  <meta name="twitter:card" content="summary" />
+
+  <!-- JSON-LD (schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "ICLVS — Intelligent Contextual Legal Verification System",
+    "applicationCategory": "LegalTech",
+    "operatingSystem": "Any",
+    "description": "Prototipo técnico imprimible para verificación legal contextual, adaptación normativa y trazabilidad.",
+    "author": {
+      "@type": "Person",
+      "name": "Eduardo Luis Espinal de Aza",
+      "jobTitle": "Abogado · LegalTech Developer",
+      "sameAs": [
+        "https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=8686960"
+      ]
+    },
+    "url": "https://REPLACE_WITH_GITHUB_URL/",
+    "datePublished": "2025-10-27",
+    "dateModified": "2025-10-27",
+    "softwareVersion": "0.1.0",
+    "license": "https://opensource.org/licenses/MIT"
+  }
+  </script>
+
   <style>
     :root{
-      --bg:#fff; --fg:#0b1220; --muted:#5b677a; --line:#e6e9ef; --primary:#0a4bd1;
-      --ink:#0a2e7a; --chip:#eef3ff; --shadow:0 6px 20px rgba(17,24,39,.06);
-      --maxw:1024px; --radius:14px;
+      --bg:#fff; --fg:#0b1220; --muted:#5b677a; --line:#e6e9ef; --accent:#0a4bd1;
+      --maxw:980px; --radius:12px;
     }
-    html,body{background:var(--bg);color:var(--fg);margin:0}
-    body{font:16px/1.55 ui-sans-serif,-apple-system,Segoe UI,Roboto,Helvetica Neue,Arial}
-    .container{max-width:var(--maxw);margin:0 auto;padding:24px}
-    h1,h2,h3{line-height:1.15;margin:.2em 0 .4em}
-    h1{font-size:clamp(1.7rem,2.1vw+1rem,2.4rem);letter-spacing:-.01em}
-    h2{font-size:clamp(1.2rem,1.1vw+1rem,1.6rem)}
-    p{margin:.4em 0 1em}
-    a{color:var(--primary);text-decoration:none}
-    a:hover{text-decoration:underline}
-    hr{border:0;border-top:1px solid var(--line);margin:28px 0}
-    .grid{display:grid;gap:18px}
-    @media(min-width:880px){.grid.cols-2{grid-template-columns:1.2fr 1fr}}
-    @media(min-width:880px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}}
-    .card{border:1px solid var(--line);border-radius:var(--radius);background:#fff;box-shadow:var(--shadow);padding:18px}
-    .badge{display:inline-block;background:var(--chip);color:var(--ink);padding:6px 10px;border-radius:999px;font-weight:600;font-size:.85rem;border:1px solid #dfe7ff}
-    .tiny{font-size:.92rem;color:var(--muted)}
-    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-    .btn{display:inline-block;border-radius:10px;padding:9px 12px;font-weight:700;border:1px solid var(--line);background:#fff}
-    .btn.primary{background:var(--primary);color:#fff;border-color:var(--primary)}
-    .btn:hover{filter:brightness(.98)}
-    table{width:100%;border-collapse:collapse;border:1px solid var(--line);border-radius:12px;overflow:hidden}
-    th,td{padding:10px 12px;border-top:1px solid var(--line);text-align:left}
-    th{background:#f7f8fb;font-weight:700}
-    .svgwrap{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#f8faff}
-    header.hero{padding:28px 0;border-bottom:1px solid var(--line)}
-    footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);font-size:.95rem}
-    code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;background:#fafafa;border:1px solid var(--line)}
-    code{padding:.1em .35em;border-radius:6px}
-    pre{padding:14px;border-radius:12px;overflow:auto}
+    html,body{background:var(--bg);color:var(--fg);margin:0;padding:0;font-family:Inter,ui-sans-serif,-apple-system,Segoe UI,Roboto,Helvetica,Arial;}
+    .container{max-width:var(--maxw);margin:0 auto;padding:22px}
+    header{border-bottom:1px solid var(--line);padding:18px 0 20px}
+    h1{font-size:1.6rem;margin:.1rem 0 .3rem}
+    h2{font-size:1.1rem;margin:.3rem 0}
+    p{margin:.3rem 0 1rem;color:var(--muted)}
+    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:#f1f6ff;color:var(--accent);font-weight:700;border:1px solid #d6e6ff}
+    .actions{margin-top:10px}
+    .btn{display:inline-block;padding:8px 12px;border-radius:10px;border:1px solid var(--line);background:#fff;font-weight:700;margin-right:8px}
+    .btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+    .card{border:1px solid var(--line);border-radius:var(--radius);padding:14px;margin-top:12px}
+    table{width:100%;border-collapse:collapse;margin-top:8px}
+    th,td{padding:8px;border-top:1px solid var(--line);text-align:left;font-size:0.95rem}
+    th{background:#f8fbff;font-weight:700}
+    .svgwrap{border:1px solid var(--line);border-radius:10px;background:#fbfeff;padding:10px;margin-top:10px}
+    pre{background:#fafafa;border:1px solid var(--line);padding:10px;border-radius:8px;overflow:auto;font-size:0.92rem}
+    code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;background:#fff;padding:2px 6px;border-radius:6px;border:1px solid var(--line)}
 
-    /* impresión */
+    /* print-specific */
     @media print{
       *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-      a{text-decoration:underline;color:#000}
-      .actions,.print-hide{display:none!important}
-      body{font-size:12pt}
-      .container{max-width:none;padding:0}
+      .actions,.no-print{display:none!important}
+      body::before{
+        content: "ANEXO PROBATORIO — ICLVS v0.1.0 · Autor: Eduardo Luis Espinal de Aza";
+        position:fixed; top:10mm; left:14mm; font-weight:700;
+      }
       .card{box-shadow:none;border:1pt solid #000}
       .badge{border:1pt solid #000;background:#fff;color:#000}
+      a{text-decoration:underline;color:#000}
       @page{size:A4;margin:14mm}
     }
+
+    /* responsive */
+    @media (min-width:860px){
+      .grid-2{display:grid;grid-template-columns:1fr 420px;gap:18px}
+      .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    }
+    .tiny{font-size:0.93rem;color:var(--muted)}
   </style>
 </head>
 <body>
-  <!-- HERO -->
-  <header class="hero">
+  <header>
     <div class="container">
-      <span class="badge">ICLVS · Prototipo técnico (single-file · print-ready)</span>
-      <h1>ICLVS — Intelligent Contextual Legal Verification System</h1>
-      <p class="tiny" style="max-width:780px">
-        Pipeline técnico para verificación legal contextual: <strong>Ingestión</strong> → <strong>Razonamiento</strong> → <strong>Adaptación normativa</strong> → <strong>Trazabilidad</strong>.
-      </p>
-      <div class="actions print-hide">
-        <a class="btn primary" href="#arquitectura">Arquitectura</a>
-        <a class="btn" href="#pipeline">Pipeline</a>
-        <a class="btn" href="#metricas">Gráficas</a>
-        <button class="btn" onclick="window.print()">Imprimir</button>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <div>
+          <span class="badge">ICLVS · Prototipo técnico — print-ready</span>
+          <h1>ICLVS — Intelligent Contextual Legal Verification System</h1>
+          <p class="tiny">Pipeline reproducible para verificación legal contextual: <strong>Ingestión → Razonamiento → Adaptación normativa → Trazabilidad</strong>. Archivo único para GitHub Pages.</p>
+        </div>
+        <div class="actions no-print">
+          <a class="btn primary" href="#evidencias">Proveniencia</a>
+          <a class="btn" href="#metricas">Gráficas</a>
+          <button class="btn" onclick="window.print()">Imprimir</button>
+        </div>
       </div>
     </div>
   </header>
 
-  <main>
-    <!-- RESUMEN -->
-    <section class="container" id="resumen" style="padding-top:22px">
-      <div class="grid cols-2">
-        <div>
-          <h2>Resumen técnico</h2>
-          <p>
-            El prototipo ICLVS evalúa cláusulas/requisitos contra marcos legales aplicables y emite salidas auditables
-            con <em>mapping</em> de reglas, motivos y referencias normativas. Diseño minimal para revisión, auditoría y exportación a PDF.
-          </p>
-          <ul class="tiny" style="margin:.2rem 0 0 18px">
-            <li>Archivo único (<code>index.html</code>), sin dependencias.</li>
-            <li>SVG embebidos: nítidos al imprimir.</li>
-            <li>Estilos de impresión con márgenes A4.</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3 style="margin-top:0">Especificaciones</h3>
-          <table>
-            <tbody>
-              <tr><td><strong>Formato</strong></td><td>HTML5 (single file)</td></tr>
-              <tr><td><strong>Diagrama</strong></td><td>SVG inline (vectorial)</td></tr>
-              <tr><td><strong>Interacción</strong></td><td>Estática (no requiere JS)</td></tr>
-              <tr><td><strong>Impresión</strong></td><td>CSS @media print · A4</td></tr>
-            </tbody>
-          </table>
-        </div>
+  <main class="container" id="main">
+    <!-- SUMMARY -->
+    <section class="card" id="resumen">
+      <h2>Resumen técnico (versión ejecutable: 0.1.0)</h2>
+      <p class="tiny">ICLVS propone un flujo verificable donde cláusulas y requisitos se mapean a marcos legales aplicables. El prototipo aquí es conceptual y técnico — incluye diagramas vectoriales, matriz de trazabilidad y métricas de ejemplo. En producción, el motor asociaría reglas a evidencia y generaría salidas auditables.</p>
+      <div style="margin-top:8px">
+        <strong>DOI / SSRN:</strong> <a href="https://ssrn.com/abstract=5646790">10.2139/ssrn.5646790</a> — Perfil autor: <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=8686960">SSRN (Espinal De Aza)</a>
       </div>
     </section>
 
-    <!-- ARQUITECTURA -->
-    <section class="container" id="arquitectura">
+    <!-- ARCHITECTURE -->
+    <section class="card" id="arquitectura" style="margin-top:18px">
       <h2>Arquitectura conceptual</h2>
-      <div class="svgwrap">
-        <!-- Diagrama de arquitectura (bloques + flechas) -->
+      <div class="svgwrap" aria-hidden="false">
+        <!-- SVG vectorial: bloques y flujo -->
         <svg viewBox="0 0 1100 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arquitectura ICLVS">
           <defs>
-            <linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#d8e6ff"/><stop offset="1" stop-color="#f2f6ff"/></linearGradient>
-            <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
-              <path d="M0,0 L0,6 L9,3 z" fill="#0a4bd1"/>
-            </marker>
+            <linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#e9f2ff"/><stop offset="1" stop-color="#f9fbff"/></linearGradient>
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#0a4bd1"/></marker>
           </defs>
           <rect x="0" y="0" width="1100" height="380" fill="url(#g1)"/>
-          <g fill="#fff" stroke="#b9c7e6" stroke-width="2">
-            <rect x="40" y="60" width="240" height="120" rx="14"/>
-            <rect x="320" y="60" width="240" height="120" rx="14"/>
-            <rect x="600" y="60" width="240" height="120" rx="14"/>
-            <rect x="880" y="60" width="180" height="120" rx="14"/>
-            <rect x="180" y="220" width="320" height="110" rx="14"/>
-            <rect x="540" y="220" width="320" height="110" rx="14"/>
+          <g fill="#fff" stroke="#cbdcf0" stroke-width="1.8">
+            <rect x="40" y="60" width="240" height="110" rx="10"/>
+            <rect x="320" y="60" width="240" height="110" rx="10"/>
+            <rect x="600" y="60" width="240" height="110" rx="10"/>
+            <rect x="880" y="60" width="180" height="110" rx="10"/>
+            <rect x="180" y="200" width="320" height="110" rx="10"/>
+            <rect x="540" y="200" width="320" height="110" rx="10"/>
           </g>
-          <g stroke="#0a4bd1" stroke-width="3" fill="none" marker-end="url(#arrow)">
-            <line x1="280" y1="120" x2="320" y2="120"/>
-            <line x1="560" y1="120" x2="600" y2="120"/>
-            <line x1="840" y1="120" x2="880" y2="120"/>
-            <line x1="260" y1="220" x2="260" y2="180"/>
-            <line x1="740" y1="220" x2="740" y2="180"/>
+          <g stroke="#0a4bd1" stroke-width="2.6" fill="none" marker-end="url(#arrow)">
+            <line x1="280" y1="115" x2="320" y2="115"/>
+            <line x1="560" y1="115" x2="600" y2="115"/>
+            <line x1="840" y1="115" x2="880" y2="115"/>
+            <line x1="260" y1="200" x2="260" y2="170"/>
+            <line x1="740" y1="200" x2="740" y2="170"/>
           </g>
-          <g font-family="ui-sans-serif, Segoe UI, Roboto" fill="#0b1220" font-size="18" text-anchor="middle">
-            <text x="160" y="120">Ingestión</text><text x="160" y="146" fill="#5b677a">Docs + Jurisdicciones</text>
-            <text x="440" y="120">Razonamiento</text><text x="440" y="146" fill="#5b677a">Contextual</text>
-            <text x="720" y="120">Adaptación</text><text x="720" y="146" fill="#5b677a">Normativa</text>
-            <text x="970" y="120">Trazabilidad</text><text x="970" y="146" fill="#5b677a">Bitácora & Evidencia</text>
-            <text x="340" y="270">Explicaciones</text><text x="340" y="296" fill="#5b677a">Motivos & reglas</text>
-            <text x="700" y="270">Reportes</text><text x="700" y="296" fill="#5b677a">Descargas</text>
+          <g font-family="ui-sans-serif,Segoe UI,Roboto" fill="#0b1220" font-size="16" text-anchor="middle">
+            <text x="160" y="100">Ingestión</text><text x="160" y="124" fill="#5b677a">OCR · Parsers · Metadatos</text>
+            <text x="440" y="100">Razonamiento</text><text x="440" y="124" fill="#5b677a">Mapping semántico · NER</text>
+            <text x="720" y="100">Adaptación</text><text x="720" y="124" fill="#5b677a">Reglas · Transformación</text>
+            <text x="970" y="100">Trazabilidad</text><text x="970" y="124" fill="#5b677a">Bitácora · Auditoría</text>
+            <text x="340" y="245">Explicaciones</text><text x="340" y="269" fill="#5b677a">Motivos · Reglas aplicadas</text>
+            <text x="700" y="245">Reportes</text><text x="700" y="269" fill="#5b677a">PDF · Anexos</text>
           </g>
         </svg>
       </div>
-      <p class="tiny" style="margin-top:10px">Vector embebido para impresión nítida (A4).</p>
+      <p class="tiny" style="margin-top:8px">SVG embebido: nítido al imprimir (A4). Mantener diagramas vectoriales para evidencias.</p>
     </section>
 
-    <!-- PIPELINE DETALLADO -->
-    <section class="container" id="pipeline">
-      <h2>Pipeline operacional</h2>
-      <div class="card">
-        <table>
-          <thead>
-            <tr><th>Fase</th><th>Entrada</th><th>Proceso</th><th>Salida</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>F1 Ingestión</td><td>Cláusulas, metadatos, jurisdicción</td><td>Normalización y etiquetado</td><td>Dataset estructurado</td></tr>
-            <tr><td>F2 Razonamiento</td><td>Dataset estructurado</td><td>Mapeo semántico + reglas</td><td>Requisitos aplicables</td></tr>
-            <tr><td>F3 Adaptación</td><td>Requisitos aplicables</td><td>Transformación de cláusulas</td><td>Redacciones compatibles</td></tr>
-            <tr><td>F4 Trazabilidad</td><td>Decisiones</td><td>Bitácora, motivos, referencias</td><td>Explicaciones auditables</td></tr>
-            <tr><td>F5 Evidencia</td><td>Explicaciones</td><td>Consolidación de anexos</td><td>Reporte imprimible</td></tr>
-          </tbody>
-        </table>
-      </div>
+    <!-- PIPELINE -->
+    <section class="card" id="pipeline" style="margin-top:18px">
+      <h2>Pipeline operacional (tabla)</h2>
+      <table>
+        <thead>
+          <tr><th>Fase</th><th>Entrada</th><th>Proceso</th><th>Salida</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>F1 — Ingestión</td><td>Documentos, metadatos</td><td>Parsing, normalización, etiquetado</td><td>Dataset estructurado</td></tr>
+          <tr><td>F2 — Razonamiento</td><td>Dataset</td><td>Mapeo semántico, NER, reglas</td><td>Requisitos aplicables</td></tr>
+          <tr><td>F3 — Adaptación</td><td>Requisitos</td><td>Reglas transformadoras, plantillas</td><td>Cláusulas compatibles</td></tr>
+          <tr><td>F4 — Trazabilidad</td><td>Decisiones</td><td>Registro de reglas, hashes, referencias</td><td>Explicaciones auditables</td></tr>
+          <tr><td>F5 — Evidencia</td><td>Explicaciones</td><td>Consolidación de anexos y PDF</td><td>Reporte imprimible</td></tr>
+        </tbody>
+      </table>
+      <p class="tiny" style="margin-top:8px">Recomendación técnica: almacenar bitácora en formato inmutable (hash + timestamp) con referencia a commit del repositorio.</p>
     </section>
 
-    <!-- GRÁFICAS (SVG) -->
-    <section class="container" id="metricas">
-      <h2>Gráficas</h2>
+    <!-- METRICS: GRÁFICAS SVG -->
+    <section class="card" id="metricas" style="margin-top:18px">
+      <h2>Gráficas (ejemplo reproducible)</h2>
 
-      <!-- 1) Barras comparativas -->
-      <div class="card">
-        <h3 style="margin-top:0">Cobertura normativa por jurisdicción (ejemplo)</h3>
-        <div class="svgwrap" style="padding:12px">
-          <svg viewBox="0 0 720 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cobertura normativa">
-            <defs>
-              <linearGradient id="b" x1="0" x2="0" y1="0" y2="1">
-                <stop offset="0" stop-color="#0a4bd1"/><stop offset="1" stop-color="#82b1ff"/>
-              </linearGradient>
-            </defs>
-            <rect x="0" y="0" width="720" height="260" fill="#f8faff" />
-            <!-- Ejes -->
-            <g stroke="#c7d3ea" stroke-width="1">
-              <line x1="60" y1="200" x2="680" y2="200"/>
-              <line x1="60" y1="60" x2="60" y2="200"/>
-            </g>
-            <!-- Barras (valores de ejemplo: 78, 64, 86, 71) -->
-            <g>
-              <rect x="110" y="200-156" width="60" height="156" fill="url(#b)" />
-              <rect x="240" y="200-128" width="60" height="128" fill="url(#b)" opacity=".85"/>
-              <rect x="370" y="200-172" width="60" height="172" fill="url(#b)" opacity=".95"/>
-              <rect x="500" y="200-142" width="60" height="142" fill="url(#b)" opacity=".9"/>
-            </g>
-            <!-- Etiquetas -->
-            <g font-family="ui-sans-serif, Segoe UI" fill="#0b1220" font-size="14" text-anchor="middle">
-              <text x="140" y="220">EU</text>
-              <text x="270" y="220">US</text>
-              <text x="400" y="220">ES</text>
-              <text x="530" y="220">DO</text>
-            </g>
-            <g font-family="ui-sans-serif, Segoe UI" fill="#5b677a" font-size="12" text-anchor="end">
-              <text x="56" y="204">0%</text>
-              <text x="56" y="164">25%</text>
-              <text x="56" y="124">50%</text>
-              <text x="56" y="84">75%</text>
-            </g>
-          </svg>
-        </div>
-        <p class="tiny">Cobertura simulada de requisitos mapeados por jurisdicción (ejemplo demostrativo).</p>
+      <!-- Barra comparativa: cobertura -->
+      <h3 style="margin:.6rem 0 0">Cobertura normativa por jurisdicción (ejemplo)</h3>
+      <div class="svgwrap" aria-hidden="false">
+        <svg viewBox="0 0 720 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cobertura normativa">
+          <rect x="0" y="0" width="720" height="260" fill="#fbfeff"/>
+          <g stroke="#e7f0ff" stroke-width="1"><line x1="60" y1="200" x2="680" y2="200"/></g>
+          <!-- barras (valores demo) -->
+          <rect x="110" y="44" width="60" height="156" fill="#0a4bd1"/>
+          <rect x="240" y="72" width="60" height="128" fill="#1d74e6"/>
+          <rect x="370" y="28" width="60" height="172" fill="#4f9bff"/>
+          <rect x="500" y="58" width="60" height="142" fill="#82b1ff"/>
+          <!-- etiquetas -->
+          <text x="140" y="224" text-anchor="middle" font-size="13" fill="#0b1220">EU</text>
+          <text x="270" y="224" text-anchor="middle" font-size="13" fill="#0b1220">US</text>
+          <text x="400" y="224" text-anchor="middle" font-size="13" fill="#0b1220">ES</text>
+          <text x="530" y="224" text-anchor="middle" font-size="13" fill="#0b1220">DO</text>
+        </svg>
       </div>
 
-      <!-- 2) Línea/Área (sparkline de cumplimiento) -->
-      <div class="card">
-        <h3 style="margin-top:0">Índice de cumplimiento por revisión (sparkline)</h3>
-        <div class="svgwrap" style="padding:12px">
-          <svg viewBox="0 0 720 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Índice de cumplimiento">
-            <rect x="0" y="0" width="720" height="180" fill="#f8faff" />
-            <!-- Área -->
-            <path d="M40,130 L80,120 L120,98 L160,110 L200,86 L240,92 L280,76 L320,70 L360,82 L400,68 L440,60 L480,66 L520,54 L560,58 L600,46 L640,52 L640,140 L40,140 Z"
-                  fill="#cfe0ff" stroke="none" opacity=".9"/>
-            <!-- Línea -->
-            <path d="M40,130 L80,120 L120,98 L160,110 L200,86 L240,92 L280,76 L320,70 L360,82 L400,68 L440,60 L480,66 L520,54 L560,58 L600,46 L640,52"
-                  fill="none" stroke="#0a4bd1" stroke-width="3"/>
-            <!-- Puntos -->
-            <g fill="#0a4bd1">
-              <circle cx="200" cy="86" r="3"/><circle cx="320" cy="70" r="3"/><circle cx="520" cy="54" r="3"/><circle cx="640" cy="52" r="3"/>
-            </g>
-            <!-- Ejes mínimos -->
-            <g stroke="#c7d3ea" stroke-width="1"><line x1="40" y1="140" x2="680" y2="140"/></g>
-          </svg>
-        </div>
-        <p class="tiny">Tendencia (ficticia) del puntaje de cumplimiento por iteración de revisión.</p>
+      <!-- Sparkline -->
+      <h3 style="margin:.8rem 0 0">Índice de cumplimiento por iteración (demo)</h3>
+      <div class="svgwrap">
+        <svg viewBox="0 0 720 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Índice cumplimiento">
+          <rect x="0" y="0" width="720" height="140" fill="#fbfeff"/>
+          <path d="M40,100 L80,88 L120,68 L160,78 L200,60 L240,66 L280,50 L320,44 L360,56 L400,42 L440,36 L480,42 L520,30 L560,34 L600,22 L640,28" fill="none" stroke="#0a4bd1" stroke-width="3" />
+          <g fill="#0a4bd1"><circle cx="120" cy="68" r="3"/><circle cx="320" cy="44" r="3"/><circle cx="520" cy="30" r="3"/></g>
+        </svg>
       </div>
 
-      <!-- 3) Matriz de trazabilidad simple -->
-      <div class="card">
-        <h3 style="margin-top:0">Matriz de trazabilidad (regla → salida)</h3>
-        <table>
-          <thead><tr><th>Regla</th><th>Referencia</th><th>Impacto</th><th>Salida</th></tr></thead>
-          <tbody>
-            <tr><td>R-GDPR-BaseLegal</td><td>GDPR Art. 6</td><td>Requiere base legal explícita</td><td>Marcar cláusula y recomendar ajuste</td></tr>
-            <tr><td>R-Arbitraje-Foro</td><td>Conflicto foro</td><td>Incompatibilidad jurisdiccional</td><td>Sugerir foro neutral o cláusula escalonada</td></tr>
-            <tr><td>R-Retención-Docs</td><td>Normas sectoriales</td><td>Periodo mínimo</td><td>Definir años y excepciones</td></tr>
-          </tbody>
-        </table>
-        <p class="tiny">Ejemplo demostrativo; sustituye por tu set real de reglas y referencias.</p>
-      </div>
+      <!-- Matriz trazabilidad -->
+      <h3 style="margin:.8rem 0 0">Matriz de trazabilidad (regla → salida)</h3>
+      <table>
+        <thead><tr><th>Regla</th><th>Referencia</th><th>Impacto</th><th>Salida</th></tr></thead>
+        <tbody>
+          <tr><td>R-GDPR-BaseLegal</td><td>GDPR Art.6</td><td>Base legal requerida</td><td>Marcar cláusula; recomendar consentimiento/legítimo interés</td></tr>
+          <tr><td>R-Arbitraje-Foro</td><td>Conflict of forum</td><td>Incompatibilidad jurisdiccional</td><td>Sugerir foro neutral</td></tr>
+          <tr><td>R-Retention-Docs</td><td>Normas sectoriales</td><td>Periodo mínimo</td><td>Definir periodo y excepciones</td></tr>
+        </tbody>
+      </table>
     </section>
 
-    <!-- NOTAS -->
-    <section class="container" id="notas">
-      <h2>Notas técnicas</h2>
-      <div class="grid cols-3">
-        <div class="card">
-          <h3 style="margin-top:0">Reproducibilidad</h3>
-          <p class="tiny">Todos los gráficos son <strong>SVG</strong> embebidos (sin imágenes externas). Imprimen nítidos.</p>
-        </div>
-        <div class="card">
-          <h3 style="margin-top:0">Exportación</h3>
-          <p class="tiny">Usa el botón <em>Imprimir</em> (o <code>Ctrl/Cmd+P</code>) para PDF con márgenes A4.</p>
-        </div>
-        <div class="card">
-          <h3 style="margin-top:0">Extensión</h3>
-          <p class="tiny">Puedes reemplazar valores ficticios por resultados reales del motor sin cambiar el layout.</p>
-        </div>
-      </div>
+    <!-- EVIDENCE & PROVENANCE -->
+    <section class="card" id="evidencias" style="margin-top:18px">
+      <h2>Proveniencia & Evidencias</h2>
+      <table>
+        <tbody>
+          <tr><td style="width:36%"><strong>URL canónica</strong></td><td><a href="https://REPLACE_WITH_GITHUB_URL/">https://REPLACE_WITH_GITHUB_URL/</a></td></tr>
+          <tr><td><strong>Repositorio</strong></td><td><a href="https://REPLACE_WITH_REPO_URL">REPLACE_WITH_REPO_URL</a></td></tr>
+          <tr><td><strong>Commit SHA</strong></td><td><code>REPLACE_WITH_COMMIT_SHA</code> (sustituir por el SHA real tras push)</td></tr>
+          <tr><td><strong>Fecha de publicación</strong></td><td>2025-10-27</td></tr>
+          <tr><td><strong>Última modificación</strong></td><td>2025-10-27</td></tr>
+          <tr><td><strong>Autor</strong></td><td>Eduardo Luis Espinal de Aza</td></tr>
+          <tr><td><strong>DOI / SSRN</strong></td><td><a href="https://ssrn.com/abstract=5646790">10.2139/ssrn.5646790</a></td></tr>
+          <tr><td><strong>License</strong></td><td>MIT</td></tr>
+        </tbody>
+      </table>
+
+      <h3 style="margin-top:12px">Declaración (attestation)</h3>
+      <p class="tiny">
+        Yo, <strong>Eduardo Luis Espinal de Aza</strong>, declaro que soy el autor y responsable técnico del prototipo ICLVS publicado en la URL indicada.
+        Este documento se presenta como anexo probatorio y refleja la arquitectura, metodología y limitaciones de la versión 0.1.0.
+      </p>
+      <p class="tiny"><em>Lugar y fecha:</em> Santo Domingo, República Dominicana — 2025-10-27</p>
+      <p style="margin-top:12px">Firma: ________________________________</p>
+
+      <h3 style="margin-top:12px">Metodología (resumen)</h3>
+      <ul class="tiny">
+        <li>Modelado por capas: Ingestión → Razonamiento → Adaptación → Trazabilidad.</li>
+        <li>Representación de reglas en formato estructurado; cada decisión conserva referencia a la regla y a la fuente normativa.</li>
+        <li>Evidencia reproducible: diagramas SVG, matrices y reportes imprimibles.</li>
+        <li>Limitación: versión 0.1.0 no contiene motor automatizado; es evidencia conceptual y técnica.</li>
+      </ul>
+
+      <h3 style="margin-top:12px">Cita sugerida y BibTeX</h3>
+      <p class="tiny">
+        Espinal De Aza, Eduardo Luis (2025). <em>White Paper: Intelligent Contextual Legal Verification System</em>. SSRN. DOI: 10.2139/ssrn.5646790
+      </p>
+      <pre class="tiny">@misc{EspinalDeAza2025ICLVS,
+  author  = {Espinal De Aza, Eduardo Luis},
+  title   = {White Paper: Intelligent Contextual Legal Verification System},
+  year    = {2025},
+  howpublished = {SSRN},
+  doi     = {10.2139/ssrn.5646790},
+  url     = {https://ssrn.com/abstract=5646790}
+}</pre>
+    </section>
+
+    <!-- FOOTER / README-LIKE -->
+    <section class="card" style="margin-top:18px">
+      <h2>Project — quick README</h2>
+      <p class="tiny"><strong>ICLVS — Intelligent Contextual Legal Verification System</strong></p>
+      <ul class="tiny">
+        <li>Version: 0.1.0</li>
+        <li>Format: single-file HTML (print-ready)</li>
+        <li>Purpose: evidencia técnica y conceptual para publicaciones y trámites.</li>
+        <li>How to publish: subir este archivo como <code>index.html</code> a <code>gh-pages</code> o usar GitHub Pages desde la rama <code>main</code>.</li>
+      </ul>
+      <p class="tiny">Instrucciones para completar antes de usar como evidencia técnica:</p>
+      <ol class="tiny">
+        <li>Reemplazar <code>REPLACE_WITH_GITHUB_URL</code>, <code>REPLACE_WITH_REPO_URL</code> y <code>REPLACE_WITH_COMMIT_SHA</code> por tus enlaces y SHA reales.</li>
+        <li>Hacer push público al repositorio; anotar el commit SHA en la sección de Proveniencia.</li>
+        <li>Adjuntar en tu expediente la URL pública y PDF impreso (Ctrl/Cmd+P → guardar como PDF).</li>
+      </ol>
     </section>
   </main>
 
-  <footer>
-    <div class="container" style="display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:space-between">
-      <div>© 2025 ICLVS — Intelligent Contextual Legal Verification System. Todos los derechos reservados.</div>
-      <div class="print-hide" style="display:flex;gap:12px">
-        <a href="#arquitectura">Arquitectura</a><a href="#pipeline">Pipeline</a><a href="#metricas">Gráficas</a><a href="#notas">Notas</a>
+  <footer style="border-top:1px solid var(--line);padding:18px 0;margin-top:18px">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <div class="tiny">© 2025 Eduardo Luis Espinal de Aza — ICLVS. All rights reserved.</div>
+      <div class="tiny no-print">
+        <a href="#resumen">Resumen</a> · <a href="#arquitectura">Arquitectura</a> · <a href="#pipeline">Pipeline</a> · <a href="#evidencias">Proveniencia</a>
       </div>
     </div>
   </footer>
