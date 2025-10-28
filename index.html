@@ -16,109 +16,190 @@ CommitSHA: REPLACE_WITH_COMMIT_SHA
   <meta name="color-scheme" content="light only" />
   <link rel="canonical" href="https://REPLACE_WITH_GITHUB_URL/" />
   <style>
+    /* =================== THEME =================== */
     :root{
-      --bg:#fff; --fg:#0b1220; --muted:#5b677a; --line:#e6e9ef; --accent:#0a4bd1;
-      --maxw:980px; --radius:12px;
+      --bg:#ffffff;
+      --fg:#0b1220;
+      --muted:#5b677a;
+      --line:#e6e9ef;
+      --accent:#0a4bd1;         /* Azul principal */
+      --accent-2:#1d74e6;       /* Azul secundario */
+      --accent-3:#4f9bff;       /* Azul claro */
+      --chip:#eef4ff;
+      --maxw:980px;
+      --radius:14px;
+      --shadow:0 8px 26px rgba(10,75,209,.08);
+      --space:22px;
     }
-    html,body{background:var(--bg);color:var(--fg);margin:0;padding:0;
-      font:16px/1.55 ui-sans-serif,-apple-system,"Segoe UI",Roboto,Helvetica,Arial}
-    .container{max-width:var(--maxw);margin:0 auto;padding:22px}
-    header{border-bottom:1px solid var(--line);padding:18px 0 20px}
-    h1{font-size:1.55rem;margin:.1rem 0 .3rem;letter-spacing:-.01em}
-    h2{font-size:1.1rem;margin:.35rem 0}
-    h3{font-size:1rem;margin:.4rem 0 .2rem}
-    p{margin:.35rem 0 .9rem;color:var(--muted)}
-    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:#f1f6ff;color:var(--accent);font-weight:700;border:1px solid #d6e6ff}
-    .pill{display:inline-block;padding:5px 9px;border-radius:10px;background:#f6f8ff;color:#213; border:1px solid #e2e8ff; font-weight:600; font-size:.9rem}
-    .grid{display:grid;gap:14px}
-    @media(min-width:860px){.grid-2{grid-template-columns:1fr 1fr}}
-    @media(min-width:860px){.grid-3{grid-template-columns:repeat(3,1fr)}}
-    .card{border:1px solid var(--line);border-radius:var(--radius);padding:14px;margin-top:12px;background:#fff}
-    table{width:100%;border-collapse:collapse;margin-top:6px}
-    th,td{padding:8px;border-top:1px solid var(--line);text-align:left;font-size:.95rem}
-    th{background:#f8fbff}
-    pre{background:#fafafa;border:1px solid var(--line);padding:12px;border-radius:10px;overflow:auto;font-size:.92rem}
-    code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
-    .svgwrap{border:1px solid var(--line);border-radius:10px;background:#fbfeff;padding:10px;margin-top:8px}
-    .meta{display:flex;gap:8px;flex-wrap:wrap}
-    .tiny{font-size:.93rem;color:var(--muted)}
-    .no-print{display:block}
 
+    /* =================== RESET BASE =================== */
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+    body{
+      font:16px/1.55 ui-sans-serif,-apple-system,"Segoe UI",Roboto,Helvetica,Arial;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    h1,h2,h3{line-height:1.15;margin:.2rem 0 .6rem}
+    p{margin:.4rem 0 1rem;color:var(--muted)}
+    .container{
+      max-width:var(--maxw);
+      margin:0 auto;
+      padding:calc(var(--space) + 6px) var(--space);
+    }
+
+    /* =================== LAYOUT CENTRADO =================== */
+    .center{text-align:center}
+    .stack{display:flex;flex-direction:column;gap:16px;align-items:center}
+    .row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+    .grid{display:grid;gap:16px}
+    @media(min-width:860px){
+      .grid-2{grid-template-columns:1fr 1fr}
+      .grid-3{grid-template-columns:repeat(3,1fr)}
+    }
+
+    /* =================== BLOQUES =================== */
+    header.hero{
+      padding:36px 0 26px;
+      border-bottom:1px solid var(--line);
+      background:
+        radial-gradient(1200px 220px at 50% -40px, rgba(10,75,209,.10), transparent 60%),
+        linear-gradient(180deg,#f7fbff 0,#ffffff 100%);
+    }
+    .badge{
+      display:inline-block;background:var(--chip);color:var(--accent);
+      padding:7px 12px;border-radius:999px;font-weight:700;font-size:.9rem;
+      border:1px solid #d6e6ff; box-shadow:var(--shadow);
+    }
+    .pill{
+      display:inline-block;padding:6px 10px;border-radius:10px;
+      background:#f7faff;color:#213;border:1px solid #e2e8ff;font-weight:600;
+    }
+    .card{
+      border:1px solid var(--line);border-radius:var(--radius);background:#fff;
+      box-shadow:var(--shadow); padding:18px;
+    }
+    .section-title{
+      font-size:1.15rem; letter-spacing:.2px; margin-bottom:8px;
+      position:relative; padding-top:6px;
+    }
+    .section-title::after{
+      content:""; display:block; height:3px; width:72px; margin:8px auto 0;
+      background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      border-radius:6px;
+    }
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:10px 12px;border-top:1px solid var(--line);text-align:left;font-size:.96rem}
+    th{background:#f7faff}
+
+    /* =================== NAV BOTONES =================== */
+    .actions{margin-top:8px}
+    .btn{
+      display:inline-block;border-radius:12px;padding:10px 14px;font-weight:700;
+      border:1px solid var(--line);background:#fff; color:var(--fg)
+    }
+    .btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+    .btn:hover{filter:brightness(.98)}
+
+    /* =================== SVG WRAP =================== */
+    .svgwrap{
+      border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#f7fbff;
+      padding:12px;
+    }
+    svg{max-width:100%;height:auto;display:block;margin:0 auto}
+
+    /* =================== PRINT =================== */
     @media print{
-      *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+      *{-webkit-print-color-adjust:exact; print-color-adjust:exact}
       .no-print{display:none!important}
       a{text-decoration:underline;color:#000}
-      .card{border:1pt solid #000}
+      .card{box-shadow:none;border:1pt solid #000}
       .badge{border:1pt solid #000;background:#fff;color:#000}
       @page{size:A4;margin:14mm}
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="container">
+  <!-- =================== HERO (Centrado) =================== -->
+  <header class="hero center">
+    <div class="container stack">
       <span class="badge">ICLVS — Technical Prototype</span>
-      <h1>ICLVS — Intelligent Contextual Legal Verification System</h1>
-      <div class="meta" style="margin-top:6px">
+      <h1 style="margin:.2rem 0 0">ICLVS — Intelligent Contextual Legal Verification System</h1>
+      <div class="row" aria-label="metadata">
         <span class="pill">Status: Prototype</span>
         <span class="pill">Version: 0.1.0</span>
         <span class="pill">Build: 2025-10-27</span>
         <span class="pill">Commit: <code>REPLACE_WITH_COMMIT_SHA</code></span>
       </div>
-      <p class="tiny">Landing técnica (archivo único) para desarrolladores: módulos, arquitectura, contratos de datos, interfaces, métricas, versionado y procedencia. Imprimible A4.</p>
+      <p style="max-width:820px">
+        Página técnica centrada y profesional: <strong>Módulos</strong>, <strong>Arquitectura</strong>, <strong>Contratos de datos</strong>, <strong>Interfaces</strong>, <strong>Métricas</strong> y <strong>Proveniencia</strong>.
+        Diseño con paleta azul sobria, perfecto para lectura e impresión A4.
+      </p>
+      <div class="row actions no-print">
+        <a class="btn primary" href="#modules">Módulos</a>
+        <a class="btn" href="#architecture">Arquitectura</a>
+        <a class="btn" href="#contracts">Contratos</a>
+        <a class="btn" href="#metrics">Gráficas</a>
+        <a class="btn" href="#provenance">Proveniencia</a>
+      </div>
     </div>
   </header>
 
-  <main class="container">
+  <!-- =================== MAIN =================== -->
+  <main class="container" style="padding-top:28px">
 
-    <!-- Modules -->
-    <section class="card" id="modules">
-      <h2>1. System Modules</h2>
-      <div class="grid grid-3">
-        <div class="card" style="margin:0">
+    <!-- 1. Modules (centrado con grid) -->
+    <section id="modules" class="stack">
+      <h2 class="section-title center">1. System Modules</h2>
+      <div class="grid grid-3" style="width:100%">
+        <div class="card center">
           <h3>1) Ingestión</h3>
-          <p class="tiny">Parsers/OCR · normalización · enriquecimiento de metadatos · selección de jurisdicción.</p>
+          <p>Parsers/OCR, normalización, metadatos, selección de jurisdicción.</p>
         </div>
-        <div class="card" style="margin:0">
+        <div class="card center">
           <h3>2) Razonamiento</h3>
-          <p class="tiny">NER + mapping semántico → requisitos aplicables · priorización de fuentes normativas.</p>
+          <p>NER + mapping semántico hacia requisitos aplicables y jerarquía normativa.</p>
         </div>
-        <div class="card" style="margin:0">
+        <div class="card center">
           <h3>3) Adaptación</h3>
-          <p class="tiny">Reglas transformadoras · plantillas parametrizadas · resolución de conflictos.</p>
+          <p>Reglas transformadoras, plantillas parametrizadas, resolución de conflictos.</p>
         </div>
-        <div class="card" style="margin:0">
+        <div class="card center">
           <h3>4) Trazabilidad</h3>
-          <p class="tiny">Bitácora de reglas · referencias · hashes de evidencia · justificaciones legibles.</p>
+          <p>Bitácora de reglas, referencias, hashes de evidencia y motivos legibles.</p>
         </div>
-        <div class="card" style="margin:0">
+        <div class="card center">
           <h3>5) Evidencia</h3>
-          <p class="tiny">Reportes imprimibles · anexos estructurados · export JSON/PDF.</p>
+          <p>Reportes imprimibles, anexos estructurados, export JSON/PDF.</p>
         </div>
-        <div class="card" style="margin:0">
+        <div class="card center">
           <h3>6) Export</h3>
-          <p class="tiny">Persistencia, descarga y vínculo a commit/artefactos.</p>
+          <p>Persistencia, descarga y vínculo a commit/artefactos.</p>
         </div>
       </div>
     </section>
 
-    <!-- Architecture -->
-    <section class="card" id="architecture">
-      <h2>2. Architecture (concept)</h2>
-      <div class="svgwrap">
+    <!-- 2. Architecture (SVG centrado) -->
+    <section id="architecture" class="stack" style="margin-top:28px">
+      <h2 class="section-title center">2. Architecture (concept)</h2>
+      <div class="svgwrap" style="max-width:100%">
         <svg viewBox="0 0 1100 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ICLVS Architecture">
           <defs>
-            <linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#e9f2ff"/><stop offset="1" stop-color="#f9fbff"/></linearGradient>
-            <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#0a4bd1"/></marker>
+            <linearGradient id="g1" x1="0" x2="1">
+              <stop offset="0" stop-color="#e6f0ff"/><stop offset="1" stop-color="#f9fbff"/>
+            </linearGradient>
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L9,3 z" fill="#0a4bd1"/>
+            </marker>
           </defs>
           <rect x="0" y="0" width="1100" height="380" fill="url(#g1)"/>
           <g fill="#fff" stroke="#cbdcf0" stroke-width="1.8">
-            <rect x="40" y="60" width="240" height="110" rx="10"/>
-            <rect x="320" y="60" width="240" height="110" rx="10"/>
-            <rect x="600" y="60" width="240" height="110" rx="10"/>
-            <rect x="880" y="60" width="180" height="110" rx="10"/>
-            <rect x="180" y="200" width="320" height="110" rx="10"/>
-            <rect x="540" y="200" width="320" height="110" rx="10"/>
+            <rect x="40" y="60" width="240" height="110" rx="12"/>
+            <rect x="320" y="60" width="240" height="110" rx="12"/>
+            <rect x="600" y="60" width="240" height="110" rx="12"/>
+            <rect x="880" y="60" width="180" height="110" rx="12"/>
+            <rect x="180" y="200" width="320" height="110" rx="12"/>
+            <rect x="540" y="200" width="320" height="110" rx="12"/>
           </g>
           <g stroke="#0a4bd1" stroke-width="2.6" fill="none" marker-end="url(#arrow)">
             <line x1="280" y1="115" x2="320" y2="115"/>
@@ -132,19 +213,19 @@ CommitSHA: REPLACE_WITH_COMMIT_SHA
             <text x="440" y="100">Razonamiento</text><text x="440" y="124" fill="#5b677a">Mapping semántico · NER</text>
             <text x="720" y="100">Adaptación</text><text x="720" y="124" fill="#5b677a">Reglas · Transformación</text>
             <text x="970" y="100">Trazabilidad</text><text x="970" y="124" fill="#5b677a">Bitácora · Auditoría</text>
-            <text x="340" y="245">Explicaciones</text><text x="340" y="269" fill="#5b677a">Motivos · Reglas aplicadas</text>
+            <text x="340" y="245">Explicaciones</text><text x="340" y="269" fill="#5b677a">Motivos · Reglas</text>
             <text x="700" y="245">Reportes</text><text x="700" y="269" fill="#5b677a">PDF · Anexos</text>
           </g>
         </svg>
       </div>
     </section>
 
-    <!-- Data Contracts -->
-    <section class="card" id="contracts">
-      <h2>3. Data Contracts (JSON)</h2>
-      <div class="grid grid-2">
-        <div>
-          <h3>Input: ClausePayload</h3>
+    <!-- 3. Data Contracts (centrado con dos columnas) -->
+    <section id="contracts" class="stack" style="margin-top:28px">
+      <h2 class="section-title center">3. Data Contracts (JSON)</h2>
+      <div class="grid grid-2" style="width:100%;align-items:start">
+        <div class="card">
+          <h3 class="center">Input: ClausePayload</h3>
           <pre>{
   "id": "clause-001",
   "text": "La parte X tratará datos personales...",
@@ -152,8 +233,8 @@ CommitSHA: REPLACE_WITH_COMMIT_SHA
   "meta": {"docId":"contract-42","section":"12.3"}
 }</pre>
         </div>
-        <div>
-          <h3>Output: ReviewResult</h3>
+        <div class="card">
+          <h3 class="center">Output: ReviewResult</h3>
           <pre>{
   "id": "clause-001",
   "applicableRules": ["GDPR-ART6","ES-LSSI-13"],
@@ -171,18 +252,18 @@ CommitSHA: REPLACE_WITH_COMMIT_SHA
       </div>
     </section>
 
-    <!-- Interfaces -->
-    <section class="card" id="interfaces">
-      <h2>4. Interfaces (prototype stubs)</h2>
-      <div class="grid grid-2">
-        <div>
+    <!-- 4. Interfaces (centradas) -->
+    <section id="interfaces" class="stack" style="margin-top:28px">
+      <h2 class="section-title center">4. Interfaces (prototype stubs)</h2>
+      <div class="grid grid-2" style="width:100%">
+        <div class="card center">
           <h3>CLI (pseudo)</h3>
           <pre><code>$ iclvs ingest --file contrato.pdf --jur EU,ES
 $ iclvs reason --in dataset.json --rules ruleset.json
 $ iclvs adapt  --in requirements.json --tpl templates/
 $ iclvs report --run 2025-10-27 --out report.pdf</code></pre>
         </div>
-        <div>
+        <div class="card center">
           <h3>HTTP (pseudo)</h3>
           <pre><code>POST /v0/review
 { "text": "...", "jurisdictions":["EU","ES"] }
@@ -191,76 +272,97 @@ $ iclvs report --run 2025-10-27 --out report.pdf</code></pre>
 { "decision":"ADJUST","applicableRules":[...], "trace":{...} }</code></pre>
         </div>
       </div>
-      <p class="tiny">Nota: interfaces de ejemplo para documentación del prototipo. El motor no está incluido en esta versión.</p>
+      <p class="center" style="max-width:780px">Interfaces de ejemplo para documentación del prototipo. El motor no está incluido en esta versión.</p>
     </section>
 
-    <!-- Metrics -->
-    <section class="card" id="metrics">
-      <h2>5. Metrics (demo SVG)</h2>
+    <!-- 5. Metrics (SVG con paleta azul) -->
+    <section id="metrics" class="stack" style="margin-top:28px">
+      <h2 class="section-title center">5. Metrics (demo SVG)</h2>
 
-      <h3 style="margin:.4rem 0 0">Cobertura normativa por jurisdicción</h3>
-      <div class="svgwrap">
-        <svg viewBox="0 0 720 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Coverage">
-          <rect x="0" y="0" width="720" height="240" fill="#fbfeff"/>
-          <g stroke="#e7f0ff" stroke-width="1"><line x1="60" y1="190" x2="680" y2="190"/></g>
-          <rect x="110" y="50" width="60" height="140" fill="#0a4bd1"/>
-          <rect x="240" y="74" width="60" height="116" fill="#1d74e6"/>
-          <rect x="370" y="34" width="60" height="156" fill="#4f9bff"/>
-          <rect x="500" y="62" width="60" height="128" fill="#82b1ff"/>
-          <text x="140" y="210" text-anchor="middle" font-size="13" fill="#0b1220">EU</text>
-          <text x="270" y="210" text-anchor="middle" font-size="13" fill="#0b1220">US</text>
-          <text x="400" y="210" text-anchor="middle" font-size="13" fill="#0b1220">ES</text>
-          <text x="530" y="210" text-anchor="middle" font-size="13" fill="#0b1220">DO</text>
-        </svg>
+      <div class="card" style="max-width:900px">
+        <h3 class="center" style="margin:.2rem 0 8px">Cobertura normativa por jurisdicción</h3>
+        <div class="svgwrap">
+          <svg viewBox="0 0 720 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cobertura normativa">
+            <rect x="0" y="0" width="720" height="260" fill="#f7fbff"/>
+            <g stroke="#e2ecff" stroke-width="1"><line x1="60" y1="200" x2="680" y2="200"/></g>
+            <!-- Barras demo con colores coherentes -->
+            <rect x="110" y="44" width="60" height="156" fill="var(--accent)"/>
+            <rect x="240" y="72" width="60" height="128" fill="var(--accent-2)"/>
+            <rect x="370" y="28" width="60" height="172" fill="var(--accent-3)"/>
+            <rect x="500" y="58" width="60" height="142" fill="#82b1ff"/>
+            <text x="140" y="224" text-anchor="middle" font-size="13" fill="#0b1220">EU</text>
+            <text x="270" y="224" text-anchor="middle" font-size="13" fill="#0b1220">US</text>
+            <text x="400" y="224" text-anchor="middle" font-size="13" fill="#0b1220">ES</text>
+            <text x="530" y="224" text-anchor="middle" font-size="13" fill="#0b1220">DO</text>
+          </svg>
+        </div>
       </div>
 
-      <h3 style="margin:.6rem 0 0">Índice de cumplimiento por iteración</h3>
-      <div class="svgwrap">
-        <svg viewBox="0 0 720 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Compliance index">
-          <rect x="0" y="0" width="720" height="140" fill="#fbfeff"/>
-          <path d="M40,100 L80,88 L120,68 L160,78 L200,60 L240,66 L280,50 L320,44 L360,56 L400,42 L440,36 L480,42 L520,30 L560,34 L600,22 L640,28"
-                fill="none" stroke="#0a4bd1" stroke-width="3" />
-        </svg>
+      <div class="card" style="max-width:900px">
+        <h3 class="center" style="margin:.2rem 0 8px">Índice de cumplimiento por iteración</h3>
+        <div class="svgwrap">
+          <svg viewBox="0 0 720 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Índice cumplimiento">
+            <rect x="0" y="0" width="720" height="140" fill="#f7fbff"/>
+            <path d="M40,100 L80,88 L120,68 L160,78 L200,60 L240,66 L280,50 L320,44 L360,56 L400,42 L440,36 L480,42 L520,30 L560,34 L600,22 L640,28"
+                  fill="none" stroke="var(--accent)" stroke-width="3" />
+            <g fill="var(--accent)"><circle cx="120" cy="68" r="3"/><circle cx="320" cy="44" r="3"/><circle cx="520" cy="30" r="3"/></g>
+          </svg>
+        </div>
+      </div>
+
+      <div class="card" style="max-width:900px">
+        <h3 class="center" style="margin:.2rem 0 8px">Matriz de trazabilidad (regla → salida)</h3>
+        <table>
+          <thead><tr><th>Regla</th><th>Referencia</th><th>Impacto</th><th>Salida</th></tr></thead>
+          <tbody>
+            <tr><td>R-GDPR-BaseLegal</td><td>GDPR Art.6</td><td>Base legal requerida</td><td>Marcar cláusula; recomendar consentimiento/legítimo interés</td></tr>
+            <tr><td>R-Arbitraje-Foro</td><td>Conflict of forum</td><td>Incompatibilidad jurisdiccional</td><td>Sugerir foro neutral</td></tr>
+            <tr><td>R-Retention-Docs</td><td>Normas sectoriales</td><td>Periodo mínimo</td><td>Definir periodo y excepciones</td></tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
-    <!-- Versioning & Provenance -->
-    <section class="card" id="provenance">
-      <h2>6. Versioning & Provenance</h2>
-      <table>
-        <tbody>
-          <tr><td style="width:34%"><strong>Canonical URL</strong></td><td><a href="https://REPLACE_WITH_GITHUB_URL/">https://REPLACE_WITH_GITHUB_URL/</a></td></tr>
-          <tr><td><strong>Repository</strong></td><td><a href="REPLACE_WITH_REPO_URL">REPLACE_WITH_REPO_URL</a></td></tr>
-          <tr><td><strong>Commit SHA</strong></td><td><code>REPLACE_WITH_COMMIT_SHA</code></td></tr>
-          <tr><td><strong>Version</strong></td><td>0.1.0 (prototype)</td></tr>
-          <tr><td><strong>Build date</strong></td><td>2025-10-27</td></tr>
-        </tbody>
-      </table>
-      <p class="tiny">Referencia: white paper (contexto de investigación), DOI SSRN: <a href="https://ssrn.com/abstract=5646790">10.2139/ssrn.5646790</a>.</p>
+    <!-- 6. Versioning & Provenance -->
+    <section id="provenance" class="stack" style="margin-top:28px">
+      <h2 class="section-title center">6. Versioning & Provenance</h2>
+      <div class="card" style="max-width:900px;margin-inline:auto">
+        <table>
+          <tbody>
+            <tr><td style="width:36%"><strong>Canonical URL</strong></td><td><a href="https://REPLACE_WITH_GITHUB_URL/">https://REPLACE_WITH_GITHUB_URL/</a></td></tr>
+            <tr><td><strong>Repository</strong></td><td><a href="REPLACE_WITH_REPO_URL">REPLACE_WITH_REPO_URL</a></td></tr>
+            <tr><td><strong>Commit SHA</strong></td><td><code>REPLACE_WITH_COMMIT_SHA</code></td></tr>
+            <tr><td><strong>Version</strong></td><td>0.1.0 (prototype)</td></tr>
+            <tr><td><strong>Build date</strong></td><td>2025-10-27</td></tr>
+            <tr><td><strong>Reference</strong></td><td>White paper (SSRN): <a href="https://ssrn.com/abstract=5646790">10.2139/ssrn.5646790</a></td></tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
-    <!-- Constraints -->
-    <section class="card" id="constraints">
-      <h2>7. Scope & Constraints</h2>
-      <ul class="tiny">
-        <li>Este documento no expone motor de IA; describe contratos, módulos y flujo.</li>
-        <li>Datos y métricas son ejemplificativos para documentación del prototipo.</li>
-        <li>Los diagramas son SVG embebidos para impresión A4 nítida.</li>
-      </ul>
+    <!-- 7. Scope -->
+    <section id="scope" class="stack" style="margin-top:28px">
+      <h2 class="section-title center">7. Scope & Constraints</h2>
+      <div class="card center" style="max-width:900px">
+        <p style="margin:0">
+          Este documento describe contratos, módulos y flujos del prototipo. Los datos y métricas son demostrativos.
+          Los diagramas son SVG embebidos para una impresión A4 nítida y consistente.
+        </p>
+      </div>
     </section>
 
-    <!-- License -->
-    <section class="card" id="license">
-      <h2>8. License</h2>
-      <p class="tiny">MIT. Puedes usar y modificar citando autoría y sin garantías.</p>
-    </section>
   </main>
 
-  <footer style="border-top:1px solid var(--line);padding:18px 0;margin-top:18px">
-    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-      <div class="tiny">© 2025 Eduardo Luis Espinal de Aza — ICLVS.</div>
-      <div class="tiny no-print">
-        <a href="#modules">Modules</a> · <a href="#architecture">Architecture</a> · <a href="#contracts">Contracts</a> · <a href="#interfaces">Interfaces</a> · <a href="#provenance">Provenance</a>
+  <!-- =================== FOOTER =================== -->
+  <footer style="border-top:1px solid var(--line);padding:22px 0;margin-top:22px">
+    <div class="container center">
+      <div style="color:var(--muted)">© 2025 Eduardo Luis Espinal de Aza — ICLVS.</div>
+      <div class="row no-print" style="margin-top:8px">
+        <a class="btn" href="#modules">Modules</a>
+        <a class="btn" href="#architecture">Architecture</a>
+        <a class="btn" href="#contracts">Contracts</a>
+        <a class="btn" href="#metrics">Metrics</a>
+        <a class="btn" href="#provenance">Provenance</a>
       </div>
     </div>
   </footer>
