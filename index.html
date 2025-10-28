@@ -1,11 +1,11 @@
 <!doctype html>
 <!-- ICLVS — Technical Prototype · Print-Ready A4 -->
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>ICLVS — Technical Prototype</title>
-<meta name="description" content="ICLVS Technical Prototype: módulos, arquitectura, contratos de datos, interfaces, métricas y procedencia." />
+<meta name="description" content="ICLVS Technical Prototype: modules, architecture, data contracts, interfaces, metrics, and provenance." />
 <link rel="canonical" href="https://github.com/eduardoespinal-lawtech/ICLVS-LegalTech/tree/main" />
 <link rel="icon" href="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" />
 <style>
@@ -37,30 +37,30 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
 .svgwrap{border:1px solid var(--line);border-radius:12px;background:#f7fbff;padding:12px}
 svg{display:block;max-width:100%;height:auto;margin:0 auto}
 
-/* TOC (no sticky en impresión) */
+/* TOC (hidden on print) */
 .toc{position:sticky;top:0;z-index:10;background:linear-gradient(#fafcff,#fff);border-bottom:1px solid var(--line)}
 .toc .wrap{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;padding:10px var(--sp)}
 .toc a{display:inline-block;padding:8px 12px;border-radius:10px;border:1px solid var(--line);color:var(--fg);font-weight:700;background:#fff}
 .toc a:hover{background:#f7faff}
 
-/* Apilados (para Data Contracts e Interfaces) */
+/* Stacked sections for Contracts & Interfaces */
 .stack-col{display:flex;flex-direction:column;gap:16px;max-width:900px;margin:0 auto}
 
 /* ===== PRINT-READY A4 ===== */
 @media print{
   *{-webkit-print-color-adjust:exact; print-color-adjust:exact}
   @page{size:A4; margin:14mm}
-  /* ancho exacto para no cortar (≈ 182 mm dentro de márgenes) */
+  /* exact content width to avoid clipping (≈182mm within page margins) */
   .container{max-width:182mm; padding:0 6mm}
   .toc{display:none!important}
   .card{box-shadow:none;border:0.4pt solid #000}
   .badge{border:0.4pt solid #000;background:#fff;color:#000}
   a{color:#000; text-decoration:underline}
-  /* mostrar URL en papel */
+  /* show URLs on paper */
   a[href]::after{content:" (" attr(href) ")"; font-size:.9em}
-  /* evitar cortes dentro de bloques */
+  /* avoid broken blocks */
   header, footer, .section, .card, .svgwrap, pre, table, h2, h3{break-inside:avoid; page-break-inside:avoid}
-  /* permitir salto entre secciones sin cortar contenido */
+  /* clean page rhythm */
   .section{page-break-after:always}
   .section.last{page-break-after:auto}
   img, svg{max-width:100%; height:auto}
@@ -82,40 +82,40 @@ svg{display:block;max-width:100%;height:auto;margin:0 auto}
       <span class="pill">Version: 0.1.0 · Build: 2025-10-27</span>
       <span class="pill">Commit: <code>REPLACE_WITH_COMMIT_SHA</code></span>
     </div>
-    <p>Landing técnica centrada e imprimible A4. Secciones: <strong>Módulos</strong>, <strong>Arquitectura</strong>, <strong>Contratos</strong>, <strong>Interfaces</strong>, <strong>Métricas</strong> y <strong>Proveniencia</strong>.</p>
+    <p>Print-ready technical landing. Sections: <strong>Modules</strong>, <strong>Architecture</strong>, <strong>Data Contracts</strong>, <strong>Interfaces</strong>, <strong>Metrics</strong>, and <strong>Provenance</strong>.</p>
   </div>
 </header>
 
-<!-- TOC (oculto al imprimir) -->
+<!-- TOC -->
 <nav class="toc">
   <div class="container wrap">
-    <a href="#modules">Módulos</a>
-    <a href="#architecture">Arquitectura</a>
-    <a href="#contracts">Contratos</a>
+    <a href="#modules">Modules</a>
+    <a href="#architecture">Architecture</a>
+    <a href="#contracts">Data Contracts</a>
     <a href="#interfaces">Interfaces</a>
-    <a href="#metrics">Métricas</a>
-    <a href="#provenance">Proveniencia</a>
+    <a href="#metrics">Metrics</a>
+    <a href="#provenance">Provenance</a>
   </div>
 </nav>
 
 <main>
 
-<!-- 1. MÓDULOS -->
+<!-- 1. MODULES -->
 <section id="modules" class="section">
   <div class="container" style="max-width:900px">
     <h2 class="title">1. System Modules</h2>
     <div class="stack-col">
-      <div class="card center"><h3>Ingestión</h3><p>Parsers/OCR, normalización, metadatos, selección de jurisdicción.</p></div>
-      <div class="card center"><h3>Razonamiento</h3><p>NER + mapeo semántico → requisitos aplicables y jerarquía normativa.</p></div>
-      <div class="card center"><h3>Adaptación</h3><p>Reglas transformadoras, plantillas parametrizadas, resolución de conflictos.</p></div>
-      <div class="card center"><h3>Trazabilidad</h3><p>Bitácora de reglas, referencias, hashes de evidencia y motivos legibles.</p></div>
-      <div class="card center"><h3>Evidencia</h3><p>Reportes imprimibles, anexos estructurados, export JSON/PDF.</p></div>
-      <div class="card center"><h3>Export</h3><p>Persistencia, descarga y vínculo a commit/artefactos.</p></div>
+      <div class="card center"><h3>Ingestion</h3><p>Parsers/OCR, normalization, metadata, jurisdiction selection.</p></div>
+      <div class="card center"><h3>Reasoning</h3><p>NER + semantic mapping → applicable requirements and norms hierarchy.</p></div>
+      <div class="card center"><h3>Adaptation</h3><p>Transform rules, parameterized templates, conflict resolution.</p></div>
+      <div class="card center"><h3>Traceability</h3><p>Rule ledger, references, evidence hashes, human-readable rationales.</p></div>
+      <div class="card center"><h3>Evidence</h3><p>Printable reports, structured annexes, JSON/PDF export.</p></div>
+      <div class="card center"><h3>Export</h3><p>Persistence, downloads, and commit/artifact linkage.</p></div>
     </div>
   </div>
 </section>
 
-<!-- 2. ARQUITECTURA (vertical, dimensionada para caber en A4) -->
+<!-- 2. ARCHITECTURE (vertical, fits A4) -->
 <section id="architecture" class="section">
   <div class="container" style="max-width:182mm">
     <h2 class="title">2. Architecture (concept)</h2>
@@ -130,31 +130,31 @@ svg{display:block;max-width:100%;height:auto;margin:0 auto}
           </marker>
         </defs>
         <rect x="0" y="0" width="920" height="700" fill="url(#bg)"/>
-        <!-- Etapas apiladas -->
+        <!-- Stages -->
         <rect x="160" y="40"  width="600" height="110" rx="16" fill="#fff" stroke="#cbdcf0" stroke-width="1.6"/>
-        <text x="460" y="92"  text-anchor="middle" font-size="20" fill="#0b1220">Ingestión</text>
-        <text x="460" y="116" text-anchor="middle" font-size="14" fill="#5b677a">OCR · Parsers · Metadatos · Selección de jurisdicción</text>
+        <text x="460" y="92"  text-anchor="middle" font-size="20" fill="#0b1220">Ingestion</text>
+        <text x="460" y="116" text-anchor="middle" font-size="14" fill="#5b677a">OCR · Parsers · Metadata · Jurisdiction selection</text>
         <line x1="460" y1="150" x2="460" y2="190" stroke="#0a4bd1" stroke-width="3" marker-end="url(#arrowDown)"/>
 
         <rect x="160" y="200" width="600" height="110" rx="16" fill="#fff" stroke="#cbdcf0" stroke-width="1.6"/>
-        <text x="460" y="252" text-anchor="middle" font-size="20" fill="#0b1220">Razonamiento</text>
-        <text x="460" y="276" text-anchor="middle" font-size="14" fill="#5b677a">NER · Mapeo semántico → Requisitos aplicables</text>
+        <text x="460" y="252" text-anchor="middle" font-size="20" fill="#0b1220">Reasoning</text>
+        <text x="460" y="276" text-anchor="middle" font-size="14" fill="#5b677a">NER · Semantic mapping → Applicable requirements</text>
         <line x1="460" y1="310" x2="460" y2="350" stroke="#0a4bd1" stroke-width="3" marker-end="url(#arrowDown)"/>
 
         <rect x="160" y="360" width="600" height="110" rx="16" fill="#fff" stroke="#cbdcf0" stroke-width="1.6"/>
-        <text x="460" y="412" text-anchor="middle" font-size="20" fill="#0b1220">Adaptación</text>
-        <text x="460" y="436" text-anchor="middle" font-size="14" fill="#5b677a">Reglas transformadoras · Plantillas parametrizadas</text>
+        <text x="460" y="412" text-anchor="middle" font-size="20" fill="#0b1220">Adaptation</text>
+        <text x="460" y="436" text-anchor="middle" font-size="14" fill="#5b677a">Transform rules · Parameterized templates</text>
         <line x1="460" y1="470" x2="460" y2="510" stroke="#0a4bd1" stroke-width="3" marker-end="url(#arrowDown)"/>
 
         <rect x="160" y="520" width="600" height="110" rx="16" fill="#fff" stroke="#cbdcf0" stroke-width="1.6"/>
-        <text x="460" y="572" text-anchor="middle" font-size="20" fill="#0b1220">Trazabilidad</text>
-        <text x="460" y="596" text-anchor="middle" font-size="14" fill="#5b677a">Bitácora · Hashes · Auditoría · Explicabilidad</text>
+        <text x="460" y="572" text-anchor="middle" font-size="20" fill="#0b1220">Traceability</text>
+        <text x="460" y="596" text-anchor="middle" font-size="14" fill="#5b677a">Rule log · Hashes · Audit · Explainability</text>
       </svg>
     </div>
   </div>
 </section>
 
-<!-- 3. DATA CONTRACTS (apiladas) -->
+<!-- 3. DATA CONTRACTS (stacked) -->
 <section id="contracts" class="section">
   <div class="container">
     <h2 class="title">3. Data Contracts (JSON)</h2>
@@ -162,33 +162,33 @@ svg{display:block;max-width:100%;height:auto;margin:0 auto}
       <div class="card">
         <h3 class="center" style="margin-top:0">Input</h3>
 <pre>{
-  "id":"clause-001",
-  "text":"La parte X tratará datos personales...",
-  "jurisdictions":["EU","ES"],
-  "meta":{"docId":"contract-42","section":"12.3"}
+  "id": "clause-001",
+  "text": "Party X will process personal data...",
+  "jurisdictions": ["EU","ES"],
+  "meta": {"docId": "contract-42", "section": "12.3"}
 }</pre>
       </div>
       <div class="card">
         <h3 class="center" style="margin-top:0">Output</h3>
 <pre>{
-  "id":"clause-001",
-  "applicableRules":["GDPR-ART6","ES-LSSI-13"],
-  "decision":"ADJUST",
-  "trace":{"commit":"REPLACE_WITH_COMMIT_SHA"}
+  "id": "clause-001",
+  "applicableRules": ["GDPR-ART6", "ES-LSSI-13"],
+  "decision": "ADJUST",
+  "trace": {"commit": "REPLACE_WITH_COMMIT_SHA"}
 }</pre>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 4. INTERFACES (apiladas) -->
+<!-- 4. INTERFACES (stacked) -->
 <section id="interfaces" class="section">
   <div class="container">
     <h2 class="title">4. Interfaces (prototype stubs)</h2>
     <div class="stack-col">
       <div class="card">
         <h3 class="center" style="margin-top:0">CLI (pseudo)</h3>
-<pre><code>$ iclvs ingest --file contrato.pdf --jur EU,ES
+<pre><code>$ iclvs ingest --file contract.pdf --jur EU,ES
 $ iclvs reason --in dataset.json --rules ruleset.json
 $ iclvs adapt  --in requirements.json --tpl templates/
 $ iclvs report --run 2025-10-27 --out report.pdf</code></pre>
@@ -196,24 +196,26 @@ $ iclvs report --run 2025-10-27 --out report.pdf</code></pre>
       <div class="card">
         <h3 class="center" style="margin-top:0">HTTP (pseudo)</h3>
 <pre><code>POST /v0/review
-{ "text": "...", "jurisdictions":["EU","ES"] }
+{ "text": "...", "jurisdictions": ["EU","ES"] }
 
 200 OK
-{ "decision":"ADJUST","applicableRules":[...], "trace":{...} }</code></pre>
+{ "decision": "ADJUST", "applicableRules": [...], "trace": { ... } }</code></pre>
       </div>
-      <p class="center" style="max-width:780px;margin:8px auto 0">Interfaces de ejemplo para documentación. El motor no está incluido en esta versión.</p>
+      <p class="center" style="max-width:780px;margin:8px auto 0">
+        Example interfaces for documentation. The inference engine is not included in this version.
+      </p>
     </div>
   </div>
 </section>
 
-<!-- 5. MÉTRICAS -->
+<!-- 5. METRICS -->
 <section id="metrics" class="section">
   <div class="container">
     <h2 class="title">5. Metrics (demo SVG)</h2>
     <div class="card" style="max-width:900px;margin:0 auto">
-      <h3 class="center" style="margin:.2rem 0 8px">Cobertura normativa por jurisdicción</h3>
+      <h3 class="center" style="margin:.2rem 0 8px">Regulatory coverage by jurisdiction</h3>
       <div class="svgwrap">
-        <svg viewBox="0 0 720 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cobertura normativa">
+        <svg viewBox="0 0 720 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Coverage">
           <rect x="0" y="0" width="720" height="260" fill="#f7fbff"/>
           <g stroke="#e2ecff" stroke-width="1"><line x1="60" y1="200" x2="680" y2="200"/></g>
           <rect x="110" y="44" width="60" height="156" fill="var(--accent)"/>
@@ -230,7 +232,7 @@ $ iclvs report --run 2025-10-27 --out report.pdf</code></pre>
   </div>
 </section>
 
-<!-- 6. VERSIONADO / PROVENIENCIA -->
+<!-- 6. PROVENANCE -->
 <section id="provenance" class="section last">
   <div class="container">
     <h2 class="title">6. Versioning & Provenance</h2>
@@ -238,7 +240,7 @@ $ iclvs report --run 2025-10-27 --out report.pdf</code></pre>
       <table>
         <tbody>
           <tr><td style="width:36%"><strong>Repository</strong></td><td><a href="https://github.com/eduardoespinal-lawtech/ICLVS-LegalTech/tree/main">github.com/eduardoespinal-lawtech/ICLVS-LegalTech</a></td></tr>
-          <tr><td><strong>Canonical URL</strong></td><td><a href="https://github.com/eduardoespinal-lawtech/ICLVS-LegalTech/tree/main">Temporal (hasta publicar Pages)</a></td></tr>
+          <tr><td><strong>Canonical URL</strong></td><td><a href="https://github.com/eduardoespinal-lawtech/ICLVS-LegalTech/tree/main">Temporary (until GitHub Pages)</a></td></tr>
           <tr><td><strong>Commit SHA</strong></td><td><code>REPLACE_WITH_COMMIT_SHA</code></td></tr>
           <tr><td><strong>Version</strong></td><td>0.1.0 (prototype)</td></tr>
           <tr><td><strong>Build date</strong></td><td>2025-10-27</td></tr>
