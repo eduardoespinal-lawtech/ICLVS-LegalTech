@@ -3,7 +3,7 @@
 ICLVS — Intelligent Contextual Legal Verification System
 Author: Eduardo Luis Espinal de Aza
 Role: Abogado · LegalTech Developer
-Purpose: Evidencia técnica y conceptual para peticiones de visa EB-2 NIW (AI-driven Legal Compliance Framework)
+Purpose: Evidencia técnica y conceptual (EB-2 NIW) — AI-driven Legal Compliance Framework
 Date: 2025-10-27
 Repository: REPLACE_WITH_REPO_URL
 CommitSHA: REPLACE_WITH_COMMIT_SHA
@@ -26,25 +26,22 @@ CommitSHA: REPLACE_WITH_COMMIT_SHA
   <!-- JSON-LD (schema.org) -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "ICLVS — Intelligent Contextual Legal Verification System",
-    "applicationCategory": "LegalTech",
-    "operatingSystem": "Any",
-    "description": "Prototipo técnico imprimible para verificación legal contextual, adaptación normativa y trazabilidad.",
-    "author": {
-      "@type": "Person",
-      "name": "Eduardo Luis Espinal de Aza",
-      "jobTitle": "Abogado · LegalTech Developer",
-      "sameAs": [
-        "https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=8686960"
-      ]
-    },
-    "url": "https://REPLACE_WITH_GITHUB_URL/",
-    "datePublished": "2025-10-27",
-    "dateModified": "2025-10-27",
-    "softwareVersion": "0.1.0",
-    "license": "https://opensource.org/licenses/MIT"
+    "@context":"https://schema.org",
+    "@type":"SoftwareApplication",
+    "name":"ICLVS — Intelligent Contextual Legal Verification System",
+    "applicationCategory":"LegalTech",
+    "operatingSystem":"Any",
+    "description":"Prototipo técnico imprimible para verificación legal contextual, adaptación normativa y trazabilidad.",
+    "author":{"@type":"Person","name":"Eduardo Luis Espinal de Aza","jobTitle":"Abogado · LegalTech Developer"},
+    "url":"https://REPLACE_WITH_GITHUB_URL/",
+    "datePublished":"2025-10-27",
+    "dateModified":"2025-10-27",
+    "softwareVersion":"0.1.0",
+    "license":"https://opensource.org/licenses/MIT",
+    "sameAs":[
+      "https://ssrn.com/abstract=5646790",
+      "https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=8686960"
+    ]
   }
   </script>
 
@@ -53,7 +50,8 @@ CommitSHA: REPLACE_WITH_COMMIT_SHA
       --bg:#fff; --fg:#0b1220; --muted:#5b677a; --line:#e6e9ef; --accent:#0a4bd1;
       --maxw:980px; --radius:12px;
     }
-    html,body{background:var(--bg);color:var(--fg);margin:0;padding:0;font-family:Inter,ui-sans-serif,-apple-system,Segoe UI,Roboto,Helvetica,Arial;}
+    html,body{background:var(--bg);color:var(--fg);margin:0;padding:0;
+      font-family:Inter, ui-sans-serif, -apple-system, Segoe UI, Roboto, Helvetica, Arial;}
     .container{max-width:var(--maxw);margin:0 auto;padding:22px}
     header{border-bottom:1px solid var(--line);padding:18px 0 20px}
     h1{font-size:1.6rem;margin:.1rem 0 .3rem}
@@ -70,13 +68,15 @@ CommitSHA: REPLACE_WITH_COMMIT_SHA
     .svgwrap{border:1px solid var(--line);border-radius:10px;background:#fbfeff;padding:10px;margin-top:10px}
     pre{background:#fafafa;border:1px solid var(--line);padding:10px;border-radius:8px;overflow:auto;font-size:0.92rem}
     code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;background:#fff;padding:2px 6px;border-radius:6px;border:1px solid var(--line)}
+    .tiny{font-size:0.93rem;color:var(--muted)}
+    .no-print{display:block}
 
-    /* print-specific */
+    /* Print */
     @media print{
-      *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-      .actions,.no-print{display:none!important}
+      *{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+      .no-print, .actions{display:none!important}
       body::before{
-        content: "ANEXO PROBATORIO — ICLVS v0.1.0 · Autor: Eduardo Luis Espinal de Aza";
+        content:"ANEXO PROBATORIO — ICLVS v0.1.0 · Autor: Eduardo Luis Espinal de Aza";
         position:fixed; top:10mm; left:14mm; font-weight:700;
       }
       .card{box-shadow:none;border:1pt solid #000}
@@ -85,12 +85,11 @@ CommitSHA: REPLACE_WITH_COMMIT_SHA
       @page{size:A4;margin:14mm}
     }
 
-    /* responsive */
+    /* Responsive */
     @media (min-width:860px){
       .grid-2{display:grid;grid-template-columns:1fr 420px;gap:18px}
       .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
     }
-    .tiny{font-size:0.93rem;color:var(--muted)}
   </style>
 </head>
 <body>
@@ -98,9 +97,9 @@ CommitSHA: REPLACE_WITH_COMMIT_SHA
     <div class="container">
       <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
         <div>
-          <span class="badge">ICLVS · Prototipo técnico — print-ready</span>
+          <span class="badge">ICLVS · Prototipo técnico — archivo único · imprimible</span>
           <h1>ICLVS — Intelligent Contextual Legal Verification System</h1>
-          <p class="tiny">Pipeline reproducible para verificación legal contextual: <strong>Ingestión → Razonamiento → Adaptación normativa → Trazabilidad</strong>. Archivo único para GitHub Pages.</p>
+          <p class="tiny">Pipeline reproducible para verificación legal contextual: <strong>Ingestión → Razonamiento → Adaptación normativa → Trazabilidad</strong>. Minimal, técnico y listo para GitHub Pages.</p>
         </div>
         <div class="actions no-print">
           <a class="btn primary" href="#evidencias">Proveniencia</a>
@@ -112,20 +111,17 @@ CommitSHA: REPLACE_WITH_COMMIT_SHA
   </header>
 
   <main class="container" id="main">
-    <!-- SUMMARY -->
+    <!-- RESUMEN / DOI -->
     <section class="card" id="resumen">
-      <h2>Resumen técnico (versión ejecutable: 0.1.0)</h2>
-      <p class="tiny">ICLVS propone un flujo verificable donde cláusulas y requisitos se mapean a marcos legales aplicables. El prototipo aquí es conceptual y técnico — incluye diagramas vectoriales, matriz de trazabilidad y métricas de ejemplo. En producción, el motor asociaría reglas a evidencia y generaría salidas auditables.</p>
-      <div style="margin-top:8px">
-        <strong>DOI / SSRN:</strong> <a href="https://ssrn.com/abstract=5646790">10.2139/ssrn.5646790</a> — Perfil autor: <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=8686960">SSRN (Espinal De Aza)</a>
-      </div>
+      <h2>Resumen técnico (versión 0.1.0)</h2>
+      <p class="tiny">El prototipo ICLVS modela un flujo verificable donde cláusulas y requisitos se mapean a marcos legales aplicables y producen salidas auditables (reglas, motivos, referencias). Incluye diagramas vectoriales, matriz de trazabilidad y métricas demostrativas; el motor automatizado no está incorporado en esta versión.</p>
+      <div><strong>DOI / SSRN:</strong> <a href="https://ssrn.com/abstract=5646790">10.2139/ssrn.5646790</a> · Perfil autor: <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=8686960">SSRN (Espinal De Aza)</a></div>
     </section>
 
-    <!-- ARCHITECTURE -->
+    <!-- ARQUITECTURA SVG -->
     <section class="card" id="arquitectura" style="margin-top:18px">
       <h2>Arquitectura conceptual</h2>
-      <div class="svgwrap" aria-hidden="false">
-        <!-- SVG vectorial: bloques y flujo -->
+      <div class="svgwrap">
         <svg viewBox="0 0 1100 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arquitectura ICLVS">
           <defs>
             <linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#e9f2ff"/><stop offset="1" stop-color="#f9fbff"/></linearGradient>
@@ -162,7 +158,7 @@ CommitSHA: REPLACE_WITH_COMMIT_SHA
 
     <!-- PIPELINE -->
     <section class="card" id="pipeline" style="margin-top:18px">
-      <h2>Pipeline operacional (tabla)</h2>
+      <h2>Pipeline operacional</h2>
       <table>
         <thead>
           <tr><th>Fase</th><th>Entrada</th><th>Proceso</th><th>Salida</th></tr>
@@ -175,25 +171,23 @@ CommitSHA: REPLACE_WITH_COMMIT_SHA
           <tr><td>F5 — Evidencia</td><td>Explicaciones</td><td>Consolidación de anexos y PDF</td><td>Reporte imprimible</td></tr>
         </tbody>
       </table>
-      <p class="tiny" style="margin-top:8px">Recomendación técnica: almacenar bitácora en formato inmutable (hash + timestamp) con referencia a commit del repositorio.</p>
+      <p class="tiny" style="margin-top:8px">Recomendación: bitácora inmutable (hash + timestamp) referenciando CommitSHA del repositorio.</p>
     </section>
 
-    <!-- METRICS: GRÁFICAS SVG -->
+    <!-- GRÁFICAS -->
     <section class="card" id="metricas" style="margin-top:18px">
       <h2>Gráficas (ejemplo reproducible)</h2>
 
-      <!-- Barra comparativa: cobertura -->
-      <h3 style="margin:.6rem 0 0">Cobertura normativa por jurisdicción (ejemplo)</h3>
-      <div class="svgwrap" aria-hidden="false">
+      <h3 style="margin:.6rem 0 0">Cobertura normativa por jurisdicción</h3>
+      <div class="svgwrap">
         <svg viewBox="0 0 720 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cobertura normativa">
           <rect x="0" y="0" width="720" height="260" fill="#fbfeff"/>
           <g stroke="#e7f0ff" stroke-width="1"><line x1="60" y1="200" x2="680" y2="200"/></g>
-          <!-- barras (valores demo) -->
+          <!-- Barras demo -->
           <rect x="110" y="44" width="60" height="156" fill="#0a4bd1"/>
           <rect x="240" y="72" width="60" height="128" fill="#1d74e6"/>
           <rect x="370" y="28" width="60" height="172" fill="#4f9bff"/>
           <rect x="500" y="58" width="60" height="142" fill="#82b1ff"/>
-          <!-- etiquetas -->
           <text x="140" y="224" text-anchor="middle" font-size="13" fill="#0b1220">EU</text>
           <text x="270" y="224" text-anchor="middle" font-size="13" fill="#0b1220">US</text>
           <text x="400" y="224" text-anchor="middle" font-size="13" fill="#0b1220">ES</text>
@@ -201,17 +195,16 @@ CommitSHA: REPLACE_WITH_COMMIT_SHA
         </svg>
       </div>
 
-      <!-- Sparkline -->
-      <h3 style="margin:.8rem 0 0">Índice de cumplimiento por iteración (demo)</h3>
+      <h3 style="margin:.8rem 0 0">Índice de cumplimiento por iteración</h3>
       <div class="svgwrap">
         <svg viewBox="0 0 720 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Índice cumplimiento">
           <rect x="0" y="0" width="720" height="140" fill="#fbfeff"/>
-          <path d="M40,100 L80,88 L120,68 L160,78 L200,60 L240,66 L280,50 L320,44 L360,56 L400,42 L440,36 L480,42 L520,30 L560,34 L600,22 L640,28" fill="none" stroke="#0a4bd1" stroke-width="3" />
+          <path d="M40,100 L80,88 L120,68 L160,78 L200,60 L240,66 L280,50 L320,44 L360,56 L400,42 L440,36 L480,42 L520,30 L560,34 L600,22 L640,28"
+                fill="none" stroke="#0a4bd1" stroke-width="3" />
           <g fill="#0a4bd1"><circle cx="120" cy="68" r="3"/><circle cx="320" cy="44" r="3"/><circle cx="520" cy="30" r="3"/></g>
         </svg>
       </div>
 
-      <!-- Matriz trazabilidad -->
       <h3 style="margin:.8rem 0 0">Matriz de trazabilidad (regla → salida)</h3>
       <table>
         <thead><tr><th>Regla</th><th>Referencia</th><th>Impacto</th><th>Salida</th></tr></thead>
@@ -223,19 +216,19 @@ CommitSHA: REPLACE_WITH_COMMIT_SHA
       </table>
     </section>
 
-    <!-- EVIDENCE & PROVENANCE -->
+    <!-- PROVENIENCIA -->
     <section class="card" id="evidencias" style="margin-top:18px">
       <h2>Proveniencia & Evidencias</h2>
       <table>
         <tbody>
           <tr><td style="width:36%"><strong>URL canónica</strong></td><td><a href="https://REPLACE_WITH_GITHUB_URL/">https://REPLACE_WITH_GITHUB_URL/</a></td></tr>
           <tr><td><strong>Repositorio</strong></td><td><a href="https://REPLACE_WITH_REPO_URL">REPLACE_WITH_REPO_URL</a></td></tr>
-          <tr><td><strong>Commit SHA</strong></td><td><code>REPLACE_WITH_COMMIT_SHA</code> (sustituir por el SHA real tras push)</td></tr>
+          <tr><td><strong>Commit SHA</strong></td><td><code>REPLACE_WITH_COMMIT_SHA</code> (sustituir por SHA real tras el push)</td></tr>
           <tr><td><strong>Fecha de publicación</strong></td><td>2025-10-27</td></tr>
           <tr><td><strong>Última modificación</strong></td><td>2025-10-27</td></tr>
           <tr><td><strong>Autor</strong></td><td>Eduardo Luis Espinal de Aza</td></tr>
           <tr><td><strong>DOI / SSRN</strong></td><td><a href="https://ssrn.com/abstract=5646790">10.2139/ssrn.5646790</a></td></tr>
-          <tr><td><strong>License</strong></td><td>MIT</td></tr>
+          <tr><td><strong>Licencia</strong></td><td>MIT</td></tr>
         </tbody>
       </table>
 
@@ -247,18 +240,8 @@ CommitSHA: REPLACE_WITH_COMMIT_SHA
       <p class="tiny"><em>Lugar y fecha:</em> Santo Domingo, República Dominicana — 2025-10-27</p>
       <p style="margin-top:12px">Firma: ________________________________</p>
 
-      <h3 style="margin-top:12px">Metodología (resumen)</h3>
-      <ul class="tiny">
-        <li>Modelado por capas: Ingestión → Razonamiento → Adaptación → Trazabilidad.</li>
-        <li>Representación de reglas en formato estructurado; cada decisión conserva referencia a la regla y a la fuente normativa.</li>
-        <li>Evidencia reproducible: diagramas SVG, matrices y reportes imprimibles.</li>
-        <li>Limitación: versión 0.1.0 no contiene motor automatizado; es evidencia conceptual y técnica.</li>
-      </ul>
-
       <h3 style="margin-top:12px">Cita sugerida y BibTeX</h3>
-      <p class="tiny">
-        Espinal De Aza, Eduardo Luis (2025). <em>White Paper: Intelligent Contextual Legal Verification System</em>. SSRN. DOI: 10.2139/ssrn.5646790
-      </p>
+      <p class="tiny">Espinal De Aza, Eduardo Luis (2025). <em>White Paper: Intelligent Contextual Legal Verification System</em>. SSRN. DOI: 10.2139/ssrn.5646790</p>
       <pre class="tiny">@misc{EspinalDeAza2025ICLVS,
   author  = {Espinal De Aza, Eduardo Luis},
   title   = {White Paper: Intelligent Contextual Legal Verification System},
@@ -269,21 +252,19 @@ CommitSHA: REPLACE_WITH_COMMIT_SHA
 }</pre>
     </section>
 
-    <!-- FOOTER / README-LIKE -->
+    <!-- README RÁPIDO -->
     <section class="card" style="margin-top:18px">
       <h2>Project — quick README</h2>
-      <p class="tiny"><strong>ICLVS — Intelligent Contextual Legal Verification System</strong></p>
       <ul class="tiny">
         <li>Version: 0.1.0</li>
         <li>Format: single-file HTML (print-ready)</li>
-        <li>Purpose: evidencia técnica y conceptual para publicaciones y trámites.</li>
-        <li>How to publish: subir este archivo como <code>index.html</code> a <code>gh-pages</code> o usar GitHub Pages desde la rama <code>main</code>.</li>
+        <li>Purpose: evidencia técnica y conceptual para expediente y publicaciones.</li>
+        <li>Publish: subir este archivo como <code>index.html</code> a GitHub Pages (rama <code>main</code> o <code>gh-pages</code>).</li>
       </ul>
-      <p class="tiny">Instrucciones para completar antes de usar como evidencia técnica:</p>
       <ol class="tiny">
-        <li>Reemplazar <code>REPLACE_WITH_GITHUB_URL</code>, <code>REPLACE_WITH_REPO_URL</code> y <code>REPLACE_WITH_COMMIT_SHA</code> por tus enlaces y SHA reales.</li>
-        <li>Hacer push público al repositorio; anotar el commit SHA en la sección de Proveniencia.</li>
-        <li>Adjuntar en tu expediente la URL pública y PDF impreso (Ctrl/Cmd+P → guardar como PDF).</li>
+        <li>Reemplaza <code>REPLACE_WITH_GITHUB_URL</code>, <code>REPLACE_WITH_REPO_URL</code> y <code>REPLACE_WITH_COMMIT_SHA</code>.</li>
+        <li>Haz push público y copia el <strong>SHA</strong> en “Proveniencia”.</li>
+        <li>Imprime a PDF (Ctrl/Cmd+P) con márgenes A4.</li>
       </ol>
     </section>
   </main>
