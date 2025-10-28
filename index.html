@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- ICLVS — Intelligent Contextual Legal Verification System · Modern Tech Page -->
+<!-- ICLVS — Modern Technical Page (color & centered) -->
 <html lang="en">
 <head>
 <meta charset="utf-8" />
@@ -10,51 +10,98 @@
 <link rel="icon" href="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" />
 <style>
 :root{
-  --bg:#f7f9fc; --surface:#ffffff; --fg:#0b1220; --muted:#5b677a; --line:#e6e9ef;
-  --accent:#0a4bd1; --accent2:#1d74e6; --accent3:#4f9bff; --chip:#eef4ff;
-  --shadow:0 12px 36px rgba(10,75,209,.10);
-  --radius:16px; --maxw:1120px; --sp:22px;
+  --bg:#0b1220;        /* deep navy backdrop */
+  --surface:#0f1b33;   /* card surface (dark) */
+  --panel:#0c1630;     /* hero/navigation panel */
+  --fg:#eaf2ff;        /* main text */
+  --muted:#a9b9d6;     /* secondary text */
+  --line:#1e2c4d;      /* border */
+  --accent:#4f9bff;    /* primary blue */
+  --accent2:#9fd0ff;   /* light blue */
+  --chip:#10305f;
+  --radius:16px;
+  --shadow:0 18px 60px rgba(0,0,0,.35), 0 8px 24px rgba(20,80,180,.25);
+  --max:1100px;
+  --sp:22px;
 }
-*{box-sizing:border-box} html,body{margin:0;background:
-  radial-gradient(1200px 400px at 50% -200px, #eaf2ff 0, transparent 60%),
-  var(--bg);color:var(--fg);font:16px/1.6 ui-sans-serif,-apple-system,"Segoe UI",Roboto,Helvetica,Arial}
-a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
-.container{max-width:var(--maxw);margin:0 auto;padding:0 var(--sp)}
-.section{padding:48px 0}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:
+  radial-gradient(1200px 600px at 50% -200px, #143061 0, transparent 60%),
+  linear-gradient(180deg,#061022 0,#0b1220 30%,#0b1220 100%);
+color:var(--fg);font:16px/1.6 ui-sans-serif,-apple-system,"Segoe UI",Roboto,Helvetica,Arial}
+a{color:var(--accent2);text-decoration:none} a:hover{text-decoration:underline}
+.container{max-width:var(--max);margin:0 auto;padding:0 var(--sp)}
+.section{padding:56px 0}
 .center{text-align:center}
-.row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
-.grid{display:grid;gap:16px}
-@media (min-width:900px){.grid-2{grid-template-columns:1fr 1fr}.grid-3{grid-template-columns:repeat(3,1fr)}}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px}
-.badge{display:inline-block;background:var(--chip);color:var(--accent);border:1px solid #d6e6ff;border-radius:999px;padding:8px 12px;font-weight:700}
-.pill{display:inline-block;border:1px solid var(--line);background:#fff;border-radius:12px;padding:8px 12px;font-weight:600}
-.btn{display:inline-block;border-radius:12px;padding:10px 14px;font-weight:700;border:1px solid var(--accent);background:var(--accent);color:#fff}
-.btn.ghost{background:#fff;color:var(--fg);border-color:var(--line)}
+.row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;align-items:center}
+.grid{display:grid;gap:18px}
+@media(min-width:900px){.grid-2{grid-template-columns:1fr 1fr}.grid-3{grid-template-columns:repeat(3,1fr)}}
+
+header.nav{
+  position:sticky;top:0;z-index:20;
+  background:linear-gradient(180deg,#0d1a35ee,#0d1a35ee);
+  border-bottom:1px solid var(--line);
+  backdrop-filter:saturate(140%) blur(6px);
+}
+nav.toc .link{
+  display:inline-block;padding:10px 14px;border:1px solid var(--line);
+  border-radius:12px;background:#0d1a35;color:var(--fg);font-weight:700
+}
+nav.toc .link:hover{background:#11224a}
+
+.hero{
+  background:
+    radial-gradient(800px 300px at 50% 0, rgba(79,155,255,.25), transparent 60%),
+    linear-gradient(180deg,#0c1630 0,#0b1220 100%);
+  border-bottom:1px solid var(--line);
+}
+.badge{
+  display:inline-block;background:#0f2a55;color:#cfe3ff;border:1px solid #214a86;
+  border-radius:999px;padding:8px 14px;font-weight:800;letter-spacing:.2px
+}
 h1,h2,h3{margin:.2rem 0 .6rem;line-height:1.15}
-.title{font-size:1.2rem;letter-spacing:.2px;margin-bottom:12px;text-align:center}
-.title::after{content:"";display:block;height:3px;width:76px;margin:10px auto 0;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:8px}
-pre{background:#fcfdff;border:1px solid var(--line);border-radius:12px;padding:14px;overflow:auto}
+h1{font-size:2.2rem}
+.title{font-size:1.25rem;letter-spacing:.2px;margin-bottom:14px;text-align:center}
+.title::after{content:"";display:block;height:3px;width:82px;margin:12px auto 0;
+  background:linear-gradient(90deg,#4f9bff,#9fd0ff);border-radius:8px}
+
+.card{
+  background:linear-gradient(180deg,#0f1b33 0,#0e1a31 100%);
+  border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px
+}
+.card h3{margin-top:.1rem}
+p{margin:.4rem 0 1rem;color:var(--muted)}
+.pill{display:inline-block;border:1px solid #264b86;background:#123063;color:#d3e6ff;border-radius:12px;padding:8px 12px;font-weight:700}
+
+pre{
+  background:linear-gradient(180deg,#0c1831,#0b162e);
+  border:1px solid #1b2d55;border-radius:12px;padding:14px;overflow:auto;color:#cfe3ff
+}
 code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
-table{width:100%;border-collapse:collapse} th,td{padding:10px 12px;border-top:1px solid var(--line);text-align:left} th{background:#f7faff}
+
 svg{display:block;max-width:100%;height:auto}
-header.sticky{position:sticky;top:0;z-index:20;background:linear-gradient(#ffffffee,#ffffffe8);backdrop-filter:saturate(140%) blur(4px);border-bottom:1px solid var(--line)}
-nav.toc .link{display:inline-block;padding:10px 14px;border:1px solid var(--line);border-radius:12px;background:#fff;font-weight:700}
-nav.toc .link:hover{background:#f7faff}
-footer{border-top:1px solid var(--line);color:var(--muted)}
-/* small flourish */
-.hero{background:
-  radial-gradient(500px 180px at 50% -40px, rgba(79,155,255,.20), transparent 60%);}
+.kpi{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:linear-gradient(180deg,#0f2a55,#0e2346);
+  border:1px solid #1a3b72;border-radius:14px;padding:18px;min-height:110px
+}
+.kpi strong{font-size:1.6rem;color:#fff}
+.kpi span{color:#b8cff2}
+
+/* subtle motion */
+.reveal{opacity:0;transform:translateY(14px);animation:rise .7s ease .05s forwards}
+@keyframes rise{to{opacity:1;transform:none}}
 </style>
 </head>
 <body>
 
-<!-- ====== TOP / NAV ====== -->
-<header class="sticky">
-  <div class="container section" style="padding:14px 0">
-    <div class="row" style="justify-content:space-between;align-items:center;gap:10px">
+<!-- ===== NAV ===== -->
+<header class="nav">
+  <div class="container" style="padding:12px 0">
+    <div class="row" style="justify-content:space-between">
       <a href="#" class="row" style="gap:10px;text-decoration:none">
         <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" width="34" height="34" style="border-radius:8px">
-        <strong style="color:var(--fg)">ICLVS — Technical Prototype</strong>
+        <strong>ICLVS — Technical Prototype</strong>
       </a>
       <nav class="toc row">
         <a class="link" href="#modules">Modules</a>
@@ -68,15 +115,17 @@ footer{border-top:1px solid var(--line);color:var(--muted)}
   </div>
 </header>
 
-<!-- ====== HERO ====== -->
+<!-- ===== HERO ===== -->
 <section class="section hero">
   <div class="container center">
-    <span class="badge">ICLVS — Intelligent Contextual Legal Verification System</span>
-    <h1 style="margin:.3rem 0 0">Technical Prototype</h1>
-    <p class="center" style="max-width:860px;color:var(--muted)">Concise technical page: <strong>Modules</strong>, <strong>Architecture</strong>, <strong>Data Contracts</strong>, <strong>Interfaces</strong>, <strong>Metrics</strong>, and <strong>Provenance</strong>. Built for clarity and credibility.</p>
-    <div class="row" style="margin-top:8px">
-      <a class="btn" href="https://github.com/eduardoespinal-lawtech/ICLVS-LegalTech/tree/main" target="_blank" rel="noopener">Repository</a>
-      <a class="btn ghost" href="#provenance">Build Info</a>
+    <span class="badge reveal">ICLVS — Intelligent Contextual Legal Verification System</span>
+    <h1 class="reveal" style="animation-delay:.05s">Technical Prototype</h1>
+    <p class="reveal" style="max-width:860px;margin:6px auto 0;animation-delay:.1s">
+      Modern, credible, and centered technical page: <strong>Modules</strong>, <strong>Architecture</strong>,
+      <strong>Data Contracts</strong>, <strong>Interfaces</strong>, <strong>Metrics</strong>, and <strong>Provenance</strong>.
+    </p>
+    <div class="row reveal" style="margin-top:12px;animation-delay:.15s">
+      <a class="pill" href="https://github.com/eduardoespinal-lawtech/ICLVS-LegalTech/tree/main" target="_blank" rel="noopener">Repository</a>
       <span class="pill">v0.1.0</span>
       <span class="pill">Prototype</span>
     </div>
@@ -85,166 +134,173 @@ footer{border-top:1px solid var(--line);color:var(--muted)}
 
 <main>
 
-<!-- ====== MODULES ====== -->
+<!-- ===== MODULES ===== -->
 <section id="modules" class="section">
-  <div class="container">
+  <div class="container center">
     <h2 class="title">1) System Modules</h2>
     <div class="grid grid-3">
-      <div class="card center"><h3>Ingestion</h3><p>Parsers/OCR, normalization, metadata, jurisdiction selection.</p></div>
-      <div class="card center"><h3>Reasoning</h3><p>NER + semantic mapping to applicable requirements and norms hierarchy.</p></div>
-      <div class="card center"><h3>Adaptation</h3><p>Transform rules, parameterized templates, conflict resolution.</p></div>
-      <div class="card center"><h3>Traceability</h3><p>Rule ledger, references, evidence hashes, human-readable rationales.</p></div>
-      <div class="card center"><h3>Evidence</h3><p>Printable reports, structured annexes, JSON/PDF export.</p></div>
-      <div class="card center"><h3>Export</h3><p>Persistence, downloads, link to commit/artifacts.</p></div>
+      <div class="card"><h3>Ingestion</h3><p>Parsers/OCR, normalization, metadata, jurisdiction selection.</p></div>
+      <div class="card"><h3>Reasoning</h3><p>NER + semantic mapping → applicable requirements and norms hierarchy.</p></div>
+      <div class="card"><h3>Adaptation</h3><p>Transform rules, parameterized templates, conflict resolution.</p></div>
+      <div class="card"><h3>Traceability</h3><p>Rule ledger, references, evidence hashes, human-readable rationales.</p></div>
+      <div class="card"><h3>Evidence</h3><p>Reports, structured annexes, JSON/PDF export.</p></div>
+      <div class="card"><h3>Export</h3><p>Persistence, downloads, link to commit/artifacts.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ====== ARCHITECTURE (modern, responsive) ====== -->
+<!-- ===== ARCHITECTURE ===== -->
 <section id="architecture" class="section">
-  <div class="container">
+  <div class="container center">
     <h2 class="title">2) Architecture (concept)</h2>
     <div class="card">
-      <svg viewBox="0 0 1180 320" role="img" aria-label="ICLVS Architecture">
+      <svg viewBox="0 0 1180 340" role="img" aria-label="ICLVS Architecture">
         <defs>
           <linearGradient id="g" x1="0" x2="1">
-            <stop offset="0" stop-color="#eef4ff"/><stop offset="1" stop-color="#ffffff"/>
+            <stop offset="0" stop-color="#0f2a55"/><stop offset="1" stop-color="#0e2346"/>
           </linearGradient>
           <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
-            <path d="M0,0 L0,12 L12,6 z" fill="#0a4bd1"/>
+            <path d="M0,0 L0,12 L12,6 z" fill="#4f9bff"/>
           </marker>
         </defs>
-        <rect x="0" y="0" width="1180" height="320" fill="url(#g)"/>
+        <rect x="0" y="0" width="1180" height="340" fill="url(#g)" rx="14"/>
         <!-- stages -->
-        <g fill="#fff" stroke="#d5e3f8" stroke-width="1.6">
-          <rect x="40" y="80" width="250" height="120" rx="16"/>
-          <rect x="330" y="80" width="250" height="120" rx="16"/>
-          <rect x="620" y="80" width="250" height="120" rx="16"/>
-          <rect x="910" y="80" width="230" height="120" rx="16"/>
+        <g fill="#0b162e" stroke="#2b4b86" stroke-width="1.6">
+          <rect x="40" y="90" width="250" height="120" rx="16"/>
+          <rect x="330" y="90" width="250" height="120" rx="16"/>
+          <rect x="620" y="90" width="250" height="120" rx="16"/>
+          <rect x="910" y="90" width="230" height="120" rx="16"/>
         </g>
         <!-- flows -->
-        <g stroke="#0a4bd1" stroke-width="3" fill="none" marker-end="url(#arrow)">
-          <line x1="290" y1="140" x2="330" y2="140"/>
-          <line x1="580" y1="140" x2="620" y2="140"/>
-          <line x1="870" y1="140" x2="910" y2="140"/>
+        <g stroke="#9fd0ff" stroke-width="3" fill="none" marker-end="url(#arrow)">
+          <line x1="290" y1="150" x2="330" y2="150"/>
+          <line x1="580" y1="150" x2="620" y2="150"/>
+          <line x1="870" y1="150" x2="910" y2="150"/>
         </g>
         <!-- labels -->
-        <g font-family="ui-sans-serif,Segoe UI,Roboto" font-size="18" fill="#0b1220" text-anchor="middle">
-          <text x="165" y="130">Ingestion</text><text x="165" y="156" fill="#5b677a">OCR · Parsers · Metadata</text>
-          <text x="455" y="130">Reasoning</text><text x="455" y="156" fill="#5b677a">Semantic mapping · NER</text>
-          <text x="745" y="130">Adaptation</text><text x="745" y="156" fill="#5b677a">Rules · Templates</text>
-          <text x="1025" y="130">Traceability</text><text x="1025" y="156" fill="#5b677a">Ledger · Audit</text>
+        <g font-family="ui-sans-serif,Segoe UI,Roboto" font-size="18" fill="#eaf2ff" text-anchor="middle">
+          <text x="165" y="140">Ingestion</text><text x="165" y="166" fill="#a9c8f2">OCR · Parsers · Metadata</text>
+          <text x="455" y="140">Reasoning</text><text x="455" y="166" fill="#a9c8f2">Semantic mapping · NER</text>
+          <text x="745" y="140">Adaptation</text><text x="745" y="166" fill="#a9c8f2">Rules · Templates</text>
+          <text x="1025" y="140">Traceability</text><text x="1025" y="166" fill="#a9c8f2">Ledger · Audit</text>
         </g>
       </svg>
     </div>
   </div>
 </section>
 
-<!-- ====== DATA CONTRACTS ====== -->
+<!-- ===== DATA CONTRACTS ===== -->
 <section id="contracts" class="section">
-  <div class="container">
+  <div class="container center">
     <h2 class="title">3) Data Contracts (JSON)</h2>
     <div class="grid grid-2">
       <div class="card">
-        <h3 class="center" style="margin-top:0">Input</h3>
+        <h3>Input</h3>
 <pre>{
-  "id": "clause-001",
-  "text": "Party X will process personal data...",
-  "jurisdictions": ["EU","ES"],
-  "meta": {"docId": "contract-42", "section": "12.3"}
+  "id":"clause-001",
+  "text":"Party X will process personal data...",
+  "jurisdictions":["EU","ES"],
+  "meta":{"docId":"contract-42","section":"12.3"}
 }</pre>
       </div>
       <div class="card">
-        <h3 class="center" style="margin-top:0">Output</h3>
+        <h3>Output</h3>
 <pre>{
-  "id": "clause-001",
-  "applicableRules": ["GDPR-ART6", "ES-LSSI-13"],
-  "decision": "ADJUST",
-  "trace": {
-    "rulesApplied": ["R-GDPR-BaseLegal"],
-    "evidenceHash": "sha256:REPLACE",
-    "commit": "REPLACE_WITH_COMMIT_SHA"
-  }
+  "id":"clause-001",
+  "applicableRules":["GDPR-ART6","ES-LSSI-13"],
+  "decision":"ADJUST",
+  "trace":{"rulesApplied":["R-GDPR-BaseLegal"],"evidenceHash":"sha256:REPLACE","commit":"REPLACE_WITH_COMMIT_SHA"}
 }</pre>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ====== INTERFACES ====== -->
+<!-- ===== INTERFACES ===== -->
 <section id="interfaces" class="section">
-  <div class="container">
+  <div class="container center">
     <h2 class="title">4) Interfaces (prototype stubs)</h2>
     <div class="grid grid-2">
-      <div class="card center">
+      <div class="card">
         <h3>CLI (pseudo)</h3>
 <pre><code>$ iclvs ingest --file contract.pdf --jur EU,ES
 $ iclvs reason --in dataset.json --rules ruleset.json
 $ iclvs adapt  --in requirements.json --tpl templates/
 $ iclvs report --run 2025-10-27 --out report.pdf</code></pre>
       </div>
-      <div class="card center">
+      <div class="card">
         <h3>HTTP (pseudo)</h3>
 <pre><code>POST /v0/review
-{ "text": "...", "jurisdictions": ["EU","ES"] }
+{ "text":"...", "jurisdictions":["EU","ES"] }
 
 200 OK
-{ "decision": "ADJUST", "applicableRules": [...], "trace": { ... } }</code></pre>
+{ "decision":"ADJUST", "applicableRules":[...], "trace":{...} }</code></pre>
       </div>
     </div>
-    <p class="center" style="max-width:780px;margin-top:10px;color:var(--muted)">Example interfaces for documentation. The inference engine is not included in this version.</p>
+    <p style="max-width:760px;color:var(--muted)">Example interfaces for documentation. The inference engine is not included in this version.</p>
   </div>
 </section>
 
-<!-- ====== METRICS ====== -->
+<!-- ===== METRICS ===== -->
 <section id="metrics" class="section">
-  <div class="container">
-    <h2 class="title">5) Metrics (demo SVG)</h2>
+  <div class="container center">
+    <h2 class="title">5) Metrics (demo)</h2>
     <div class="grid grid-2">
+      <div class="kpi"><strong>92%</strong><span>Norm coverage (EU)</span></div>
+      <div class="kpi"><strong>78%</strong><span>Clause adjust accuracy</span></div>
+    </div>
+
+    <div class="grid grid-2" style="margin-top:18px">
       <div class="card">
-        <h3 class="center" style="margin-top:0">Regulatory coverage by jurisdiction</h3>
-        <svg viewBox="0 0 720 260" role="img" aria-label="Coverage">
-          <rect x="0" y="0" width="720" height="260" fill="#f7fbff"/>
-          <g stroke="#e2ecff" stroke-width="1"><line x1="60" y1="200" x2="680" y2="200"/></g>
-          <rect x="110" y="44" width="60" height="156" fill="var(--accent)"/>
-          <rect x="240" y="72" width="60" height="128" fill="var(--accent2)"/>
-          <rect x="370" y="28" width="60" height="172" fill="var(--accent3)"/>
+        <h3>Coverage by jurisdiction</h3>
+        <svg viewBox="0 0 720 240" role="img" aria-label="Coverage">
+          <rect x="0" y="0" width="720" height="240" fill="#0e2346"/>
+          <g stroke="#1f3f76" stroke-width="1"><line x1="60" y1="200" x2="680" y2="200"/></g>
+          <rect x="110" y="44" width="60" height="156" fill="#4f9bff"/>
+          <rect x="240" y="72" width="60" height="128" fill="#9fd0ff"/>
+          <rect x="370" y="28" width="60" height="172" fill="#6bb3ff"/>
           <rect x="500" y="58" width="60" height="142" fill="#82b1ff"/>
-          <text x="140" y="224" text-anchor="middle" font-size="13" fill="#0b1220">EU</text>
-          <text x="270" y="224" text-anchor="middle" font-size="13" fill="#0b1220">US</text>
-          <text x="400" y="224" text-anchor="middle" font-size="13" fill="#0b1220">ES</text>
-          <text x="530" y="224" text-anchor="middle" font-size="13" fill="#0b1220">DO</text>
+          <text x="140" y="224" text-anchor="middle" font-size="13" fill="#cfe3ff">EU</text>
+          <text x="270" y="224" text-anchor="middle" font-size="13" fill="#cfe3ff">US</text>
+          <text x="400" y="224" text-anchor="middle" font-size="13" fill="#cfe3ff">ES</text>
+          <text x="530" y="224" text-anchor="middle" font-size="13" fill="#cfe3ff">DO</text>
         </svg>
       </div>
       <div class="card">
-        <h3 class="center" style="margin-top:0">Compliance index over iterations</h3>
+        <h3>Compliance index over iterations</h3>
         <svg viewBox="0 0 720 150" role="img" aria-label="Index">
-          <rect x="0" y="0" width="720" height="150" fill="#f7fbff"/>
+          <rect x="0" y="0" width="720" height="150" fill="#0e2346"/>
           <path d="M40,110 L110,96 L180,82 L250,76 L320,68 L390,58 L460,54 L530,46 L600,40 L670,34"
-                fill="none" stroke="var(--accent)" stroke-width="3"/>
-          <g fill="var(--accent)"><circle cx="180" cy="82" r="3"/><circle cx="460" cy="54" r="3"/><circle cx="670" cy="34" r="3"/></g>
+                fill="none" stroke="#9fd0ff" stroke-width="3"/>
+          <g fill="#9fd0ff"><circle cx="180" cy="82" r="3"/><circle cx="460" cy="54" r="3"/><circle cx="670" cy="34" r="3"/></g>
         </svg>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ====== PROVENANCE ====== -->
+<!-- ===== PROVENANCE ===== -->
 <section id="provenance" class="section">
-  <div class="container">
+  <div class="container center">
     <h2 class="title">6) Versioning & Provenance</h2>
     <div class="card" style="max-width:920px;margin:0 auto">
-      <table>
+      <table style="width:100%;border-collapse:collapse">
         <tbody>
-          <tr><td style="width:34%"><strong>Repository</strong></td>
-              <td><a href="https://github.com/eduardoespinal-lawtech/ICLVS-LegalTech/tree/main">github.com/eduardoespinal-lawtech/ICLVS-LegalTech</a></td></tr>
-          <tr><td><strong>Canonical URL</strong></td>
-              <td><a href="https://github.com/eduardoespinal-lawtech/ICLVS-LegalTech/tree/main">Temporary (until GitHub Pages)</a></td></tr>
-          <tr><td><strong>Commit SHA</strong></td><td><code>REPLACE_WITH_COMMIT_SHA</code></td></tr>
-          <tr><td><strong>Version</strong></td><td>0.1.0 (prototype)</td></tr>
-          <tr><td><strong>Build date</strong></td><td>2025-10-27</td></tr>
-          <tr><td><strong>Reference</strong></td>
-              <td>SSRN DOI: <a href="https://ssrn.com/abstract=5646790">10.2139/ssrn.5646790</a></td></tr>
+          <tr><td style="width:34%;padding:10px;border-top:1px solid var(--line)"><strong>Repository</strong></td>
+              <td style="padding:10px;border-top:1px solid var(--line)">
+                <a href="https://github.com/eduardoespinal-lawtech/ICLVS-LegalTech/tree/main">github.com/eduardoespinal-lawtech/ICLVS-LegalTech</a></td></tr>
+          <tr><td style="padding:10px;border-top:1px solid var(--line)"><strong>Canonical URL</strong></td>
+              <td style="padding:10px;border-top:1px solid var(--line)">
+                Temporary (until GitHub Pages)</td></tr>
+          <tr><td style="padding:10px;border-top:1px solid var(--line)"><strong>Commit SHA</strong></td>
+              <td style="padding:10px;border-top:1px solid var(--line)"><code>REPLACE_WITH_COMMIT_SHA</code></td></tr>
+          <tr><td style="padding:10px;border-top:1px solid var(--line)"><strong>Version</strong></td>
+              <td style="padding:10px;border-top:1px solid var(--line)">0.1.0 (prototype)</td></tr>
+          <tr><td style="padding:10px;border-top:1px solid var(--line)"><strong>Build date</strong></td>
+              <td style="padding:10px;border-top:1px solid var(--line)">2025-10-27</td></tr>
+          <tr><td style="padding:10px;border-top:1px solid var(--line)"><strong>Reference</strong></td>
+              <td style="padding:10px;border-top:1px solid var(--line)">
+                SSRN DOI: <a href="https://ssrn.com/abstract=5646790">10.2139/ssrn.5646790</a></td></tr>
         </tbody>
       </table>
     </div>
@@ -255,7 +311,7 @@ $ iclvs report --run 2025-10-27 --out report.pdf</code></pre>
 
 <footer class="section">
   <div class="container center">
-    <div class="row" style="gap:10px;align-items:center;justify-content:center">
+    <div class="row" style="gap:10px">
       <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="" width="24" height="24" style="border-radius:6px">
       <span style="color:var(--muted)">© 2025 Eduardo Luis Espinal de Aza — ICLVS</span>
     </div>
