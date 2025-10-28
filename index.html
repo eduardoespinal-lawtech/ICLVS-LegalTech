@@ -1,11 +1,11 @@
 <!doctype html>
-<!-- ICLVS — Technical Prototype · Author: Eduardo Luis Espinal de Aza · Build: 2025-10-27 -->
+<!-- ICLVS — Technical Prototype · Print-Ready A4 -->
 <html lang="es">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>ICLVS — Technical Prototype</title>
-<meta name="description" content="ICLVS Technical Prototype: módulos, arquitectura, contratos de datos, interfaces, métricas, versionado y procedencia." />
+<meta name="description" content="ICLVS Technical Prototype: módulos, arquitectura, contratos de datos, interfaces, métricas y procedencia." />
 <link rel="canonical" href="https://github.com/eduardoespinal-lawtech/ICLVS-LegalTech/tree/main" />
 <link rel="icon" href="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" />
 <style>
@@ -36,28 +36,43 @@ pre{background:#fbfbfc;border:1px solid var(--line);padding:12px;border-radius:1
 code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
 .svgwrap{border:1px solid var(--line);border-radius:12px;background:#f7fbff;padding:12px}
 svg{display:block;max-width:100%;height:auto;margin:0 auto}
+
 /* TOC */
 .toc{position:sticky;top:0;z-index:10;background:linear-gradient(#fafcff,#fff);border-bottom:1px solid var(--line)}
 .toc .wrap{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;padding:10px var(--sp)}
 .toc a{display:inline-block;padding:8px 12px;border-radius:10px;border:1px solid var(--line);color:var(--fg);font-weight:700;background:#fff}
 .toc a:hover{background:#f7faff}
-/* Columnas a 1 (apiladas) para cuadros específicos */
+
+/* Apilados (para Data Contracts e Interfaces) */
 .stack-col{display:flex;flex-direction:column;gap:16px;max-width:900px;margin:0 auto}
-/* PRINT */
+
+/* ===== PRINT PERFECT ===== */
 @media print{
+  *{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+  @page{size:A4; margin:14mm}
+  /* quitar sticky/nav/sombras y colores fuertes que ensucien */
   .toc{display:none!important}
   .card{box-shadow:none;border:1pt solid #000}
   .badge{border:1pt solid #000;background:#fff;color:#000}
-  a{text-decoration:underline;color:#000}
-  @page{size:A4;margin:14mm}
+  a{color:#000; text-decoration:underline}
+  /* mostrar URL de los enlaces en papel */
+  a[href]::after{content:" (" attr(href) ")"; font-size:.9em}
+  /* evitar cortes feos */
+  header, footer, .section, .card, .svgwrap, pre, table, h2, h3{break-inside:avoid; page-break-inside:avoid}
+  /* forzar salto entre secciones largas para ritmo limpio */
+  .section{page-break-after:always}
+  .section.last{page-break-after:auto}
 }
+
+/* opción: limitar ancho de hero para mejor impresión */
+.hero-inner{max-width:820px;margin:0 auto}
 </style>
 </head>
 <body>
 
 <!-- HERO -->
-<header class="section" style="padding-top:34px">
-  <div class="container center">
+<header class="section">
+  <div class="container center hero-inner">
     <a href="https://github.com/eduardoespinal-lawtech/ICLVS-LegalTech/tree/main" target="_blank" rel="noopener">
       <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" width="72" height="72" style="border-radius:14px;box-shadow:var(--shadow)">
     </a>
@@ -68,11 +83,11 @@ svg{display:block;max-width:100%;height:auto;margin:0 auto}
       <span class="pill">Version: 0.1.0 · Build: 2025-10-27</span>
       <span class="pill">Commit: <code>REPLACE_WITH_COMMIT_SHA</code></span>
     </div>
-    <p style="max-width:820px;margin:8px auto 0">Página técnica centrada. Mantiene solo: <strong>Módulos</strong>, <strong>Arquitectura</strong>, <strong>Contratos</strong>, <strong>Interfaces</strong>, <strong>Métricas</strong> y <strong>Proveniencia</strong>.</p>
+    <p>Landing técnica centrada e imprimible A4. Solo: <strong>Módulos</strong>, <strong>Arquitectura</strong>, <strong>Contratos</strong>, <strong>Interfaces</strong>, <strong>Métricas</strong> y <strong>Proveniencia</strong>.</p>
   </div>
 </header>
 
-<!-- TOC -->
+<!-- TOC (oculto en impresión) -->
 <nav class="toc">
   <div class="container wrap">
     <a href="#modules">Módulos</a>
@@ -86,11 +101,11 @@ svg{display:block;max-width:100%;height:auto;margin:0 auto}
 
 <main>
 
-<!-- 1. MÓDULOS -->
+<!-- 1 -->
 <section id="modules" class="section">
-  <div class="container">
+  <div class="container" style="max-width:900px">
     <h2 class="title">1. System Modules</h2>
-    <div style="display:grid;gap:16px;grid-template-columns:1fr;max-width:900px;margin:0 auto">
+    <div class="stack-col">
       <div class="card center"><h3>Ingestión</h3><p>Parsers/OCR, normalización, metadatos, selección de jurisdicción.</p></div>
       <div class="card center"><h3>Razonamiento</h3><p>NER + mapeo semántico → requisitos aplicables y jerarquía normativa.</p></div>
       <div class="card center"><h3>Adaptación</h3><p>Reglas transformadoras, plantillas parametrizadas, resolución de conflictos.</p></div>
@@ -101,12 +116,11 @@ svg{display:block;max-width:100%;height:auto;margin:0 auto}
   </div>
 </section>
 
-<!-- 2. ARQUITECTURA (vertical mejorada) -->
+<!-- 2: Arquitectura vertical (etapas apiladas) -->
 <section id="architecture" class="section">
-  <div class="container">
+  <div class="container" style="max-width:920px">
     <h2 class="title">2. Architecture (concept)</h2>
     <div class="svgwrap">
-      <!-- Diagrama VERTICAL: etapas apiladas con flechas hacia abajo -->
       <svg viewBox="0 0 920 840" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ICLVS Architecture Vertical">
         <defs>
           <linearGradient id="bg" x1="0" x2="0" y1="0" y2="1">
@@ -115,39 +129,23 @@ svg{display:block;max-width:100%;height:auto;margin:0 auto}
           <marker id="arrowDown" markerWidth="12" markerHeight="12" refX="6" refY="6" orient="auto">
             <path d="M0,0 L12,6 L0,12 z" fill="#0a4bd1"/>
           </marker>
-          <filter id="soft" x="-10%" y="-10%" width="120%" height="120%">
-            <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#bcd3ff" flood-opacity=".7"/>
-          </filter>
         </defs>
-
         <rect x="0" y="0" width="920" height="840" fill="url(#bg)"/>
-
-        <!-- helper to draw a stage -->
-        <!-- coords for stages -->
-        <g id="stage" stroke="#cbdcf0" stroke-width="1.8" fill="#fff" filter="url(#soft)"></g>
-
         <!-- Stage 1 -->
         <rect x="160" y="60" width="600" height="120" rx="16" fill="#fff" stroke="#cbdcf0" stroke-width="1.8"/>
-        <text x="460" y="115" text-anchor="middle" font-size="22" font-family="ui-sans-serif,Segoe UI,Roboto" fill="#0b1220">Ingestión</text>
+        <text x="460" y="115" text-anchor="middle" font-size="22" fill="#0b1220">Ingestión</text>
         <text x="460" y="145" text-anchor="middle" font-size="15" fill="#5b677a">OCR · Parsers · Metadatos · Selección de jurisdicción</text>
-
-        <!-- Arrow -->
         <line x1="460" y1="180" x2="460" y2="220" stroke="#0a4bd1" stroke-width="3" marker-end="url(#arrowDown)"/>
-
         <!-- Stage 2 -->
         <rect x="160" y="240" width="600" height="120" rx="16" fill="#fff" stroke="#cbdcf0" stroke-width="1.8"/>
         <text x="460" y="295" text-anchor="middle" font-size="22" fill="#0b1220">Razonamiento</text>
         <text x="460" y="325" text-anchor="middle" font-size="15" fill="#5b677a">NER · Mapeo semántico → Requisitos aplicables</text>
-
         <line x1="460" y1="360" x2="460" y2="400" stroke="#0a4bd1" stroke-width="3" marker-end="url(#arrowDown)"/>
-
         <!-- Stage 3 -->
         <rect x="160" y="420" width="600" height="120" rx="16" fill="#fff" stroke="#cbdcf0" stroke-width="1.8"/>
         <text x="460" y="475" text-anchor="middle" font-size="22" fill="#0b1220">Adaptación</text>
         <text x="460" y="505" text-anchor="middle" font-size="15" fill="#5b677a">Reglas transformadoras · Plantillas parametrizadas</text>
-
         <line x1="460" y1="540" x2="460" y2="580" stroke="#0a4bd1" stroke-width="3" marker-end="url(#arrowDown)"/>
-
         <!-- Stage 4 -->
         <rect x="160" y="600" width="600" height="120" rx="16" fill="#fff" stroke="#cbdcf0" stroke-width="1.8"/>
         <text x="460" y="655" text-anchor="middle" font-size="22" fill="#0b1220">Trazabilidad</text>
@@ -157,7 +155,7 @@ svg{display:block;max-width:100%;height:auto;margin:0 auto}
   </div>
 </section>
 
-<!-- 3. DATA CONTRACTS (apiladas: Input debajo, luego Output) -->
+<!-- 3: Data Contracts (apiladas) -->
 <section id="contracts" class="section">
   <div class="container">
     <h2 class="title">3. Data Contracts (JSON)</h2>
@@ -184,7 +182,7 @@ svg{display:block;max-width:100%;height:auto;margin:0 auto}
   </div>
 </section>
 
-<!-- 4. INTERFACES (apiladas: CLI debajo, luego HTTP) -->
+<!-- 4: Interfaces (apiladas) -->
 <section id="interfaces" class="section">
   <div class="container">
     <h2 class="title">4. Interfaces (prototype stubs)</h2>
@@ -209,7 +207,7 @@ $ iclvs report --run 2025-10-27 --out report.pdf</code></pre>
   </div>
 </section>
 
-<!-- 5. MÉTRICAS -->
+<!-- 5: Métricas -->
 <section id="metrics" class="section">
   <div class="container">
     <h2 class="title">5. Metrics (demo SVG)</h2>
@@ -233,8 +231,8 @@ $ iclvs report --run 2025-10-27 --out report.pdf</code></pre>
   </div>
 </section>
 
-<!-- 6. VERSIONADO / PROVENIENCIA -->
-<section id="provenance" class="section">
+<!-- 6: Versionado / Proveniencia -->
+<section id="provenance" class="section last">
   <div class="container">
     <h2 class="title">6. Versioning & Provenance</h2>
     <div class="card" style="max-width:900px;margin:0 auto">
@@ -254,7 +252,7 @@ $ iclvs report --run 2025-10-27 --out report.pdf</code></pre>
 
 </main>
 
-<footer class="section" style="padding-bottom:30px">
+<footer class="section last">
   <div class="container center">
     <div class="badge" style="border-style:dashed">© 2025 Eduardo Luis Espinal de Aza — ICLVS</div>
   </div>
