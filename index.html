@@ -37,7 +37,7 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
 .svgwrap{border:1px solid var(--line);border-radius:12px;background:#f7fbff;padding:12px}
 svg{display:block;max-width:100%;height:auto;margin:0 auto}
 
-/* TOC */
+/* TOC (no sticky en impresión) */
 .toc{position:sticky;top:0;z-index:10;background:linear-gradient(#fafcff,#fff);border-bottom:1px solid var(--line)}
 .toc .wrap{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;padding:10px var(--sp)}
 .toc a{display:inline-block;padding:8px 12px;border-radius:10px;border:1px solid var(--line);color:var(--fg);font-weight:700;background:#fff}
@@ -46,33 +46,32 @@ svg{display:block;max-width:100%;height:auto;margin:0 auto}
 /* Apilados (para Data Contracts e Interfaces) */
 .stack-col{display:flex;flex-direction:column;gap:16px;max-width:900px;margin:0 auto}
 
-/* ===== PRINT PERFECT ===== */
+/* ===== PRINT-READY A4 ===== */
 @media print{
   *{-webkit-print-color-adjust:exact; print-color-adjust:exact}
   @page{size:A4; margin:14mm}
-  /* quitar sticky/nav/sombras y colores fuertes que ensucien */
+  /* ancho exacto para no cortar (≈ 182 mm dentro de márgenes) */
+  .container{max-width:182mm; padding:0 6mm}
   .toc{display:none!important}
-  .card{box-shadow:none;border:1pt solid #000}
-  .badge{border:1pt solid #000;background:#fff;color:#000}
+  .card{box-shadow:none;border:0.4pt solid #000}
+  .badge{border:0.4pt solid #000;background:#fff;color:#000}
   a{color:#000; text-decoration:underline}
-  /* mostrar URL de los enlaces en papel */
+  /* mostrar URL en papel */
   a[href]::after{content:" (" attr(href) ")"; font-size:.9em}
-  /* evitar cortes feos */
+  /* evitar cortes dentro de bloques */
   header, footer, .section, .card, .svgwrap, pre, table, h2, h3{break-inside:avoid; page-break-inside:avoid}
-  /* forzar salto entre secciones largas para ritmo limpio */
+  /* permitir salto entre secciones sin cortar contenido */
   .section{page-break-after:always}
   .section.last{page-break-after:auto}
+  img, svg{max-width:100%; height:auto}
 }
-
-/* opción: limitar ancho de hero para mejor impresión */
-.hero-inner{max-width:820px;margin:0 auto}
 </style>
 </head>
 <body>
 
 <!-- HERO -->
 <header class="section">
-  <div class="container center hero-inner">
+  <div class="container center" style="max-width:820px">
     <a href="https://github.com/eduardoespinal-lawtech/ICLVS-LegalTech/tree/main" target="_blank" rel="noopener">
       <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" width="72" height="72" style="border-radius:14px;box-shadow:var(--shadow)">
     </a>
@@ -83,11 +82,11 @@ svg{display:block;max-width:100%;height:auto;margin:0 auto}
       <span class="pill">Version: 0.1.0 · Build: 2025-10-27</span>
       <span class="pill">Commit: <code>REPLACE_WITH_COMMIT_SHA</code></span>
     </div>
-    <p>Landing técnica centrada e imprimible A4. Solo: <strong>Módulos</strong>, <strong>Arquitectura</strong>, <strong>Contratos</strong>, <strong>Interfaces</strong>, <strong>Métricas</strong> y <strong>Proveniencia</strong>.</p>
+    <p>Landing técnica centrada e imprimible A4. Secciones: <strong>Módulos</strong>, <strong>Arquitectura</strong>, <strong>Contratos</strong>, <strong>Interfaces</strong>, <strong>Métricas</strong> y <strong>Proveniencia</strong>.</p>
   </div>
 </header>
 
-<!-- TOC (oculto en impresión) -->
+<!-- TOC (oculto al imprimir) -->
 <nav class="toc">
   <div class="container wrap">
     <a href="#modules">Módulos</a>
@@ -101,7 +100,7 @@ svg{display:block;max-width:100%;height:auto;margin:0 auto}
 
 <main>
 
-<!-- 1 -->
+<!-- 1. MÓDULOS -->
 <section id="modules" class="section">
   <div class="container" style="max-width:900px">
     <h2 class="title">1. System Modules</h2>
@@ -116,12 +115,12 @@ svg{display:block;max-width:100%;height:auto;margin:0 auto}
   </div>
 </section>
 
-<!-- 2: Arquitectura vertical (etapas apiladas) -->
+<!-- 2. ARQUITECTURA (vertical, dimensionada para caber en A4) -->
 <section id="architecture" class="section">
-  <div class="container" style="max-width:920px">
+  <div class="container" style="max-width:182mm">
     <h2 class="title">2. Architecture (concept)</h2>
     <div class="svgwrap">
-      <svg viewBox="0 0 920 840" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ICLVS Architecture Vertical">
+      <svg viewBox="0 0 920 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ICLVS Architecture Vertical">
         <defs>
           <linearGradient id="bg" x1="0" x2="0" y1="0" y2="1">
             <stop offset="0" stop-color="#eef5ff"/><stop offset="1" stop-color="#ffffff"/>
@@ -130,32 +129,32 @@ svg{display:block;max-width:100%;height:auto;margin:0 auto}
             <path d="M0,0 L12,6 L0,12 z" fill="#0a4bd1"/>
           </marker>
         </defs>
-        <rect x="0" y="0" width="920" height="840" fill="url(#bg)"/>
-        <!-- Stage 1 -->
-        <rect x="160" y="60" width="600" height="120" rx="16" fill="#fff" stroke="#cbdcf0" stroke-width="1.8"/>
-        <text x="460" y="115" text-anchor="middle" font-size="22" fill="#0b1220">Ingestión</text>
-        <text x="460" y="145" text-anchor="middle" font-size="15" fill="#5b677a">OCR · Parsers · Metadatos · Selección de jurisdicción</text>
-        <line x1="460" y1="180" x2="460" y2="220" stroke="#0a4bd1" stroke-width="3" marker-end="url(#arrowDown)"/>
-        <!-- Stage 2 -->
-        <rect x="160" y="240" width="600" height="120" rx="16" fill="#fff" stroke="#cbdcf0" stroke-width="1.8"/>
-        <text x="460" y="295" text-anchor="middle" font-size="22" fill="#0b1220">Razonamiento</text>
-        <text x="460" y="325" text-anchor="middle" font-size="15" fill="#5b677a">NER · Mapeo semántico → Requisitos aplicables</text>
-        <line x1="460" y1="360" x2="460" y2="400" stroke="#0a4bd1" stroke-width="3" marker-end="url(#arrowDown)"/>
-        <!-- Stage 3 -->
-        <rect x="160" y="420" width="600" height="120" rx="16" fill="#fff" stroke="#cbdcf0" stroke-width="1.8"/>
-        <text x="460" y="475" text-anchor="middle" font-size="22" fill="#0b1220">Adaptación</text>
-        <text x="460" y="505" text-anchor="middle" font-size="15" fill="#5b677a">Reglas transformadoras · Plantillas parametrizadas</text>
-        <line x1="460" y1="540" x2="460" y2="580" stroke="#0a4bd1" stroke-width="3" marker-end="url(#arrowDown)"/>
-        <!-- Stage 4 -->
-        <rect x="160" y="600" width="600" height="120" rx="16" fill="#fff" stroke="#cbdcf0" stroke-width="1.8"/>
-        <text x="460" y="655" text-anchor="middle" font-size="22" fill="#0b1220">Trazabilidad</text>
-        <text x="460" y="685" text-anchor="middle" font-size="15" fill="#5b677a">Bitácora · Hashes · Auditoría · Explicabilidad</text>
+        <rect x="0" y="0" width="920" height="700" fill="url(#bg)"/>
+        <!-- Etapas apiladas -->
+        <rect x="160" y="40"  width="600" height="110" rx="16" fill="#fff" stroke="#cbdcf0" stroke-width="1.6"/>
+        <text x="460" y="92"  text-anchor="middle" font-size="20" fill="#0b1220">Ingestión</text>
+        <text x="460" y="116" text-anchor="middle" font-size="14" fill="#5b677a">OCR · Parsers · Metadatos · Selección de jurisdicción</text>
+        <line x1="460" y1="150" x2="460" y2="190" stroke="#0a4bd1" stroke-width="3" marker-end="url(#arrowDown)"/>
+
+        <rect x="160" y="200" width="600" height="110" rx="16" fill="#fff" stroke="#cbdcf0" stroke-width="1.6"/>
+        <text x="460" y="252" text-anchor="middle" font-size="20" fill="#0b1220">Razonamiento</text>
+        <text x="460" y="276" text-anchor="middle" font-size="14" fill="#5b677a">NER · Mapeo semántico → Requisitos aplicables</text>
+        <line x1="460" y1="310" x2="460" y2="350" stroke="#0a4bd1" stroke-width="3" marker-end="url(#arrowDown)"/>
+
+        <rect x="160" y="360" width="600" height="110" rx="16" fill="#fff" stroke="#cbdcf0" stroke-width="1.6"/>
+        <text x="460" y="412" text-anchor="middle" font-size="20" fill="#0b1220">Adaptación</text>
+        <text x="460" y="436" text-anchor="middle" font-size="14" fill="#5b677a">Reglas transformadoras · Plantillas parametrizadas</text>
+        <line x1="460" y1="470" x2="460" y2="510" stroke="#0a4bd1" stroke-width="3" marker-end="url(#arrowDown)"/>
+
+        <rect x="160" y="520" width="600" height="110" rx="16" fill="#fff" stroke="#cbdcf0" stroke-width="1.6"/>
+        <text x="460" y="572" text-anchor="middle" font-size="20" fill="#0b1220">Trazabilidad</text>
+        <text x="460" y="596" text-anchor="middle" font-size="14" fill="#5b677a">Bitácora · Hashes · Auditoría · Explicabilidad</text>
       </svg>
     </div>
   </div>
 </section>
 
-<!-- 3: Data Contracts (apiladas) -->
+<!-- 3. DATA CONTRACTS (apiladas) -->
 <section id="contracts" class="section">
   <div class="container">
     <h2 class="title">3. Data Contracts (JSON)</h2>
@@ -182,7 +181,7 @@ svg{display:block;max-width:100%;height:auto;margin:0 auto}
   </div>
 </section>
 
-<!-- 4: Interfaces (apiladas) -->
+<!-- 4. INTERFACES (apiladas) -->
 <section id="interfaces" class="section">
   <div class="container">
     <h2 class="title">4. Interfaces (prototype stubs)</h2>
@@ -207,7 +206,7 @@ $ iclvs report --run 2025-10-27 --out report.pdf</code></pre>
   </div>
 </section>
 
-<!-- 5: Métricas -->
+<!-- 5. MÉTRICAS -->
 <section id="metrics" class="section">
   <div class="container">
     <h2 class="title">5. Metrics (demo SVG)</h2>
@@ -231,7 +230,7 @@ $ iclvs report --run 2025-10-27 --out report.pdf</code></pre>
   </div>
 </section>
 
-<!-- 6: Versionado / Proveniencia -->
+<!-- 6. VERSIONADO / PROVENIENCIA -->
 <section id="provenance" class="section last">
   <div class="container">
     <h2 class="title">6. Versioning & Provenance</h2>
